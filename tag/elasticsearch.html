@@ -2,7 +2,7 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>Yullin - YULLIN' Blog</title>	
+	<title>elasticsearch - YULLIN' Blog</title>	
 	<meta name="author" content="Yullin">
 	
 
@@ -28,37 +28,9 @@
 
 		  <div role="main" class="content">
 
-<h1>Posts published by: Yullin</h1>
+<h1>Post tagged: elasticsearch</h1>
 
 <article class="summary">
-<div class="metadata">
-  <time datetime="2018-08-30T10:38:00+08:00" pubdate>四 30 八月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/openresty.html">openresty</a></p></div>  <div>
-    <h2>
-      <a href="http://yull.in/install-and-config-openresty.html" rel="bookmark" title="Permalink to install and config openresty">install and config openresty</a>
-    </h2>
-    <p><h3>安装配置openresty</h3>
-<ol>
-<li>下载源码  </li>
-</ol>
-<div class="highlight"><pre><span></span>cd /usr/local/src
-wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
-</pre></div>
-
-
-<ol>
-<li>解压后编译安装<br>
-<code>yum install pcre-devel openssl-devel gcc curl  #需要事先准备好需要的依赖包
-tar xzf openresty-1.13.6.2.tar.gz
-cd openresty-1.13.6.2
- ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug
-gmake -j2 …</code></li></ol></p>
-  </div>
-</article><article class="summary">
 <div class="metadata">
   <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
     <address class="vcard author">
@@ -83,29 +55,6 @@ gmake -j2 …</code></li></ol></p>
         &quot;grok&quot;: {
           &quot;field&quot;: &quot;message&quot;,
           &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div></p>
-  </div>
-</article><article class="summary">
-<div class="metadata">
-  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/php.html">php</a>, <a href="http://yull.in/tag/imagick.html">imagick</a>, <a href="http://yull.in/tag/php-extension.html">php extension</a></p></div>  <div>
-    <h2>
-      <a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a>
-    </h2>
-    <p><p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
-</pre></div>
-
-
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div></p>
   </div>
 </article><article class="summary">
 <div class="metadata">

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>install php extension imagick - YULLIN' Blog</title>	
+	<meta name="author" content="Yullin">
+	
+
+	<meta name="description" content="linux下配置imagick的步骤为(以centOS为例): 1. 安装ImageMagick yum install ImageMagick-devel /usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句 2. 安装php的imagick扩展模块 (http://pecl.php.net/package/imagick) wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz tar -zxvf imagick-3.1.0RC2.tgz /usr/local/php/bin/phpize #在项目目录下运行phpize …">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="http://yull.in/theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+	      </nav>
+		<a href="http://yull.in" class="title">YULLIN' Blog</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>install php extension imagick</h1>
+		
+<div class="metadata">
+  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/php.html">php</a>, <a href="http://yull.in/tag/imagick.html">imagick</a>, <a href="http://yull.in/tag/php-extension.html">php extension</a></p></div>		
+		<p>linux下配置imagick的步骤为(以centOS为例):</p>
+<h3>1. 安装ImageMagick</h3>
+<div class="highlight"><pre><span></span>yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+</pre></div>
+
+
+<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
+<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize, phpize为项目生成合乎php使用的configure文件
+./configure --with-php-config=/usr/local/php/bin/php-config --with-imagick=/usr/local/imagemagick   #php-config:获取php配置信息
+make
+make install
+</pre></div>
+
+
+<h3>4. 配置php.ini</h3>
+<p>在php.ini中加入下面这句话</p>
+<blockquote>
+<p>extension=imagick.so</p>
+</blockquote>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li class="active"><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="#">You can add links in your config file</a><i></i></li>
+				  <li><a href="#">Another social link</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Yullin - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>

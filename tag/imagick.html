@@ -2,7 +2,7 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>YULLIN' Blog</title>	
+	<title>imagick - YULLIN' Blog</title>	
 	<meta name="author" content="Yullin">
 	
 
@@ -27,9 +27,37 @@
 	  <div class="wrapper">
 
 		  <div role="main" class="content">
-<ul>
-    <li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
-</ul>
+
+<h1>Post tagged: imagick</h1>
+
+<article class="summary">
+<div class="metadata">
+  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/php.html">php</a>, <a href="http://yull.in/tag/imagick.html">imagick</a>, <a href="http://yull.in/tag/php-extension.html">php extension</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a>
+    </h2>
+    <p><p>linux下配置imagick的步骤为(以centOS为例):</p>
+<h3>1. 安装ImageMagick</h3>
+<div class="highlight"><pre><span></span>yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+</pre></div>
+
+
+<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
+<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div></p>
+  </div>
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
+
 		  </div>	
 		  
 		  <div class="sidebar">

@@ -2,9 +2,12 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>YULLIN' Blog</title>	
+	<title>install and config openresty - YULLIN' Blog</title>	
 	<meta name="author" content="Yullin">
 	
+
+	<meta name="description" content="安装配置openresty 下载源码 cd /usr/local/src wget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包 tar xzf openresty-1.13.6.2.tar.gz cd openresty-1.13.6.2 ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug gmake -j2 …">
+
 
 	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
 	<link rel="stylesheet" href="http://yull.in/theme/css/main.css" type="text/css" />
@@ -27,12 +30,18 @@
 	  <div class="wrapper">
 
 		  <div role="main" class="content">
-
-
-
-      <article>
-        <h1><a href="http://yull.in/install-and-config-openresty.html">install and config openresty</a></h1>
-        <h3>安装配置openresty</h3>
+	<article class="full">
+			
+		<h1>install and config openresty</h1>
+		
+<div class="metadata">
+  <time datetime="2018-08-30T10:38:00+08:00" pubdate>四 30 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/openresty.html">openresty</a></p></div>		
+		<h3>安装配置openresty</h3>
 <ol>
 <li>下载源码  </li>
 </ol>
@@ -49,37 +58,15 @@ cd openresty-1.13.6.2
  ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug
 gmake -j2   ##由于是双核CPU，所以编译时添加-j2的参数
 gmake install</code></li>
-</ol>
-      </article>
+</ol>	
 
-      <hr />
+	</article>
 
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-    
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
 
-
-      <li>
-<a href="http://yull.in/config-elasticsearch-ingest-node.html" rel="bookmark" title="Permalink to configure elasticsearch ingest node">configure elasticsearch ingest node</a>
-  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/elk.html">elk</a><a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a><a href="http://yull.in/tag/logstash.html">logstash</a><a href="http://yull.in/tag/kibana.html">kibana</a><a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a>
-  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/php.html">php</a><a href="http://yull.in/tag/imagick.html">imagick</a><a href="http://yull.in/tag/php-extension.html">php extension</a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/config-elk-enviroment.html" rel="bookmark" title="Permalink to configure ELK">configure ELK</a>
-  <time datetime="2018-07-26T18:17:00+08:00" pubdate>四 26 七月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/elk.html">elk</a><a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a><a href="http://yull.in/tag/logstash.html">logstash</a><a href="http://yull.in/tag/kibana.html">kibana</a></p></a>      </li>
-
-
-          </ol>
-        </div>
 
 		  </div>	
 		  
@@ -88,7 +75,7 @@ gmake install</code></li>
 	        <nav>
 	          <h2>Categories</h2>
 	          <ul>
-	              <li ><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+	              <li class="active"><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
 	          </ul>
 	        </nav>
 

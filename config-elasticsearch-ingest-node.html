@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="">	
+<head>
+	<meta charset="utf-8"/>
+	<title>configure elasticsearch ingest node - YULLIN' Blog</title>	
+	<meta name="author" content="Yullin">
+	
+
+	<meta name="description" content="在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。 1.测试可以用如下命令 curl -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json filebeat.test.json的内容如下： { "pipeline" : { "description" : "nginx access log", "processors": [ { "grok": { "field": "message", "patterns": ["%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …">
+
+
+	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="http://yull.in/theme/css/main.css" type="text/css" />
+		
+
+</head>
+	
+<body>
+
+    <div class="container">
+	  
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+	      <nav class="pages">
+	      </nav>
+		<a href="http://yull.in" class="title">YULLIN' Blog</a>
+      </header>
+	
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+	<article class="full">
+			
+		<h1>configure elasticsearch ingest node</h1>
+		
+<div class="metadata">
+  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>		
+		<p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
+<h3>1.测试可以用如下命令</h3>
+<blockquote>
+<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
+</blockquote>
+<p>filebeat.test.json的内容如下：  </p>
+<div class="highlight"><pre><span></span>{
+  &quot;pipeline&quot; : {
+    &quot;description&quot; : &quot;nginx access log&quot;,
+    &quot;processors&quot;: [
+      {
+        &quot;grok&quot;: {
+          &quot;field&quot;: &quot;message&quot;,
+          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %
+{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?:%{NUMBER:bytes}|-) (?:%{NUMBER:error_code}|-) \&quot;(?:%{WORD:error_msg}|-)\&quot; %{QS:referrer} %{QS:agent} \&quot;%{DATA:x_forwarded_for}\&quot; \&quot;%{DATA:x_is_ip}\&quot; %{HOSTN
+AME:server_host} %{URIHOST:upstream_addr} %{BASE10NUM:upstream_response_time} %{NUMBER:upstream_status} \&quot;(?:%{IP:x_is_client_ip}|-)\&quot;&quot;],
+          &quot;ignore_missing&quot;: true
+        }
+      }
+    ]
+  },
+  &quot;docs&quot; : [
+    { &quot;_source&quot;: {
+        &quot;message&quot;: &quot;101.95.128.162 2018-08-09T19:26:41+08:00 1533814001.040 0.061 407 27500839 1 /wp-includes/js/jquery/jquery.js \&quot;GET /wp-includes/js/jquery/jquery.js?ver=1.12.4 HTTP/1.1\&quot; 200 97184 - \&quot;-\&quot; \&quot;http://blog.zdao.com/\
+&quot; \&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36\&quot; \&quot;-\&quot; \&quot;-\&quot; blog.zdao.com 106.75.223.130:80 0.061 200 \&quot;101.95.128.162\&quot;&quot; 
+      }
+    }
+  ]
+}
+</pre></div>
+
+
+<p>配置文件filebeat.yml如下：</p>
+<div class="highlight"><pre><span></span>filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /data/front/webcc_online/*/*/*/10.2.0.247/5032/*.log
+  fields:
+    type: &quot;access-log&quot;
+
+filebeat.config.modules:
+  path: <span class="cp">${</span><span class="n">path</span><span class="o">.</span><span class="n">config</span><span class="cp">}</span>/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 3
+
+setup.template.name: &quot;ignore-this&quot;
+setup.template.pattern: &quot;ignore-this&quot;
+
+setup.kibana:
+  host: &quot;localhost:5601&quot;
+
+output.elasticsearch:
+  hosts: [&quot;10.2.4.34:9200&quot;]
+  indices:
+    - index: &quot;filebeat-nginx-access-%{+yyy.MM.dd}&quot;
+      when.equals:
+        fields.type: &quot;access-log&quot;
+  pipelines:
+    - pipeline: &quot;pipeline-nginx-access&quot;
+      when.equals:
+        fields.type: &quot;access-log&quot;
+</pre></div>	
+
+	</article>
+
+    <p>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</p>
+
+
+		  </div>	
+		  
+		  <div class="sidebar">
+
+	        <nav>
+	          <h2>Categories</h2>
+	          <ul>
+	              <li class="active"><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+	          </ul>
+	        </nav>
+
+	          <aside>
+	          <h2>Social</h2>
+			    <ul class="social">
+				  <li><a href="#">You can add links in your config file</a><i></i></li>
+				  <li><a href="#">Another social link</a><i></i></li>
+			    </ul>
+			  </aside>
+
+	          <aside>
+	            <h2>Blogroll</h2>
+	            <ul>
+	                <li><a href="http://getpelican.com/">Pelican</a></li>
+	                <li><a href="http://python.org/">Python.org</a></li>
+	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                <li><a href="#">You can modify those links in your config file</a></li>
+	            </ul>
+	          </aside>
+
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  © 2013 Yullin - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
+    	</p>
+
+	  </footer>	
+
+	</div>
+	
+
+</body>
+</html>
