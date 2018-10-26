@@ -64,6 +64,58 @@
 
 <article class="summary">
 <div class="metadata">
+  <time datetime="2018-10-26T11:20:00+08:00" pubdate>五 26 十月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a>
+    </h2>
+    <p><p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.30</td>
+<td>centosT-AutomELK-8030</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.31</td>
+<td>centosT-AutomELK-8031</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.32</td>
+<td>centosT-AutomELK-8032</td>
+<td>ElasticSearch</td>
+</tr>
+</tbody>
+</table>
+<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
+首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
+由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
+<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div></p>
+  </div>
+</article><article class="summary">
+<div class="metadata">
   <time datetime="2018-10-09T18:08:00+08:00" pubdate>二 09 十月 2018</time>
     <address class="vcard author">
       by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
@@ -136,58 +188,6 @@ gmake -j2 …</pre></div></p>
         &quot;grok&quot;: {
           &quot;field&quot;: &quot;message&quot;,
           &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div></p>
-  </div>
-</article><article class="summary">
-<div class="metadata">
-  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>  <div>
-    <h2>
-      <a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a>
-    </h2>
-    <p><p>本文主要记录ELK的测试环境的搭建过程   </p>
-<h3>1.环境以及架构</h3>
-<table>
-<thead>
-<tr>
-<th>Jumper</th>
-<th>系统版本</th>
-<th align="center">IP地址</th>
-<th>主机名</th>
-<th>角色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.30</td>
-<td>centosT-AutomELK-8030</td>
-<td>Kibana</td>
-</tr>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.31</td>
-<td>centosT-AutomELK-8031</td>
-<td>Logstash</td>
-</tr>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.32</td>
-<td>centosT-AutomELK-8032</td>
-<td>ElasticSearch</td>
-</tr>
-</tbody>
-</table>
-<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
-<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div></p>
   </div>
 </article><article class="summary">
 <div class="metadata">

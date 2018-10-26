@@ -64,33 +64,7 @@
 
 <article class="summary">
 <div class="metadata">
-  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>  <div>
-    <h2>
-      <a href="http://yull.in/config-elasticsearch-ingest-node.html" rel="bookmark" title="Permalink to configure elasticsearch ingest node">configure elasticsearch ingest node</a>
-    </h2>
-    <p><p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
-<h3>1.测试可以用如下命令</h3>
-<blockquote>
-<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
-</blockquote>
-<p>filebeat.test.json的内容如下：  </p>
-<div class="highlight"><pre><span></span>{
-  &quot;pipeline&quot; : {
-    &quot;description&quot; : &quot;nginx access log&quot;,
-    &quot;processors&quot;: [
-      {
-        &quot;grok&quot;: {
-          &quot;field&quot;: &quot;message&quot;,
-          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div></p>
-  </div>
-</article><article class="summary">
-<div class="metadata">
-  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
+  <time datetime="2018-10-26T11:20:00+08:00" pubdate>五 26 十月 2018</time>
     <address class="vcard author">
       by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
     </address>
@@ -139,6 +113,32 @@
 首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
 由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
 <div class="highlight"><pre><span></span>wget http://10.2 …</pre></div></p>
+  </div>
+</article><article class="summary">
+<div class="metadata">
+  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/config-elasticsearch-ingest-node.html" rel="bookmark" title="Permalink to configure elasticsearch ingest node">configure elasticsearch ingest node</a>
+    </h2>
+    <p><p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
+<h3>1.测试可以用如下命令</h3>
+<blockquote>
+<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
+</blockquote>
+<p>filebeat.test.json的内容如下：  </p>
+<div class="highlight"><pre><span></span>{
+  &quot;pipeline&quot; : {
+    &quot;description&quot; : &quot;nginx access log&quot;,
+    &quot;processors&quot;: [
+      {
+        &quot;grok&quot;: {
+          &quot;field&quot;: &quot;message&quot;,
+          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div></p>
   </div>
 </article>
 <div class="pagination">

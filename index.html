@@ -63,15 +63,185 @@
 
 
       <article>
-        <h1><a href="http://yull.in/microsoft-win10-oct-update.html">win10十月更新坑用户</a></h1>
-        <p>昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。</p>
-<p>换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。</p>
-<p>虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。</p>
-<p>reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。</p>
-<p>但是，随着Windows 10 10月2018 Update的撤下，此问题不再发生，用户将无法再看到通过Windows Update提供的新版本。</p>
-<p>Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一天，微软开始允许用户通过手动检查后通过Windows Update下载。</p>
-<p>然而，到目前为止，新操作系统功能更新带来了众多问题，最糟糕的问题导致在升级期间完全删除用户文件，虽然目前尚不清楚有多少台PC出现此问题，但微软决定完全撤销2018年10月的更新。</p>
-<p>目前还不知道微软什么时候想恢复推出，但随着10月的周二补丁日即将到来，预计下周会有更多这方面的新闻。</p>
+        <h1><a href="http://yull.in/config-elasticsearch-logstash-kibana.html">configure elasticsearch logstash kibana</a></h1>
+        <p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.30</td>
+<td>centosT-AutomELK-8030</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.31</td>
+<td>centosT-AutomELK-8031</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.32</td>
+<td>centosT-AutomELK-8032</td>
+<td>ElasticSearch</td>
+</tr>
+</tbody>
+</table>
+<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
+首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
+由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
+<div class="highlight"><pre><span></span>wget http://10.2.4.11/bin_deng/packagename.rpm  
+rpm -ivh packagename.rpm
+</pre></div>
+
+
+<h3>2.安装配置Elasticsearch</h3>
+<p>首先需要下载最新版本：  </p>
+<div class="highlight"><pre><span></span>wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.1.tar.gz  
+</pre></div>
+
+
+<p>下载后解压至<code>/usr/local/</code>目录下，解压后的路径即为<code>/usr/local/elasticsearch-6.3.1/</code>，做一个软链接</p>
+<div class="highlight"><pre><span></span>ln -s /usr/local/elasticsearch-6.3.1 /usr/local/elasticsearch
+</pre></div>
+
+
+<p>修改配置文件<code>/usr/local/elasticsearch/config/elasticsearch.yml</code>，需要修改以下几项：</p>
+<div class="highlight"><pre><span></span>network.host: 10.2.8.32  #设置为本机外网可访问的IP
+http.port: 9200          #设置监听端口为9200  
+cluster.name: my-es      #设置集群名字
+node.name: node-1        #设置节点名字
+path.data: /data/es_data #设置数据文件存储目录
+path.logs: /data/es_logs #设置日志文件目录
+</pre></div>
+
+
+<p>修改完成后，启动elasticsearch  </p>
+<div class="highlight"><pre><span></span>/usr/local/elasticsearch/bin/elasticsearch  
+</pre></div>
+
+
+<p>启动直接就报错了，报错信息如下：  </p>
+<div class="highlight"><pre><span></span>Exception in thread &quot;main&quot; java.nio.file.AccessDeniedException: /usr/local/elasticsearch/config/jvm.options
+        at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+        at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:215)
+        at java.base/java.nio.file.Files.newByteChannel(Files.java:369)
+        at java.base/java.nio.file.Files.newByteChannel(Files.java:415)
+        at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384)
+        at java.base/java.nio.file.Files.newInputStream(Files.java:154)
+        at org.elasticsearch.tools.launchers.JvmOptionsParser.main(JvmOptionsParser.java:58)
+</pre></div>
+
+
+<p>经过查询是由于执行该命令的用户没有运行jvm的权限导致该报错，所以我们新建一个elk用户:</p>
+<div class="highlight"><pre><span></span>sudo useradd elk  
+</pre></div>
+
+
+<p>然后修改目录归属：</p>
+<div class="highlight"><pre><span></span>sudo chown -R elk.elk /usr/local/elasticsearch* 
+sudo chown -R elk.elk /data/es_*               #修改/data/es_data和/data/es_log目录的权限 
+sudo su
+</pre></div>
+
+
+<p>在root用户下运行elasticsearch也会报错<code>can not run elasticsearch as root</code>，所以我们需要切换到elk用户下面再启动elasticsearch</p>
+<div class="highlight"><pre><span></span>su elk
+/usr/local/elasticsearch/bin/elasticsearch -d  #-d参数是后台运行
+</pre></div>
+
+
+<p>修改之后仍然还是有报错，报错如下：</p>
+<div class="highlight"><pre><span></span>ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+</pre></div>
+
+
+<p>需要在/etc/sysctl.conf中修改配置</p>
+<div class="highlight"><pre><span></span>vm.max_map_count=262144
+</pre></div>
+
+
+<p>或者在命令行中执行<code>sysctl -w vm.max_map_count=262144</code><br>
+如此折腾一番之后，可以正常运行elasticsearch了。</p>
+<h3>3.安装配置Logstash</h3>
+<ul>
+<li><em>需要注意的一点是新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错<code>Unrecognized VM option 'UseParNewGC'</code>参考链接https://github.com/elastic/logstash/issues/9345</em></li>
+</ul>
+<p>下载最新版本的Logstash:</p>
+<div class="highlight"><pre><span></span>sudo wget https://artifacts.elastic.co/downloads/logstash/logstash-6.3.2.tar.gz
+sudo tar xzf logstash-6.3.2.tar.gz -C /usr/local/
+sudo ln -s logstash-6.3.2 logstash
+</pre></div>
+
+
+<p>在<code>/esr/local/logstash/config</code>目录下面新建log.conf配置文件，并添加以下修改内容：</p>
+<div class="highlight"><pre><span></span>input {
+  stdin {
+    type =&gt; &quot;syslog&quot;
+  }
+  #file {
+  #  type =&gt; &quot;hadoop-yarnlog&quot;
+  #  path =&gt; &quot;/usr/local/hadoop/logs/yarn-hadoop-resourcemanager-m000.log&quot;
+  #}
+}
+
+output {
+  elasticsearch {
+    hosts =&gt; &quot;10.2.8.32:9200&quot;
+    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
+    template_overwrite =&gt; true
+  }
+}
+</pre></div>
+
+
+<p>关于logstash配置文件的解释可以参考 <a href="https://blog.csdn.net/king7950/article/details/61196447">csdn blog</a> 的说明 </p>
+<p>关于logstash的启动命令如下：</p>
+<div class="highlight"><pre><span></span>sudo /usr/local/logstash/bin/logstash -f /usr/local/logstash/config/log.conf &gt; /dev/null 2&gt;&amp;1
+</pre></div>
+
+
+<p>这样的方式启动主要是为了防止其产生不必要的输出，占用磁盘存储。</p>
+<h3>4.安装配置Kibana</h3>
+<p>到官网进行下载最新版本：</p>
+<div class="highlight"><pre><span></span>cd /usr/local/src/
+sudo wget https://artifacts.elastic.co/downloads/kibana/kibana-6.3.2-linux-x86_64.tar.gz
+</pre></div>
+
+
+<p>然后解压缩到<code>/usr/local/</code>目录下面</p>
+<div class="highlight"><pre><span></span>sudo tar xzf kibana-6.3.2-linux-x86_64.tar.gz -C /usr/local/
+cd /usr/local/
+sudo ln -s kibana-6.3.2-linux-x86_64 kibana
+</pre></div>
+
+
+<p>修改配置文件<code>/usr/local/kibana/config/kibana.yml</code>中的以下参数：</p>
+<div class="highlight"><pre><span></span>server.port: 5601                           #kibana的监听端口
+server.host: &quot;10.2.8.30&quot;                    #kibana的绑定IP
+elasticsearch.url: &quot;http://10.2.8.32:9200&quot;  #kibana的后端数据查询链接
+</pre></div>
+
+
+<p>修改完成后启动kibana到后台</p>
+<div class="highlight"><pre><span></span>sudo /usr/local/kibana/bin/kibana &gt; /dev/null 2&gt;&amp;1 &amp;
+</pre></div>
       </article>
 
       <hr />
@@ -83,6 +253,12 @@
 
 
       <li>
+<a href="http://yull.in/microsoft-win10-oct-update.html" rel="bookmark" title="Permalink to win10十月更新坑用户">win10十月更新坑用户</a>
+  <time datetime="2018-10-09T18:08:00+08:00" pubdate>二 09 十月 2018</time>
+<p class="tags">tags: <a href="http://yull.in/tag/win10.html">win10</a><a href="http://yull.in/tag/microsoft.html">microsoft</a><a href="http://yull.in/tag/update.html">update</a><a href="http://yull.in/tag/201810.html">201810</a></p></a>      </li>
+
+
+      <li>
 <a href="http://yull.in/install-and-config-openresty.html" rel="bookmark" title="Permalink to install and config openresty">install and config openresty</a>
   <time datetime="2018-08-30T10:38:00+08:00" pubdate>四 30 八月 2018</time>
 <p class="tags">tags: <a href="http://yull.in/tag/openresty.html">openresty</a></p></a>      </li>
@@ -90,12 +266,6 @@
 
       <li>
 <a href="http://yull.in/config-elasticsearch-ingest-node.html" rel="bookmark" title="Permalink to configure elasticsearch ingest node">configure elasticsearch ingest node</a>
-  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/elk.html">elk</a><a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a><a href="http://yull.in/tag/logstash.html">logstash</a><a href="http://yull.in/tag/kibana.html">kibana</a><a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a>
   <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
 <p class="tags">tags: <a href="http://yull.in/tag/elk.html">elk</a><a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a><a href="http://yull.in/tag/logstash.html">logstash</a><a href="http://yull.in/tag/kibana.html">kibana</a><a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></a>      </li>
 
