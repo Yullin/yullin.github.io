@@ -119,37 +119,14 @@ gmake -j2 …</pre></div></p>
   </div>
 </article><article class="summary">
 <div class="metadata">
-  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
+  <time datetime="2018-08-20T18:08:00+08:00" pubdate>一 20 八月 2018</time>
     <address class="vcard author">
       by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
     </address>
   in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/php.html">php</a>, <a href="http://yull.in/tag/imagick.html">imagick</a>, <a href="http://yull.in/tag/php-extension.html">php extension</a></p></div>  <div>
+<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a>, <a href="http://yull.in/tag/ingest-node.html">ingest node</a></p></div>  <div>
     <h2>
-      <a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a>
-    </h2>
-    <p><p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
-</pre></div>
-
-
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div></p>
-  </div>
-</article><article class="summary">
-<div class="metadata">
-  <time datetime="2018-07-26T18:17:00+08:00" pubdate>四 26 七月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/elk.html">elk</a>, <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>, <a href="http://yull.in/tag/logstash.html">logstash</a>, <a href="http://yull.in/tag/kibana.html">kibana</a></p></div>  <div>
-    <h2>
-      <a href="http://yull.in/config-elk-enviroment.html" rel="bookmark" title="Permalink to configure ELK">configure ELK</a>
+      <a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a>
     </h2>
     <p><p>本文主要记录ELK的测试环境的搭建过程   </p>
 <h3>1.环境以及架构</h3>
@@ -191,6 +168,29 @@ tar -zxvf imagick-3.1.0RC2.tgz
 首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
 由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
 <div class="highlight"><pre><span></span>wget http://10.2 …</pre></div></p>
+  </div>
+</article><article class="summary">
+<div class="metadata">
+  <time datetime="2018-08-09T16:06:00+08:00" pubdate>四 09 八月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/php.html">php</a>, <a href="http://yull.in/tag/imagick.html">imagick</a>, <a href="http://yull.in/tag/php-extension.html">php extension</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a>
+    </h2>
+    <p><p>linux下配置imagick的步骤为(以centOS为例):</p>
+<h3>1. 安装ImageMagick</h3>
+<div class="highlight"><pre><span></span>yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+</pre></div>
+
+
+<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
+<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div></p>
   </div>
 </article>
 <div class="pagination">
