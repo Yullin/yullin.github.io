@@ -2,7 +2,7 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>YULLIN' Blog</title>	
+	<title>usage - YULLIN' Blog</title>	
 	<meta name="author" content="Yullin">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,22 +59,51 @@
 </script>
 
 		  <div role="main" class="content">
-<h1>Archives for YULLIN' Blog</h1>
 
-<dl>
-    <dt>五 02 十一月 2018</dt>
-    <dd><a href="http://yull.in/curl-usage-note.html">curl usage note</a></dd>
-    <dt>五 26 十月 2018</dt>
-    <dd><a href="http://yull.in/config-elasticsearch-logstash-kibana.html">configure elasticsearch logstash kibana</a></dd>
-    <dt>二 09 十月 2018</dt>
-    <dd><a href="http://yull.in/microsoft-win10-oct-update.html">win10十月更新坑用户</a></dd>
-    <dt>四 30 八月 2018</dt>
-    <dd><a href="http://yull.in/install-and-config-openresty.html">install and config openresty</a></dd>
-    <dt>一 20 八月 2018</dt>
-    <dd><a href="http://yull.in/config-elasticsearch-ingest-node.html">configure elasticsearch ingest node</a></dd>
-    <dt>四 09 八月 2018</dt>
-    <dd><a href="http://yull.in/install-php-extension-imagick.html">install php extension imagick</a></dd>
-</dl>
+<h1>Post tagged: usage</h1>
+
+<article class="summary">
+<div class="metadata">
+  <time datetime="2018-11-02T11:08:00+08:00" pubdate>五 02 十一月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/curl.html">curl</a>, <a href="http://yull.in/tag/usage.html">usage</a>, <a href="http://yull.in/tag/get.html">get</a>, <a href="http://yull.in/tag/post.html">post</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/curl-usage-note.html" rel="bookmark" title="Permalink to curl usage note">curl usage note</a>
+    </h2>
+    <p><p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
+下面说一下具体的使用方法：  </p>
+<h3>1.建立一个命令格式文件</h3>
+<div class="highlight"><pre><span></span>\n 
+　　　　　　　time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                 time_total:  %{time_total}\n
+\n
+</pre></div>
+
+
+<p>说明：<br>
+time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间<br>
+time_connect：TCP连接的时间，三次握手的时间<br>
+time_appconnect：SSL|SSH等上层连接建立的时间<br>
+time_pretransfer：从请求开始到到响应开始传输的时间<br>
+time_redirect：从开始到最后一个请求事务的时间<br>
+time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
+time_total：总时间</p>
+<h3>2.命令使用方法 …</h3></p>
+  </div>
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
+
 		  </div>	
 		  
 		  <div class="sidebar">
