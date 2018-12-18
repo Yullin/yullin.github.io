@@ -2,7 +2,7 @@
 <html lang="">	
 <head>
 	<meta charset="utf-8"/>
-	<title>YULLIN' Blog - Authors</title>	
+	<title>list - YULLIN' Blog</title>	
 	<meta name="author" content="Yullin">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -59,10 +59,53 @@
 </script>
 
 		  <div role="main" class="content">
-    <h1>Authors on YULLIN' Blog</h1>
 
-    <ul>        <li><a href="http://yull.in/author/yullin.html">Yullin</a> (7)</li>
-    </ul>
+<h1>Post tagged: list</h1>
+
+<article class="summary">
+<div class="metadata">
+  <time datetime="2018-12-18T14:40:00+08:00" pubdate>二 18 十二月 2018</time>
+    <address class="vcard author">
+      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
+    </address>
+  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
+<p class="tags">tagged <a href="http://yull.in/tag/python.html">python</a>, <a href="http://yull.in/tag/dict.html">dict</a>, <a href="http://yull.in/tag/list.html">list</a></p></div>  <div>
+    <h2>
+      <a href="http://yull.in/python-dict-and-list-copy.html" rel="bookmark" title="Permalink to python字典和列表赋值的坑">python字典和列表赋值的坑</a>
+    </h2>
+    <p><p>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  </p>
+<p>列表的具体测试如下：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = [&#39;1&#39;]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; a.append(&#39;2&#39;)
+&gt;&gt;&gt; a
+[&#39;1&#39;, &#39;2&#39;]
+&gt;&gt;&gt; b
+[&#39;1&#39;, &#39;2&#39;]
+</pre></div>
+
+
+<p>可以看到当改变a的值时，b的值也跟着一起改变了。
+再看字典的例子：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}
+&gt;&gt;&gt; br = ar
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}
+&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
+&gt;&gt;&gt; ar
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
+</pre></div>
+
+
+<p>其实还可以有更简单的验证方式 …</p></p>
+  </div>
+</article>
+<div class="pagination">
+    Page 1 / 1
+</div>
+
 		  </div>	
 		  
 		  <div class="sidebar">
