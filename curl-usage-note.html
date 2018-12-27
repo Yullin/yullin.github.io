@@ -1,68 +1,151 @@
-<!doctype html>
-<html lang="">	
-<head>
-	<meta charset="utf-8"/>
-	<title>curl usage note - YULLIN' Blog</title>	
-	<meta name="author" content="Yullin">
-	
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh">
+<!--<![endif]-->
+	<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="author" content="Yullin">
 
-	<meta name="description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名--->ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
+
+        <title>YULLIN's Blog - curl usage note</title>
 
 
-	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
-	<link rel="stylesheet" href="http://yull.in/theme/css/main.css" type="text/css" />
-		
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://yull.in/theme/css/style.css">
+
+        <!-- Custom CSS -->
+        	<link rel="stylesheet" href="http://yull.in/theme/css/colors/blue.css" id="colors">
+
+        <!-- Code highlight color scheme -->
+            <link href="http://yull.in/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+
+        <meta name="tags" contents="curl" />
+        <meta name="tags" contents="usage" />
+        <meta name="tags" contents="get" />
+        <meta name="tags" contents="post" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="curl usage note">
+    <meta property="og:url" content="curl-usage-note.html">
+    <meta property="og:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
+    <meta property="article:published_time" content="星期五, 十一月 02, 2018">
+    <meta name="twitter:title" content="curl usage note">
+    <meta name="twitter:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
+    <meta name="description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
+    <meta name="twitter:image" content="">
+    <meta property="og:image" content="">
+
+	<!--Custom sign: head-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126720130-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-126720130-1');
+	</script>
+
 	<script src="http://yull.in/theme/js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-7268840106840339",
-          enable_page_level_ads: true
-     });
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-7268840106840339",
+			enable_page_level_ads: true
+		});
 	</script>
 
-</head>
-	
-<body>
-<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
+	<!--Custom head END-->
 
-    <div class="container">
-	  
-	  <header role="banner">
-	    <div class="feeds">
-	    </div>
-	      <nav class="pages">
-	      </nav>
-		<a href="http://yull.in" class="title">YULLIN' Blog</a>
-      </header>
-	
-	  <div class="wrapper">
-<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- header_ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="6462162613"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="YULLIN's Blog">
 
-		  <div role="main" class="content">
-	<article class="full">
-			
-		<h1>curl usage note</h1>
-		
-<div class="metadata">
-  <time datetime="2018-11-02T11:08:00+08:00" pubdate>五 02 十一月 2018</time>
-    <address class="vcard author">
-      by <a class="url fn" href="http://yull.in/author/yullin.html">Yullin</a>
-    </address>
-  in <a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a>
-<p class="tags">tagged <a href="http://yull.in/tag/curl.html">curl</a>, <a href="http://yull.in/tag/usage.html">usage</a>, <a href="http://yull.in/tag/get.html">get</a>, <a href="http://yull.in/tag/post.html">post</a></p></div>		
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="http://yull.in/curl-usage-note.html">
+	<meta property="og:title" content="curl usage note">
+	<meta property="og:description" content="">
+	   <meta property="og:image" content="http://yull.in/images/guilherme-toti.jpg">
+	<meta property="article:published_time" content="2018-11-02 11:08:00+08:00">
+	</head>
+	<body>
+		<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
+		<header id="header">
+			<!-- Container -->
+			<div class="container">
+				<!-- Logo / Mobile Menu -->
+				<div class="five columns">
+					<div id="textlogo">
+						<h1><a href="http://yull.in/">YULLIN's Blog</a></h1>
+					</div>
+				</div>
+						<!-- Navigation
+				================================================== -->
+				<div class="eleven columns">
+
+					<nav id="navigation" class="menu">
+						<ul id="responsive">
+
+							<li><a href="http://yull.in/">Home</a></li>
+
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- Container / End -->
+		</header>
+		<!-- Header / End -->
+
+		<!-- Breadcrumbs Container-->
+		<div id="content-wrapper">
+			<section id="titlebar">
+				<!-- Container -->
+				<div class="container">
+				<div class="thirteen columns">
+					<nav id="breadcrumbs">
+						<ul>
+							<li>You are here:</li>
+							<li><a href="http://yull.in/">Home</a></li>
+<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+<li>curl usage note</li>
+						</ul>
+					</nav>
+				</div>
+				</div>
+				<!-- Container / End -->
+			</section>
+
+			<div class="container">
+	<div class="twelve alt columns">
+<article class="post" style="margin: 0; border: 0;">
+
+	<section class="post-content">
+
+		<header class="meta">
+			<h2><a href="http://yull.in/curl-usage-note.html">curl usage note</a></h2>
+			<ul>
+				<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+				<li>五 02 十一月 2018</li>
+				    <li>Updated on 五 02 十一月 2018</li>
+			</ul>
+		</header>
+
 		<p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
 下面说一下具体的使用方法：  </p>
 <h3>1.建立一个命令格式文件</h3>
@@ -168,91 +251,172 @@ TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
 </pre></div>
 
 
-<p>可以看到 time_appconnect 和 time_redirect 都不是 0 了，其中 SSL 协议处理时间为 328-18=310ms 。而且 pretransfer 和 starttransfer 的时间都缩短了，这是重定向之后请求的时间。</p>	
+<p>可以看到 time_appconnect 和 time_redirect 都不是 0 了，其中 SSL 协议处理时间为 328-18=310ms 。而且 pretransfer 和 starttransfer 的时间都缩短了，这是重定向之后请求的时间。</p>
+		    <div class="tags">
+		        <p>tags: <a href="http://yull.in/tag/curl.html">curl</a><a href="http://yull.in/tag/usage.html">usage</a><a href="http://yull.in/tag/get.html">get</a><a href="http://yull.in/tag/post.html">post</a></p>
+		    </div>
 
-	</article>
+<div class="sharing">
+</div>
+<hr>
 
-    <p>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</p>
+	</section>
+	<div class="clearfix"></div>
 
-
-		  </div>	
-		  
-		  <div class="sidebar">
-
-	        <nav>
-	          <h2>Categories</h2>
-	          <ul>
-	              <li ><a href="http://yull.in/category/tech-info.html">TECH INFO</a></li>
-	              <li class="active"><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
-	          </ul>
-	        </nav>
-
-	          <aside>
-	          <h2>Social</h2>
-			    <ul class="social">
-				  <li><a href="#">You can add links in your config file</a><i></i></li>
-				  <li><a href="#">Another social link</a><i></i></li>
-			    </ul>
-			  </aside>
-
-	          <aside>
-	            <h2>Blogroll</h2>
-	            <ul>
-	                <li><a href="http://getpelican.com/">Pelican</a></li>
-	                <li><a href="http://python.org/">Python.org</a></li>
-	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-	                <li><a href="#">You can modify those links in your config file</a></li>
-	            </ul>
-	          </aside>
-					<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- sidebar_ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="8751190709"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-		  </div>
-
-	  </div>
-
-      <footer>
-			<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- ads-test -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="4525891349"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-		<p role="contentinfo">
-		  © 2013 Yullin - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
-    	</p>
-
-	  </footer>	
+</article>
 
 	</div>
-	
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126720130-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-126720130-1');
-</script>
+	<!-- Sidebar -->
+	<div class="four columns">
+		<!-- About  -->
+		<div class="widget no-mg-top">
+			<h3 class="headline">About</h3><span class="line"></span><div class="clearfix"></div>
+			<p>Want to learn more!</p>
+		</div>
 
+		<!-- Categories -->
+		<div class="widget">
+			<h3 class="headline">Categories</h3><span class="line"></span><div class="clearfix"></div>
+			<nav class="categories">
+				<ul>
+					    <li><a href="http://yull.in/category/tech-info.html">TECH INFO</a></li>
+					    <li class="active"><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<!-- Tags -->
+		<div class="widget">
+			<h3 class="headline">Tags</h3><span class="line"></span><div class="clearfix"></div>
+			<nav class="tags">				    <a href="http://yull.in/tag/201810.html">201810</a>
+				    <a href="http://yull.in/tag/curl.html">curl</a>
+				    <a href="http://yull.in/tag/dict.html">dict</a>
+				    <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>
+				    <a href="http://yull.in/tag/elk.html">elk</a>
+				    <a href="http://yull.in/tag/fan-xiang-dai-li.html">反向代理</a>
+				    <a href="http://yull.in/tag/get.html">get</a>
+				    <a href="http://yull.in/tag/imagick.html">imagick</a>
+				    <a href="http://yull.in/tag/ingest-node.html">ingest node</a>
+				    <a href="http://yull.in/tag/kibana.html">kibana</a>
+				    <a href="http://yull.in/tag/list.html">list</a>
+				    <a href="http://yull.in/tag/logstash.html">logstash</a>
+				    <a href="http://yull.in/tag/microsoft.html">microsoft</a>
+				    <a href="http://yull.in/tag/nginx.html">nginx</a>
+				    <a href="http://yull.in/tag/openresty.html">openresty</a>
+				    <a href="http://yull.in/tag/php.html">php</a>
+				    <a href="http://yull.in/tag/php-extension.html">php extension</a>
+				    <a href="http://yull.in/tag/post.html">post</a>
+				    <a href="http://yull.in/tag/proxy.html">proxy</a>
+				    <a href="http://yull.in/tag/python.html">python</a>
+				    <a href="http://yull.in/tag/reverse.html">reverse</a>
+				    <a href="http://yull.in/tag/update.html">update</a>
+				    <a href="http://yull.in/tag/usage.html">usage</a>
+				    <a href="http://yull.in/tag/win10.html">win10</a>
+			</nav>
+		</div>
 
-</body>
+        <!--Social link-->
+		<div class="widget">
+			<h3 class="headline">Social</h3><span class="line"></span><div class="clearfix"></div>
+				<!--<ul class="social-icons-footer">-->
+			<nav class="categories">
+				<ul>
+						<li>
+							<a href="http://getpelican.com/" class="tooltip top" title="Pelican">Pelican
+								<i class="icon-pelican"></i>
+							</a>
+						</li>
+						<li>
+							<a href="http://python.org/" class="tooltip top" title="Python.org">Python.org
+								<i class="icon-python.org"></i>
+							</a>
+						</li>
+						<li>
+							<a href="http://jinja.pocoo.org/" class="tooltip top" title="Jinja2">Jinja2
+								<i class="icon-jinja2"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="tooltip top" title="You can modify those links in your config file">You can modify those links in your config file
+								<i class="icon-you can modify those links in your config file"></i>
+							</a>
+						</li>
+					<!--<li><a href="http://yull.in/None" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>-->
+				</ul>
+		</div>
+
+		<!-- Custom sign: sidebar_ads -->
+		<div class="widget">
+			<h3 class="headline"></h3><span class="line"></span><div class="clearfix"></div>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="ca-pub-7268840106840339"
+				data-ad-slot="8751190709"
+				data-ad-format="auto"
+				data-full-width-responsive="true"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+
+	</div>
+			</div>
+			<!-- Container / End -->
+		</div>
+		<!-- Content Wrapper / End -->
+
+		<div id="footer-bottom">
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Custom sign: ads-test -->
+				<div class="eight columns">
+					<ins class="adsbygoogle"
+						style="display:block"
+						data-ad-client="ca-pub-7268840106840339"
+						data-ad-slot="4525891349"
+						data-ad-format="auto"
+						data-full-width-responsive="true"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				<!-- Custom sign END: ads-test -->
+
+				<div class="eight columns">&copy; Copyright 2018 Yullin || Blog powered by <a href="http://getpelican.com">Pelican</a></div>
+				<!--					<div class="eight columns">
+						<ul class="social-icons-footer">
+								<li>
+									<a href="http://getpelican.com/" class="tooltip top" title="Pelican">
+										<i class="icon-pelican"></i>
+									</a>
+								</li>
+								<li>
+									<a href="http://python.org/" class="tooltip top" title="Python.org">
+										<i class="icon-python.org"></i>
+									</a>
+								</li>
+								<li>
+									<a href="http://jinja.pocoo.org/" class="tooltip top" title="Jinja2">
+										<i class="icon-jinja2"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltip top" title="You can modify those links in your config file">
+										<i class="icon-you can modify those links in your config file"></i>
+									</a>
+								</li>
+							<li><a href="http://yull.in/None" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>
+						</ul>
+					</div>
+-->
+			</div>
+			<!-- Container / End -->
+		</div>
+		<!-- Footer Bottom / End -->
+
+	<!-- Javascripts -->
+	<script src="http://yull.in/theme/js/jquery.min.js"></script>
+	</body>
 </html>

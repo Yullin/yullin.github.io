@@ -1,70 +1,130 @@
-<!doctype html>
-<html lang="">	
-<head>
-	<meta charset="utf-8"/>
-	<title>YULLIN' Blog</title>	
-	<meta name="author" content="Yullin">
-	
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh">
+<!--<![endif]-->
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="author" content="Yullin">
+
+
+        <title>YULLIN's Blog</title>
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://yull.in/theme/css/style.css">
+
+        <!-- Custom CSS -->
+        	<link rel="stylesheet" href="http://yull.in/theme/css/colors/blue.css" id="colors">
+
+        <!-- Code highlight color scheme -->
+            <link href="http://yull.in/theme/css/code_blocks/monokai.css" rel="stylesheet">
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+	<!--Custom sign: head-->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126720130-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126720130-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-  gtag('config', 'UA-126720130-1');
-</script>
+		gtag('config', 'UA-126720130-1');
+	</script>
 
-
-	<link rel="top" href="#" /><link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro' rel='stylesheet' type='text/css'></link>
-	<link rel="stylesheet" href="http://yull.in/theme/css/main.css" type="text/css" />
-		
 	<script src="http://yull.in/theme/js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-7268840106840339",
-          enable_page_level_ads: true
-     });
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-7268840106840339",
+			enable_page_level_ads: true
+		});
 	</script>
 
-</head>
-	
-<body>
-<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
+	<!--Custom head END-->
 
-    <div class="container">
-	  
-	  <header role="banner">
-	    <div class="feeds">
-	    </div>
-	      <nav class="pages">
-	      </nav>
-		<a href="http://yull.in" class="title">YULLIN' Blog</a>
-      </header>
-	
-	  <div class="wrapper">
-<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- header_ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="6462162613"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="YULLIN's Blog">
+	</head>
+	<body>
+		<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
+		<header id="header">
+			<!-- Container -->
+			<div class="container">
+				<!-- Logo / Mobile Menu -->
+				<div class="five columns">
+					<div id="textlogo">
+						<h1><a href="http://yull.in/">YULLIN's Blog</a></h1>
+					</div>
+				</div>
+						<!-- Navigation
+				================================================== -->
+				<div class="eleven columns">
 
-		  <div role="main" class="content">
+					<nav id="navigation" class="menu">
+						<ul id="responsive">
+
+							<li><a href="http://yull.in/">Home</a></li>
 
 
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- Container / End -->
+		</header>
+		<!-- Header / End -->
 
-      <article>
-        <h1><a href="http://yull.in/nginx-reverse-proxy-pass.html">Nginx反向代理配置</a></h1>
-        <p>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下</p>
+		<!-- Breadcrumbs Container-->
+		<div id="content-wrapper">
+			<section id="titlebar">
+				<!-- Container -->
+				<div class="container">
+				<div class="thirteen columns">
+					<nav id="breadcrumbs">
+						<ul>
+							<li>You are here:</li>
+							<li><a href="http://yull.in/">Home</a></li>
+						</ul>
+					</nav>
+				</div>
+				</div>
+				<!-- Container / End -->
+			</section>
+
+			<div class="container">
+	<div class="twelve alt columns">
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/nginx-reverse-proxy-pass.html" rel="bookmark" title="Permalink to Nginx反向代理配置">Nginx反向代理配置</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>三 19 十二月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下</p>
+<h2>普通反向代理</h2>
+<p>Nginx的普通的反向代理配置还是比较简单的，如：</p>
+<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">~</span> <span class="o">/*</span>
+<span class="p">{</span>
+    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">8080</span><span...-->
+							<p>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下</p>
 <h2>普通反向代理</h2>
 <p>Nginx的普通的反向代理配置还是比较简单的，如：</p>
 <div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">~</span> <span class="o">/*</span>
@@ -91,203 +151,553 @@
         <span class="err">set</span> <span class="err">$id</span> <span class="err">$1</span><span class="p">;</span>
         <span class="err">set</span> <span class="err">$params</span> <span class="err">$2</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">proxy_pass</span> <span class="nt">http</span><span class="o">://</span><span class="nt">backend</span><span class="o">$</span><span class="nt">id</span><span class="p">.</span><span class="nc">domain</span><span class="p">.</span><span class="nc">com</span><span class="p">:</span><span class="nd">5543</span><span class="o">/$</span><span class="nt">params</span><span class="o">;</span>
-<span class="err">}</span>
+    <span class="nt">proxy_pass</span> <span class="nt">http</span><span class="o">://</span><span class="nt">backend</span><span class="o">$</span><span class="nt">id</span><span class="p">.</span><span class="nc">domain …</span></pre></div>
+	        		</p>
+					<a href="http://yull.in/nginx-reverse-proxy-pass.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/python-dict-and-list-copy.html" rel="bookmark" title="Permalink to python字典和列表赋值的坑">python字典和列表赋值的坑</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>二 18 十二月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  </p>
+<p>列表的具体测试如下：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = [&#39;1&#39;]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; a.append(&#39;2&#39;)
+&gt;&gt;&gt; a
+[&#39;1&#39;, &#39;2&#39;]
+&gt;&gt;&gt; b
+[&#39;1&#39;, &#39;2&#39;]
 </pre></div>
 
 
-<p>也可以先rewrite一下，然后再代理：</p>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">test</span><span class="o">/</span><span class="p">{</span>
-    <span class="err">rewrite</span> <span class="err">/test/(\d+)/(.+)</span> <span class="err">/$2?$args</span> <span class="err">break</span><span class="p">;</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">backend</span><span class="err">$</span><span class="mi">1</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">:</span><span class="mi">5543</span><span class="p">;</span>
-<span class="p">}</span>
+<p>可以看到当改变a的值时，b的值也跟着一起改变了。
+再看字典的例子：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; ar =...-->
+							<p>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  </p>
+<p>列表的具体测试如下：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = [&#39;1&#39;]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; a.append(&#39;2&#39;)
+&gt;&gt;&gt; a
+[&#39;1&#39;, &#39;2&#39;]
+&gt;&gt;&gt; b
+[&#39;1&#39;, &#39;2&#39;]
 </pre></div>
 
 
-<p>或者</p>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">~*</span> <span class="o">/</span><span class="nt">test</span><span class="o">/(</span><span class="err">\</span><span class="nt">d</span><span class="o">+)/(.+)</span>
-<span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">backend</span><span class="err">$</span><span class="mi">1</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">:</span><span class="mi">5543</span><span class="o">/</span><span class="err">$</span><span class="mi">2</span><span class="o">?</span><span class="err">$</span><span class="n">args</span><span class="p">;</span>
-<span class="p">}</span>
+<p>可以看到当改变a的值时，b的值也跟着一起改变了。
+再看字典的例子：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}
+&gt;&gt;&gt; br = ar
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}
+&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
+&gt;&gt;&gt; ar
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
 </pre></div>
 
 
-<p>注意上面最后的<code>?$args</code>，表明把原始url最后的get参数也给代理到后台<br>
-如果在proxy_pass中使用了变量（不管是主机名变量$1或后面的$2变量），则必须得加这段代码<br>
-但如果pass_proxy后没用任何变量，则不需要加，它默认会把所有的url都给代理到后台，如：</p>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">~*</span> <span class="o">/</span><span class="nt">test</span><span class="o">/(</span><span class="err">\</span><span class="nt">d</span><span class="o">+)/(.+)</span>
-<span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">backend</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">:</span><span class="mi">5543</span><span class="p">;</span>
-<span class="p">}</span>
+<p>其实还可以有更简单的验证方式 …</p>
+	        		</p>
+					<a href="http://yull.in/python-dict-and-list-copy.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/curl-usage-note.html" rel="bookmark" title="Permalink to curl usage note">curl usage note</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>五 02 十一月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
+下面说一下具体的使用方法：  </p>
+<h3>1.建立一个命令格式文件</h3>
+<div class="highlight"><pre><span></span>\n 
+　　　　　　　time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                ...-->
+							<p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
+下面说一下具体的使用方法：  </p>
+<h3>1.建立一个命令格式文件</h3>
+<div class="highlight"><pre><span></span>\n 
+　　　　　　　time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                 time_total:  %{time_total}\n
+\n
 </pre></div>
 
 
-<h2>url的/问题</h2>
-<p>在nginx中配置proxy_pass时，当在后面的url加上了/，相当于是绝对根路径，nginx不会把location中匹配的路径部分代理走;如果没有/，则会把匹配的路径部分也给代理走。</p>
-<p>下面四种情况分别用http://192.168.1.12/proxy/test.html 进行访问。<br>
-* 第一种：</p>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">/</span><span class="nt">proxy</span><span class="o">/</span> <span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">81</span><span class="o">/</span><span class="p">;</span>
-<span class="p">}</span>
+<p>说明：<br>
+time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间<br>
+time_connect：TCP连接的时间，三次握手的时间<br>
+time_appconnect：SSL|SSH等上层连接建立的时间<br>
+time_pretransfer：从请求开始到到响应开始传输的时间<br>
+time_redirect：从开始到最后一个请求事务的时间<br>
+time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
+time_total：总时间</p>
+<h3>2.命令使用方法 …</h3>
+	        		</p>
+					<a href="http://yull.in/curl-usage-note.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>五 26 十月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.30</td>
+<td>centosT-AutomELK-8030</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.31</td>
+<td>centosT-AutomELK-8031</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td...-->
+							<p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.30</td>
+<td>centosT-AutomELK-8030</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.31</td>
+<td>centosT-AutomELK-8031</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.32</td>
+<td>centosT-AutomELK-8032</td>
+<td>ElasticSearch</td>
+</tr>
+</tbody>
+</table>
+<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
+首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
+由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
+<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div>
+	        		</p>
+					<a href="http://yull.in/config-elasticsearch-logstash-kibana.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/microsoft-win10-oct-update.html" rel="bookmark" title="Permalink to win10十月更新坑用户">win10十月更新坑用户</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>二 09 十月 2018</li>
+							<li><a href="http://yull.in/category/tech-info.html">TECH INFO</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。</p>
+<p>换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。</p>
+<p>虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。</p>
+<p>reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。</p>
+<p>但是，随着Windows 10 10月2018 Update的撤下，此问题不再发生，用户将无法再看到通过Windows Update提供的新版本。</p>
+<p>Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一天，微软开始允许用户通过手动检查后通过Windows...-->
+							<p>昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。</p>
+<p>换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。</p>
+<p>虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。</p>
+<p>reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。</p>
+<p>但是，随着Windows 10 10月2018 Update的撤下，此问题不再发生，用户将无法再看到通过Windows Update提供的新版本。</p>
+<p>Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一天，微软开始允许用户通过手动检查后通过Windows Update下载。</p>
+<p>然而，到目前为止，新操作系统功能更新带来了众多问题，最糟糕的问题导致在升级期间完全删除用户文件，虽然目前尚不清楚有多少台PC出现此问题，但微软决定完全撤销2018年10月的更新。</p>
+<p>目前还不知道微软什么时候想恢复推出，但随着10月的周二补丁日即将到来，预计下周会有更多这方面的新闻。</p>
+	        		</p>
+					<a href="http://yull.in/microsoft-win10-oct-update.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/install-and-config-openresty.html" rel="bookmark" title="Permalink to install and config openresty">install and config openresty</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>四 30 八月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<h3>安装配置openresty</h3>
+<ol>
+<li>下载源码  </li>
+</ol>
+<div class="highlight"><pre><span></span>cd /usr/local/src
+wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
 </pre></div>
 
 
-<p>会被代理到http://192.168.1.12:81/test.html 这个url</p>
-<ul>
-<li>第二种(相对于第一种，最后少一个 /)</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">/</span><span class="nt">proxy</span><span class="o">/</span> <span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">81</span><span class="p">;</span>
-<span class="p">}</span>
+<ol>
+<li>解压后编译安装  </li>
+</ol>
+<div class="highlight"><pre><span></span>yum install pcre-devel openssl-devel gcc curl  #需要事先准备好需要的依赖包
+tar xzf openresty-1.13.6.2.tar.gz
+cd openresty-1.13.6.2
+ ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module...-->
+							<h3>安装配置openresty</h3>
+<ol>
+<li>下载源码  </li>
+</ol>
+<div class="highlight"><pre><span></span>cd /usr/local/src
+wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
 </pre></div>
 
 
-<p>会被代理到http://192.168.1.12:81/proxy/test.html 这个url</p>
-<ul>
-<li>第三种：</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">/</span><span class="nt">proxy</span><span class="o">/</span> <span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">81</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="p">;</span>
-<span class="p">}</span>
+<ol>
+<li>解压后编译安装  </li>
+</ol>
+<div class="highlight"><pre><span></span>yum install pcre-devel openssl-devel gcc curl  #需要事先准备好需要的依赖包
+tar xzf openresty-1.13.6.2.tar.gz
+cd openresty-1.13.6.2
+ ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug
+gmake -j2 …</pre></div>
+	        		</p>
+					<a href="http://yull.in/install-and-config-openresty.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/config-elasticsearch-ingest-node.html" rel="bookmark" title="Permalink to configure elasticsearch ingest node">configure elasticsearch ingest node</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>一 20 八月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
+<h3>1.测试可以用如下命令</h3>
+<blockquote>
+<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
+</blockquote>
+<p>filebeat.test.json的内容如下：  </p>
+<div class="highlight"><pre><span></span>{
+  &quot;pipeline&quot; : {
+    &quot;description&quot; : &quot;nginx access log&quot;,
+    &quot;processors&quot;: [
+      {
+       ...-->
+							<p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
+<h3>1.测试可以用如下命令</h3>
+<blockquote>
+<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
+</blockquote>
+<p>filebeat.test.json的内容如下：  </p>
+<div class="highlight"><pre><span></span>{
+  &quot;pipeline&quot; : {
+    &quot;description&quot; : &quot;nginx access log&quot;,
+    &quot;processors&quot;: [
+      {
+        &quot;grok&quot;: {
+          &quot;field&quot;: &quot;message&quot;,
+          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div>
+	        		</p>
+					<a href="http://yull.in/config-elasticsearch-ingest-node.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+		<!-- Post -->
+		<article class="post medium">
+			<div class="twelve columns">
+				<section class="post-content">
+					<header class="meta">
+						<h2><a href="http://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a></h2>
+						<ul>
+							<li>By <a href="http://yull.in/author/yullin.html">Yullin</a></li>
+							<li>四 09 八月 2018</li>
+							<li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+						</ul>
+					</header>
+					<p>
+							<!--<p>linux下配置imagick的步骤为(以centOS为例):</p>
+<h3>1. 安装ImageMagick</h3>
+<div class="highlight"><pre><span></span>yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
 </pre></div>
 
 
-<p>会被代理到http://192.168.1.12:81/app/test.html 这个url。</p>
-<ul>
-<li>第四种情况(相对于第三种，最后少一个 / )：</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">/</span><span class="nt">proxy</span><span class="o">/</span> <span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">81</span><span class="o">/</span><span class="n">app</span><span class="p">;</span>
-<span class="p">}</span>
+<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
+<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>-->
+							<p>linux下配置imagick的步骤为(以centOS为例):</p>
+<h3>1. 安装ImageMagick</h3>
+<div class="highlight"><pre><span></span>yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
 </pre></div>
 
 
-<p>会被代理到http://192.168.1.12:81/apptest.html 这个url</p>
-<p>从上面结果可以看出，准确说分两种情况：
-1. http://192.168.1.12:81 (上面的第二种) 这种
-2. http://127.0.0.1:81/.... （上面的第1，3，4种） 这种</p>
-      </article>
+<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
+<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>
+	        		</p>
+					<a href="http://yull.in/install-php-extension-imagick.html" class="button color">Read More</a>
+				</section>
+			</div>
+			<div class="clearfix"></div>
+		</article>
 
-      <hr />
+	<!-- Pagination -->
+	<nav class="pagination">
+		<ul>
+			<li>
+			</li>
+			<!-- Page 1 / 1 -->
+		</ul>
+		<div class="clearfix"></div>
+	</nav>
+	</div>
 
-        <div>
-          <h3>Last posts</h3>
-          <ol class="archive">
-    
+	<!-- Sidebar -->
+	<div class="four columns">
+		<!-- About  -->
+		<div class="widget no-mg-top">
+			<h3 class="headline">About</h3><span class="line"></span><div class="clearfix"></div>
+			<p>Want to learn more!</p>
+		</div>
 
+		<!-- Categories -->
+		<div class="widget">
+			<h3 class="headline">Categories</h3><span class="line"></span><div class="clearfix"></div>
+			<nav class="categories">
+				<ul>
+					    <li><a href="http://yull.in/category/tech-info.html">TECH INFO</a></li>
+					    <li><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<!-- Tags -->
+		<div class="widget">
+			<h3 class="headline">Tags</h3><span class="line"></span><div class="clearfix"></div>
+			<nav class="tags">				    <a href="http://yull.in/tag/201810.html">201810</a>
+				    <a href="http://yull.in/tag/curl.html">curl</a>
+				    <a href="http://yull.in/tag/dict.html">dict</a>
+				    <a href="http://yull.in/tag/elasticsearch.html">elasticsearch</a>
+				    <a href="http://yull.in/tag/elk.html">elk</a>
+				    <a href="http://yull.in/tag/fan-xiang-dai-li.html">反向代理</a>
+				    <a href="http://yull.in/tag/get.html">get</a>
+				    <a href="http://yull.in/tag/imagick.html">imagick</a>
+				    <a href="http://yull.in/tag/ingest-node.html">ingest node</a>
+				    <a href="http://yull.in/tag/kibana.html">kibana</a>
+				    <a href="http://yull.in/tag/list.html">list</a>
+				    <a href="http://yull.in/tag/logstash.html">logstash</a>
+				    <a href="http://yull.in/tag/microsoft.html">microsoft</a>
+				    <a href="http://yull.in/tag/nginx.html">nginx</a>
+				    <a href="http://yull.in/tag/openresty.html">openresty</a>
+				    <a href="http://yull.in/tag/php.html">php</a>
+				    <a href="http://yull.in/tag/php-extension.html">php extension</a>
+				    <a href="http://yull.in/tag/post.html">post</a>
+				    <a href="http://yull.in/tag/proxy.html">proxy</a>
+				    <a href="http://yull.in/tag/python.html">python</a>
+				    <a href="http://yull.in/tag/reverse.html">reverse</a>
+				    <a href="http://yull.in/tag/update.html">update</a>
+				    <a href="http://yull.in/tag/usage.html">usage</a>
+				    <a href="http://yull.in/tag/win10.html">win10</a>
+			</nav>
+		</div>
 
-      <li>
-<a href="http://yull.in/python-dict-and-list-copy.html" rel="bookmark" title="Permalink to python字典和列表赋值的坑">python字典和列表赋值的坑</a>
-  <time datetime="2018-12-18T14:40:00+08:00" pubdate>二 18 十二月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/python.html">python  </a><a href="http://yull.in/tag/dict.html">dict  </a><a href="http://yull.in/tag/list.html">list  </a></p></a>      </li>
+        <!--Social link-->
+		<div class="widget">
+			<h3 class="headline">Social</h3><span class="line"></span><div class="clearfix"></div>
+				<!--<ul class="social-icons-footer">-->
+			<nav class="categories">
+				<ul>
+						<li>
+							<a href="http://getpelican.com/" class="tooltip top" title="Pelican">Pelican
+								<i class="icon-pelican"></i>
+							</a>
+						</li>
+						<li>
+							<a href="http://python.org/" class="tooltip top" title="Python.org">Python.org
+								<i class="icon-python.org"></i>
+							</a>
+						</li>
+						<li>
+							<a href="http://jinja.pocoo.org/" class="tooltip top" title="Jinja2">Jinja2
+								<i class="icon-jinja2"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="tooltip top" title="You can modify those links in your config file">You can modify those links in your config file
+								<i class="icon-you can modify those links in your config file"></i>
+							</a>
+						</li>
+					<!--<li><a href="http://yull.in/None" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>-->
+				</ul>
+		</div>
 
-
-      <li>
-<a href="http://yull.in/curl-usage-note.html" rel="bookmark" title="Permalink to curl usage note">curl usage note</a>
-  <time datetime="2018-11-02T11:08:00+08:00" pubdate>五 02 十一月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/curl.html">curl  </a><a href="http://yull.in/tag/usage.html">usage  </a><a href="http://yull.in/tag/get.html">get  </a><a href="http://yull.in/tag/post.html">post  </a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/config-elasticsearch-logstash-kibana.html" rel="bookmark" title="Permalink to configure elasticsearch logstash kibana">configure elasticsearch logstash kibana</a>
-  <time datetime="2018-10-26T11:20:00+08:00" pubdate>五 26 十月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/elk.html">elk  </a><a href="http://yull.in/tag/elasticsearch.html">elasticsearch  </a><a href="http://yull.in/tag/logstash.html">logstash  </a><a href="http://yull.in/tag/kibana.html">kibana  </a><a href="http://yull.in/tag/ingest-node.html">ingest node  </a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/microsoft-win10-oct-update.html" rel="bookmark" title="Permalink to win10十月更新坑用户">win10十月更新坑用户</a>
-  <time datetime="2018-10-09T18:08:00+08:00" pubdate>二 09 十月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/win10.html">win10  </a><a href="http://yull.in/tag/microsoft.html">microsoft  </a><a href="http://yull.in/tag/update.html">update  </a><a href="http://yull.in/tag/201810.html">201810  </a></p></a>      </li>
-
-
-      <li>
-<a href="http://yull.in/install-and-config-openresty.html" rel="bookmark" title="Permalink to install and config openresty">install and config openresty</a>
-  <time datetime="2018-08-30T10:38:00+08:00" pubdate>四 30 八月 2018</time>
-<p class="tags">tags: <a href="http://yull.in/tag/openresty.html">openresty  </a></p></a>      </li>
-
-
-
-
-
-
-          </ol>
-        </div>
-
-		  </div>	
-		  
-		  <div class="sidebar">
-
-	        <nav>
-	          <h2>Categories</h2>
-	          <ul>
-	              <li ><a href="http://yull.in/category/tech-info.html">TECH INFO</a></li>
-	              <li ><a href="http://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
-	          </ul>
-	        </nav>
-
-	          <aside>
-	          <h2>Social</h2>
-			    <ul class="social">
-				  <li><a href="#">You can add links in your config file</a><i></i></li>
-				  <li><a href="#">Another social link</a><i></i></li>
-			    </ul>
-			  </aside>
-
-	          <aside>
-	            <h2>Blogroll</h2>
-	            <ul>
-	                <li><a href="http://getpelican.com/">Pelican</a></li>
-	                <li><a href="http://python.org/">Python.org</a></li>
-	                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-	                <li><a href="#">You can modify those links in your config file</a></li>
-	            </ul>
-	          </aside>
-					<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- sidebar_ads -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="8751190709"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-		  </div>
-
-	  </div>
-
-      <footer>
-			<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-<!-- ads-test -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7268840106840339"
-     data-ad-slot="4525891349"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-		<p role="contentinfo">
-		  © 2013 Yullin - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-simplegrey">pelican-simplegrey</a>.
-    	</p>
-
-	  </footer>	
+		<!-- Custom sign: sidebar_ads -->
+		<div class="widget">
+			<h3 class="headline"></h3><span class="line"></span><div class="clearfix"></div>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="ca-pub-7268840106840339"
+				data-ad-slot="8751190709"
+				data-ad-format="auto"
+				data-full-width-responsive="true"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
 
 	</div>
-	
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126720130-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+			</div>
+			<!-- Container / End -->
+		</div>
+		<!-- Content Wrapper / End -->
 
-  gtag('config', 'UA-126720130-1');
-</script>
+		<div id="footer-bottom">
+			<!-- Container -->
+			<div class="container">
 
+				<!-- Custom sign: ads-test -->
+				<div class="eight columns">
+					<ins class="adsbygoogle"
+						style="display:block"
+						data-ad-client="ca-pub-7268840106840339"
+						data-ad-slot="4525891349"
+						data-ad-format="auto"
+						data-full-width-responsive="true"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+				<!-- Custom sign END: ads-test -->
 
-</body>
+				<div class="eight columns">&copy; Copyright 2018 Yullin || Blog powered by <a href="http://getpelican.com">Pelican</a></div>
+				<!--					<div class="eight columns">
+						<ul class="social-icons-footer">
+								<li>
+									<a href="http://getpelican.com/" class="tooltip top" title="Pelican">
+										<i class="icon-pelican"></i>
+									</a>
+								</li>
+								<li>
+									<a href="http://python.org/" class="tooltip top" title="Python.org">
+										<i class="icon-python.org"></i>
+									</a>
+								</li>
+								<li>
+									<a href="http://jinja.pocoo.org/" class="tooltip top" title="Jinja2">
+										<i class="icon-jinja2"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltip top" title="You can modify those links in your config file">
+										<i class="icon-you can modify those links in your config file"></i>
+									</a>
+								</li>
+							<li><a href="http://yull.in/None" class="tooltip top" title="RSS"><i class="icon-rss"></i></a></li>
+						</ul>
+					</div>
+-->
+			</div>
+			<!-- Container / End -->
+		</div>
+		<!-- Footer Bottom / End -->
+
+	<!-- Javascripts -->
+	<script src="http://yull.in/theme/js/jquery.min.js"></script>
+	</body>
 </html>
