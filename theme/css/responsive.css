@@ -39,7 +39,7 @@
     .container .nine.columns                    { width: 655px; }
     .container .ten.columns                     { width: 730px; }
     .container .eleven.columns                  { width: 805px; }
-    .container .twelve.columns                  { width: 880px; }
+    /* .container .twelve.columns                  { width: 880px; } */
     .container .thirteen.columns                { width: 955px; }
     .container .fourteen.columns                { width: 1030px; }
     .container .fifteen.columns                 { width: 1105px; }
