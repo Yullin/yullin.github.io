@@ -10,7 +10,7 @@
         <meta name="author" content="Yullin">
 
 
-        <title>YULLIN's Blog - curl usage note</title>
+        <title>YULLIN's Blog - install php5.6 on centos6</title>
 
 
         <!-- CSS -->
@@ -35,18 +35,17 @@
 
 
 
-        <meta name="tags" contents="curl" />
-        <meta name="tags" contents="usage" />
-        <meta name="tags" contents="get" />
-        <meta name="tags" contents="post" />
+        <meta name="tags" contents="php" />
+        <meta name="tags" contents="centos6" />
+        <meta name="tags" contents="php extension" />
     <meta property="og:type" content="article">
-    <meta property="og:title" content="curl usage note">
-    <meta property="og:url" content="curl-usage-note.html">
-    <meta property="og:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
-    <meta property="article:published_time" content="星期五, 十一月 02, 2018">
-    <meta name="twitter:title" content="curl usage note">
-    <meta name="twitter:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
-    <meta name="description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。 下面说一下具体的使用方法： 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明： time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间 time_connect：TCP连接的时间，三次握手的时间 time_appconnect：SSL|SSH等上层连接建立的时间 time_pretransfer：从请求开始到到响应开始传输的时间 time_redirect：从开始到最后一个请求事务的时间 time_starttransfer：从请求开始到第一个字节将要传输的时间 time_total：总时间 2.命令使用方法 …">
+    <meta property="og:title" content="install php5.6 on centos6">
+    <meta property="og:url" content="install-php5.6-on-centos6.html">
+    <meta property="og:description" content="本次安装系统环境为Centos6 x86_64 # cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包 # yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看） # ./configure \ --prefix=/usr/local/php …">
+    <meta property="article:published_time" content="星期三, 一月 09, 2019">
+    <meta name="twitter:title" content="install php5.6 on centos6">
+    <meta name="twitter:description" content="本次安装系统环境为Centos6 x86_64 # cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包 # yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看） # ./configure \ --prefix=/usr/local/php …">
+    <meta name="description" content="本次安装系统环境为Centos6 x86_64 # cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包 # yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看） # ./configure \ --prefix=/usr/local/php …">
     <meta name="twitter:image" content="">
     <meta property="og:image" content="">
 
@@ -81,11 +80,11 @@
 
 	<meta property="og:type" content="article">
 	<meta property="article:author" content="">
-	<meta property="og:url" content="https://yull.in/curl-usage-note.html">
-	<meta property="og:title" content="curl usage note">
+	<meta property="og:url" content="https://yull.in/install-php5.6-on-centos6.html">
+	<meta property="og:title" content="install php5.6 on centos6">
 	<meta property="og:description" content="">
 	   <meta property="og:image" content="https://yull.in/images/guilherme-toti.jpg">
-	<meta property="article:published_time" content="2018-11-02 11:08:00+08:00">
+	<meta property="article:published_time" content="2019-01-09 11:48:00+08:00">
 	</head>
 	<body>
 		<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
@@ -127,7 +126,7 @@
 							<li>You are here:</li>
 							<li><a href="https://yull.in/">Home</a></li>
 <li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
-<li>curl usage note</li>
+<li>install php5.6 on centos6</li>
 						</ul>
 					</nav>
 				</div>
@@ -143,122 +142,118 @@
 	<section class="post-content">
 
 		<header class="meta">
-			<h2><a href="https://yull.in/curl-usage-note.html">curl usage note</a></h2>
+			<h2><a href="https://yull.in/install-php5.6-on-centos6.html">install php5.6 on centos6</a></h2>
 			<ul>
 				<li>By <a href="https://yull.in/author/yullin.html">Yullin</a></li>
-				<li>五 02 十一月 2018</li>
-				    <li>Updated on 五 02 十一月 2018</li>
+				<li>三 09 一月 2019</li>
+				    <li>Updated on 三 09 一月 2019</li>
 			</ul>
 		</header>
 
-		<p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
-下面说一下具体的使用方法：  </p>
-<h3>1.建立一个命令格式文件</h3>
-<div class="highlight"><pre><span></span>\n 
-　　　　　　　time_namelookup:  %{time_namelookup}\n
-               time_connect:  %{time_connect}\n
-            time_appconnect:  %{time_appconnect}\n
-           time_pretransfer:  %{time_pretransfer}\n
-              time_redirect:  %{time_redirect}\n
-         time_starttransfer:  %{time_starttransfer}\n
-                            ----------\n
-                 time_total:  %{time_total}\n
-\n
+		<p>本次安装系统环境为Centos6 x86_64</p>
+<div class="highlight"><pre><span></span># cd /usr/local/src
+# wget http://cn2.php.net/distributions/php-5.6.39.tar.gz
+# tar xzf php-5.6.39.tar.xz
 </pre></div>
 
 
-<p>说明：<br>
-time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间<br>
-time_connect：TCP连接的时间，三次握手的时间<br>
-time_appconnect：SSL|SSH等上层连接建立的时间<br>
-time_pretransfer：从请求开始到到响应开始传输的时间<br>
-time_redirect：从开始到最后一个请求事务的时间<br>
-time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
-time_total：总时间</p>
-<h3>2.命令使用方法</h3>
-<p>curl -w "@curl" -o /dev/null -s -d "username=aaa&amp;password=bbb" https://xxx.xxx.com/webapp/xxx/login</p>
-<p>-w：从文件中读取信息打印格式</p>
-<p>-o：输出的全部信息</p>
-<p>-s：不打印进度条</p>
-<p>-d：参数</p>
-<h3>3.简单的方式</h3>
-<p>curl -o /dev/null -s -w '%{time_connect}:%{time_starttransfer}:%{time_total}\n' 'http://www.baidu.com'</p>
-<p>忽略ssl认证  并输出结果</p>
-<p>curl -k -XPOST -w '\n%{time_connect}:%{time_starttransfer}:%{time_total}\n' www.baidu.com</p>
-<h3>4.当Content-Type:application/json，requestBody:{id: 93, status: 2}</h3>
-<p>curl -w "@curl" -H "Content-Type:application/json" -X PUT --data '{id: 93, status: 2}' http:/xxxxxxxxxxx/changeStatus</p>
-<hr>
-<p>curl 命令提供了 -w 参数，这个参数在 manpage 是这样解释的：</p>
-<div class="highlight"><pre><span></span>-w, --write-out &lt;format&gt;
-              Make curl display information on stdout after a completed transfer. The format is a string that may contain plain text mixed with any number of variables. The  format
-              can  be  specified  as  a literal &quot;string&quot;, or you can have curl read the format from a file with &quot;@filename&quot; and to tell curl to read the format from stdin you write
-              &quot;@-&quot;.
-
-              The variables present in the output format will be substituted by the value or text that curl thinks fit, as described below. All variables are specified  as  %{vari‐
-              able_name} and to output a normal % you just write them as %%. You can output a newline by using \n, a carriage return with \r and a tab space with \t.
+<p>安装依赖包</p>
+<div class="highlight"><pre><span></span># yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel
 </pre></div>
 
 
-<p>它能够按照指定的格式打印某些信息，里面可以使用某些特定的变量，而且支持 \n 、 \t 和 \r 转义字符。提供的变量很多，比如 status_code 、 local_port 、 size_download 等等，这篇文章我们只关注和请求时间有关的变量（以 time_ 开头的变量）。</p>
-<p>先往文本文件 curl-format.txt 写入下面的内容：</p>
-<div class="highlight"><pre><span></span>➜  ~ cat curl-format.txt
-    time_namelookup:  %{time_namelookup}\n
-       time_connect:  %{time_connect}\n
-    time_appconnect:  %{time_appconnect}\n
-      time_redirect:  %{time_redirect}\n
-   time_pretransfer:  %{time_pretransfer}\n
- time_starttransfer:  %{time_starttransfer}\n
-                    ----------\n
-         time_total:  %{time_total}\n
+<p>开始编译安装（这里先别急着去执行，先往文章后面看看）</p>
+<div class="highlight"><pre><span></span># ./configure \
+--prefix=/usr/local/php \
+--with-config-file-path=/usr/local/php/etc \
+--enable-inline-optimization \
+--disable-debug \
+--disable-rpath \
+--enable-shared \
+--enable-opcache \
+--enable-fpm \
+--with-fpm-user=www \
+--with-fpm-group=www \
+--with-mysql=mysqlnd \
+--with-mysqli=mysqlnd \
+--with-pdo-mysql=mysqlnd \
+--with-gettext \
+--enable-mbstring \
+--with-iconv=/usr/local/libiconv \
+--with-mcrypt \
+--with-mhash \
+--with-openssl \
+--enable-bcmath \
+--enable-soap \
+--with-libxml-dir \
+--enable-pcntl \
+--enable-shmop \
+--enable-sysvmsg \
+--enable-sysvsem \
+--enable-sysvshm \
+--enable-sockets \
+--with-curl \
+--with-zlib \
+--enable-zip \
+--with-bz2 \
+--with-readline \
 </pre></div>
 
 
-<p>那么这些变量都是什么意思呢？我解释一下：</p>
-<p>time_namelookup ：DNS 域名解析的时候，就是把 https://zhihu.com 转换成 ip 地址的过程
-time_connect ：TCP 连接建立的时间，就是三次握手的时间
-time_appconnect ：SSL/SSH 等上层协议建立连接的时间，比如 connect/handshake 的时间
-time_redirect ：从开始到最后一个请求事务的时间
-time_pretransfer ：从请求开始到响应开始传输的时间
-time_starttransfer ：从请求开始到第一个字节将要传输的时间
-time_total ：这次请求花费的全部时间
-我们先看看一个简单的请求，没有重定向，也没有 SSL 协议的时间：</p>
-<div class="highlight"><pre><span></span>➜  ~ curl -w &quot;@curl-format.txt&quot; -o /dev/null -s -L &quot;http://cizixs.com&quot;
-    time_namelookup:  0.012
-       time_connect:  0.227
-    time_appconnect:  0.000
-      time_redirect:  0.000
-   time_pretransfer:  0.227
- time_starttransfer:  0.443
-                    ----------
-         time_total:  0.867
+<p>编译时报错：</p>
+<div class="highlight"><pre><span></span><span class="n">configure</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Please</span> <span class="n">reinstall</span> <span class="n">the</span> <span class="n">iconv</span> <span class="n">library</span><span class="o">.</span>
 </pre></div>
 
 
-<p>可以看到这次请求各个步骤的时间都打印出来了，每个数字的单位都是秒（seconds），这样可以分析哪一步比较耗时，方便定位问题。这个命令各个参数的意义：</p>
-<p>-w ：从文件中读取要打印信息的格式
--o /dev/null ：把响应的内容丢弃，因为我们这里并不关心它，只关心请求的耗时情况
--s ：不要打印进度条
-从这个输出，我们可以算出各个步骤的时间：</p>
-<p>DNS 查询：12ms
-TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
-服务器处理时间：starttransfter(443) - pretransfer(227) = 216ms
-内容传输时间：total(867) - starttransfer(443) = 424ms
-来个比较复杂的，访问某度首页，带有中间有重定向和 SSL 协议：</p>
-<div class="highlight"><pre><span></span>➜  ~ curl -w &quot;@curl-format.txt&quot; -o /dev/null -s -L &quot;https://baidu.com&quot;
-    time_namelookup:  0.012
-       time_connect:  0.018
-    time_appconnect:  0.328
-      time_redirect:  0.356
-   time_pretransfer:  0.018
- time_starttransfer:  0.027
-                    ----------
-         time_total:  0.384
+<p>安装iconv lib</p>
+<div class="highlight"><pre><span></span># cd /usr/local/src/
+# wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz
+# tar xzf libiconv-1.15.tar.gz
+# cd libiconv-1.15
+# ./configure
+# make &amp;&amp; make install
 </pre></div>
 
 
-<p>可以看到 time_appconnect 和 time_redirect 都不是 0 了，其中 SSL 协议处理时间为 328-18=310ms 。而且 pretransfer 和 starttransfer 的时间都缩短了，这是重定向之后请求的时间。</p>
+<p>继续编译，又报错：</p>
+<div class="highlight"><pre><span></span><span class="n">configure</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">Don</span><span class="err">’</span><span class="n">t</span> <span class="n">know</span> <span class="n">how</span> <span class="n">to</span> <span class="n">define</span> <span class="n">struct</span> <span class="n">flock</span> <span class="n">on</span> <span class="k">this</span> <span class="n">system</span><span class="o">,</span> <span class="kd">set</span> <span class="err">–</span><span class="n">enable</span><span class="o">-</span><span class="n">opcache</span><span class="o">=</span><span class="n">no</span>
+</pre></div>
+
+
+<p>在我加上<code>–-enable-opcache=no</code>之后，又报错：</p>
+<div class="highlight"><pre><span></span><span class="n">configure</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">off_t</span> <span class="kc">undefined</span><span class="o">;</span> <span class="n">check</span> <span class="n">your</span> <span class="n">library</span> <span class="n">configuration</span>
+</pre></div>
+
+
+<p>到这里，我的内心OS “WTF”<br>
+找GOOGLE老师咨询了一下，原来是要这样处理一下：</p>
+<div class="highlight"><pre><span></span># echo &#39;/usr/local/lib64
+/usr/local/lib
+/usr/lib
+/usr/lib64&#39;&gt;&gt;/etc/ld.so.conf 
+# ldconfig -v
+</pre></div>
+
+
+<p>据说这样处理之后，即便不改之前的opcache设置也正常，不过我没试，你有空倒是可以<code>--enable-opcache</code>再测试一次。<br>
+修改之后是这样的：</p>
+<div class="highlight"><pre><span></span># cat /etc/ld.so.conf
+include ld.so.conf.d/*.conf
+/usr/local/lib
+/usr/lib
+/usr/lib64
+</pre></div>
+
+
+<p>然后就可以一路畅快的完成configure了，你如果仔细去关注那飞快滚动的屏幕的话，会发现不少Warning，啊注意不是“FBI WARNING”，不过我都是略过了。
+再接下来就是</p>
+<div class="highlight"><pre><span></span>make &amp;&amp; make install
+</pre></div>
+
+
+<p>然后就是，嗯。。。收工。</p>
 		    <div class="tags">
-		        <p>tags: <a href="https://yull.in/tag/curl.html">curl</a><a href="https://yull.in/tag/usage.html">usage</a><a href="https://yull.in/tag/get.html">get</a><a href="https://yull.in/tag/post.html">post</a></p>
+		        <p>tags: <a href="https://yull.in/tag/php.html">php</a><a href="https://yull.in/tag/centos6.html">centos6</a><a href="https://yull.in/tag/php-extension.html">php extension</a></p>
 		    </div>
 
 <div class="sharing">
