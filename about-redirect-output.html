@@ -1,16 +1,16 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="zh">
 <!--<![endif]-->
 	<head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="author" content="Yullin">
 
 
-        <title>YULLIN's Blog - Tag imagick</title>
+        <title>YULLIN's Blog - 输出重定向到文件的时效性</title>
 
 
         <!-- CSS -->
@@ -31,6 +31,23 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+
+
+
+        <meta name="tags" contents="shell" />
+        <meta name="tags" contents="linux" />
+        <meta name="tags" contents="file" />
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="输出重定向到文件的时效性">
+    <meta property="og:url" content="about-redirect-output.html">
+    <meta property="og:description" content="在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。 经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明： # test.py &gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。 所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？">
+    <meta property="article:published_time" content="星期一, 一月 14, 2019">
+    <meta name="twitter:title" content="输出重定向到文件的时效性">
+    <meta name="twitter:description" content="在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。 经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明： # test.py &gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。 所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？">
+    <meta name="description" content="在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。 经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明： # test.py &gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。 所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？">
+    <meta name="twitter:image" content="">
+    <meta property="og:image" content="">
 
 	<!--Custom sign: head-->
 	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -58,8 +75,16 @@
 
 	<!--Custom head END-->
 
-                <meta property="og:locale" content="">
+	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="YULLIN's Blog">
+
+	<meta property="og:type" content="article">
+	<meta property="article:author" content="">
+	<meta property="og:url" content="https://yull.in/about-redirect-output.html">
+	<meta property="og:title" content="输出重定向到文件的时效性">
+	<meta property="og:description" content="">
+	   <meta property="og:image" content="https://yull.in/images/guilherme-toti.jpg">
+	<meta property="article:published_time" content="2019-01-14 12:00:00+08:00">
 	</head>
 	<body>
 		<amp-auto-ads type="adsense" data-ad-client="ca-pub-7268840106840339"></amp-auto-ads>
@@ -100,8 +125,8 @@
 						<ul>
 							<li>You are here:</li>
 							<li><a href="https://yull.in/">Home</a></li>
-<li><a href="https://yull.in/tags.html">Tags</a></li>
-<li>imagick</li>
+<li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+<li>输出重定向到文件的时效性</li>
 						</ul>
 					</nav>
 				</div>
@@ -112,57 +137,54 @@
 			<div class="container">
 	<!--<div class="twelve alt columns">-->
 	<div class="col-xs-12 col-md-8">
-		<!-- Post -->
-		<article class="post medium">
-			<div class="post-content">
-				<section class="post-content">
-					<header class="meta">
-						<h2><a href="https://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a></h2>
-						<ul>
-							<li>By <a href="https://yull.in/author/yullin.html">Yullin</a></li>
-							<li>四 09 八月 2018</li>
-							<li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
-						</ul>
-					</header>
-					<p>
-							<!--<p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+<article class="post" style="margin: 0; border: 0;">
+
+	<section class="post-content">
+
+		<header class="meta">
+			<h2><a href="https://yull.in/about-redirect-output.html">输出重定向到文件的时效性</a></h2>
+			<ul>
+				<li>By <a href="https://yull.in/author/yullin.html">Yullin</a></li>
+				<li>一 14 一月 2019</li>
+				    <li>Updated on 一 14 一月 2019</li>
+			</ul>
+		</header>
+
+		<p>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。<br>
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：  </p>
+<div class="highlight"><pre><span></span># test.py &gt; /tmp/test.log
 </pre></div>
 
 
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>-->
-							<p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
-</pre></div>
+<p>这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，<code>/tmp/test.log</code>就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查<code>/tmp/test.log</code>文件内的内容的话，有可能是检查不到正确的内容的。<br>
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？</p>
+		    <div class="tags">
+		        <p>tags: <a href="https://yull.in/tag/shell.html">shell</a><a href="https://yull.in/tag/linux.html">linux</a><a href="https://yull.in/tag/file.html">file</a></p>
+		    </div>
 
+<div class="sharing">
+</div>
+<hr>
 
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>
-	        		</p>
-					<a href="https://yull.in/install-php-extension-imagick.html" class="button color">Read More</a>
-				</section>
-			</div>
-			<div class="clearfix"></div>
-		</article>
+		    <div class="comments">
+		        <div id="disqus_thread"></div>
+		        <script type="text/javascript">
+		            var disqus_shortname = 'yull-in';
+		            var disqus_identifier = 'about-redirect-output.html';
+		            var disqus_url = 'https://yull.in/about-redirect-output.html';
+		            (function() {
+		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		                dsq.src = '//yull-in.disqus.com/embed.js';
+		                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		            })();
+		        </script>
+		        <noscript>Please enable JavaScript to view the comments.</noscript>
+		    </div>
+	</section>
+	<div class="clearfix"></div>
 
-	<!-- Pagination -->
-	<nav class="pagination">
-		<ul>
-			<li>
-			</li>
-			<!-- Page 1 / 1 -->
-		</ul>
-		<div class="clearfix"></div>
-	</nav>
+</article>
+
 	</div>
 
 	<!-- Sidebar -->
@@ -180,7 +202,7 @@ tar -zxvf imagick-3.1.0RC2.tgz
 			<nav class="categories">
 				<ul>
 					    <li><a href="https://yull.in/category/tech-info.html">TECH INFO</a></li>
-					    <li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
+					    <li class="active"><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
 				</ul>
 			</nav>
 		</div>

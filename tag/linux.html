@@ -10,7 +10,7 @@
         <meta name="author" content="Yullin">
 
 
-        <title>YULLIN's Blog - Tag imagick</title>
+        <title>YULLIN's Blog - Tag linux</title>
 
 
         <!-- CSS -->
@@ -101,7 +101,7 @@
 							<li>You are here:</li>
 							<li><a href="https://yull.in/">Home</a></li>
 <li><a href="https://yull.in/tags.html">Tags</a></li>
-<li>imagick</li>
+<li>linux</li>
 						</ul>
 					</nav>
 				</div>
@@ -117,38 +117,32 @@
 			<div class="post-content">
 				<section class="post-content">
 					<header class="meta">
-						<h2><a href="https://yull.in/install-php-extension-imagick.html" rel="bookmark" title="Permalink to install php extension imagick">install php extension imagick</a></h2>
+						<h2><a href="https://yull.in/about-redirect-output.html" rel="bookmark" title="Permalink to 输出重定向到文件的时效性">输出重定向到文件的时效性</a></h2>
 						<ul>
 							<li>By <a href="https://yull.in/author/yullin.html">Yullin</a></li>
-							<li>四 09 八月 2018</li>
+							<li>一 14 一月 2019</li>
 							<li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a></li>
 						</ul>
 					</header>
 					<p>
-							<!--<p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+							<!--<p>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。<br>
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：  </p>
+<div class="highlight"><pre><span></span># test.py &gt; /tmp/test.log
 </pre></div>
 
 
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>-->
-							<p>linux下配置imagick的步骤为(以centOS为例):</p>
-<h3>1. 安装ImageMagick</h3>
-<div class="highlight"><pre><span></span>yum install ImageMagick-devel
-/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+<p>这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，<code>/tmp/test.log</code>就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查<code>/tmp/test.log</code>文件内的内容的话，有可能是检查不到正确的内容的。<br>
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？</p>-->
+							<p>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。<br>
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：  </p>
+<div class="highlight"><pre><span></span># test.py &gt; /tmp/test.log
 </pre></div>
 
 
-<h3>2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)</h3>
-<div class="highlight"><pre><span></span>wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
-tar -zxvf imagick-3.1.0RC2.tgz
-/usr/local/php/bin/phpize                   #在项目目录下运行phpize …</pre></div>
+<p>这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，<code>/tmp/test.log</code>就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查<code>/tmp/test.log</code>文件内的内容的话，有可能是检查不到正确的内容的。<br>
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？</p>
 	        		</p>
-					<a href="https://yull.in/install-php-extension-imagick.html" class="button color">Read More</a>
+					<a href="https://yull.in/about-redirect-output.html" class="button color">Read More</a>
 				</section>
 			</div>
 			<div class="clearfix"></div>
