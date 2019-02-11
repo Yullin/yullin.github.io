@@ -1232,7 +1232,7 @@ ul.icons li [class*=" icon-"] {
 .icon-steam:before { content: '\62'; } /* 'b' */
 .icon-dropbox:before { content: '\64'; } /* 'd' */
 .icon-facebook:before { content: '\66'; } /* 'f' */
-.icon-github:before { content: '\67'; } /* 'g' */
+/*.icon-github:before { content: '\67'; } /* 'g' */*/
 .icon-lastfm:before { content: '\6c'; } /* 'l' */
 .icon-tumblr:before { content: '\74'; } /* 't' */
 .icon-wordpress:before { content: '\77'; } /* 'w' */
