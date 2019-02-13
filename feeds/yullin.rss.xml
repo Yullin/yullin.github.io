@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Mon, 11 Feb 2019 10:58:00 +0800</lastBuildDate><item><title>chrome 73 released 自动画中画 支持硬件媒体按钮</title><link>https://yull.in/chrome-73-released.html</link><description>&lt;p&gt;桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。&lt;/p&gt;
+&lt;h3&gt;&lt;b&gt;支持硬件多媒体按钮&lt;/b&gt;&lt;/h3&gt;
+&lt;p&gt;用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" height="60%" src="https://oscimg.oschina.net/oscnet/79457c674363241c0ff32eb6617dfdc88c3.jpg" width="700px"&gt;&lt;/p&gt;
+&lt;p&gt;这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。
+&lt;img alt="多媒体交互" src="https://static.cnbetacdn.com/thumb/article/2019/0211/e14d9ddc8a4241b.jpg"&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;b&gt;可跟随系统的黑暗主题&lt;/b&gt;&lt;/h3&gt;
+&lt;p&gt;现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Mon, 11 Feb 2019 10:58:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-02-11:/chrome-73-released.html</guid><category>chrome</category><category>浏览器</category><category>新版本</category><category>beta</category></item><item><title>输出重定向到文件的时效性</title><link>https://yull.in/about-redirect-output.html</link><description>&lt;p&gt;在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。&lt;br&gt;
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# test.py &amp;gt; /tmp/test.log
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，&lt;code&gt;/tmp/test.log&lt;/code&gt;就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查&lt;code&gt;/tmp/test.log&lt;/code&gt;文件内的内容的话，有可能是检查不到正确的内容的。&lt;br&gt;
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Mon, 14 Jan 2019 12:00:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-01-14:/about-redirect-output.html</guid><category>shell</category><category>linux</category><category>file</category></item><item><title>install php5.6 on centos6</title><link>https://yull.in/install-php5.6-on-centos6.html</link><description>&lt;p&gt;本次安装系统环境为Centos6 x86_64&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# cd /usr/local/src
+# wget http://cn2.php.net/distributions/php-5.6.39.tar.gz
+# tar xzf php-5.6.39.tar.xz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装依赖包&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;开始编译安装（这里先别急着去执行，先往文章后面看看）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# ./configure \
+--prefix=/usr/local/php …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Wed, 09 Jan 2019 11:48:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-01-09:/install-php5.6-on-centos6.html</guid><category>php</category><category>centos6</category><category>php extension</category></item><item><title>Nginx反向代理配置</title><link>https://yull.in/nginx-reverse-proxy-pass.html</link><description>&lt;p&gt;这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下&lt;/p&gt;
+&lt;h2&gt;普通反向代理&lt;/h2&gt;
+&lt;p&gt;Nginx的普通的反向代理配置还是比较简单的，如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;location&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt; &lt;span class="o"&gt;/*&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;proxy_pass&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="mf"&gt;192.168.1.12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者可以&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;proxy_pass&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="mf"&gt;192.168.1.12&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上&lt;br&gt;
+可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;location&lt;/span&gt; &lt;span class="o"&gt;^~&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;test&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;if&lt;/span&gt; &lt;span class="err"&gt;($request_uri&lt;/span&gt; &lt;span class="err"&gt;~&lt;/span&gt; &lt;span class="err"&gt;/test/(\d+)/(.+))&lt;/span&gt;
+    &lt;span class="err"&gt;{&lt;/span&gt;
+        &lt;span class="err"&gt;set&lt;/span&gt; &lt;span class="err"&gt;$id&lt;/span&gt; &lt;span class="err"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="err"&gt;set&lt;/span&gt; &lt;span class="err"&gt;$params&lt;/span&gt; &lt;span class="err"&gt;$2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nt"&gt;proxy_pass&lt;/span&gt; &lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;backend&lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;domain …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Wed, 19 Dec 2018 16:05:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-12-19:/nginx-reverse-proxy-pass.html</guid><category>nginx</category><category>reverse</category><category>proxy</category><category>反向代理</category></item><item><title>python字典和列表赋值的坑</title><link>https://yull.in/python-dict-and-list-copy.html</link><description>&lt;p&gt;今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  &lt;/p&gt;
+&lt;p&gt;列表的具体测试如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; a = [&amp;#39;1&amp;#39;]
+&amp;gt;&amp;gt;&amp;gt; b = a
+&amp;gt;&amp;gt;&amp;gt; a.append(&amp;#39;2&amp;#39;)
+&amp;gt;&amp;gt;&amp;gt; a
+[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;]
+&amp;gt;&amp;gt;&amp;gt; b
+[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可以看到当改变a的值时，b的值也跟着一起改变了。
+再看字典的例子：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt;&amp;gt;&amp;gt; ar = {&amp;#39;x&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;y&amp;#39;:&amp;#39;2&amp;#39;}
+&amp;gt;&amp;gt;&amp;gt; br = ar
+&amp;gt;&amp;gt;&amp;gt; br
+{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;1&amp;#39;}
+&amp;gt;&amp;gt;&amp;gt; ar[&amp;#39;x&amp;#39;] = &amp;#39;3&amp;#39;
+&amp;gt;&amp;gt;&amp;gt; br
+{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;}
+&amp;gt;&amp;gt;&amp;gt; ar
+{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;其实还可以有更简单的验证方式 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Tue, 18 Dec 2018 14:40:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-12-18:/python-dict-and-list-copy.html</guid><category>python</category><category>dict</category><category>list</category></item><item><title>curl usage note</title><link>https://yull.in/curl-usage-note.html</link><description>&lt;p&gt;CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。&lt;br&gt;
+下面说一下具体的使用方法：  &lt;/p&gt;
+&lt;h3&gt;1.建立一个命令格式文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\n 
+　　　　　　　time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                 time_total:  %{time_total}\n
+\n
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;说明：&lt;br&gt;
+time_namelookup：DNS解析域名时间，把域名---&amp;gt;ip的时间&lt;br&gt;
+time_connect：TCP连接的时间，三次握手的时间&lt;br&gt;
+time_appconnect：SSL|SSH等上层连接建立的时间&lt;br&gt;
+time_pretransfer：从请求开始到到响应开始传输的时间&lt;br&gt;
+time_redirect：从开始到最后一个请求事务的时间&lt;br&gt;
+time_starttransfer：从请求开始到第一个字节将要传输的时间&lt;br&gt;
+time_total：总时间&lt;/p&gt;
+&lt;h3&gt;2.命令使用方法 …&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Fri, 02 Nov 2018 11:08:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-11-02:/curl-usage-note.html</guid><category>curl</category><category>usage</category><category>get</category><category>post</category></item><item><title>configure elasticsearch logstash kibana</title><link>https://yull.in/config-elasticsearch-logstash-kibana.html</link><description>&lt;p&gt;本文主要记录ELK的测试环境的搭建过程   &lt;/p&gt;
+&lt;h3&gt;1.环境以及架构&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Jumper&lt;/th&gt;
+&lt;th&gt;系统版本&lt;/th&gt;
+&lt;th align="center"&gt;IP地址&lt;/th&gt;
+&lt;th&gt;主机名&lt;/th&gt;
+&lt;th&gt;角色&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;d1000&lt;/td&gt;
+&lt;td&gt;CENTOS 7&lt;/td&gt;
+&lt;td align="center"&gt;10.2.8.30&lt;/td&gt;
+&lt;td&gt;centosT-AutomELK-8030&lt;/td&gt;
+&lt;td&gt;Kibana&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;d1000&lt;/td&gt;
+&lt;td&gt;CENTOS 7&lt;/td&gt;
+&lt;td align="center"&gt;10.2.8.31&lt;/td&gt;
+&lt;td&gt;centosT-AutomELK-8031&lt;/td&gt;
+&lt;td&gt;Logstash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;d1000&lt;/td&gt;
+&lt;td&gt;CENTOS 7&lt;/td&gt;
+&lt;td align="center"&gt;10.2.8.32&lt;/td&gt;
+&lt;td&gt;centosT-AutomELK-8032&lt;/td&gt;
+&lt;td&gt;ElasticSearch&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;本次的所有环境均是基于CENTOS7系统进行搭建。&lt;br&gt;
+首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
+由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://10.2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Fri, 26 Oct 2018 11:20:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-10-26:/config-elasticsearch-logstash-kibana.html</guid><category>elk</category><category>elasticsearch</category><category>logstash</category><category>kibana</category><category>ingest node</category></item><item><title>win10十月更新坑用户</title><link>https://yull.in/microsoft-win10-oct-update.html</link><description>&lt;p&gt;昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。&lt;/p&gt;
+&lt;p&gt;换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。&lt;/p&gt;
+&lt;p&gt;虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。&lt;/p&gt;
+&lt;p&gt;reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。&lt;/p&gt;
+&lt;p&gt;但是，随着Windows 10 10月2018 Update的撤下，此问题不再发生，用户将无法再看到通过Windows Update提供的新版本。&lt;/p&gt;
+&lt;p&gt;Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一天，微软开始允许用户通过手动检查后通过Windows Update下载。&lt;/p&gt;
+&lt;p&gt;然而，到目前为止，新操作系统功能更新带来了众多问题，最糟糕的问题导致在升级期间完全删除用户文件，虽然目前尚不清楚有多少台PC出现此问题，但微软决定完全撤销2018年10月的更新。&lt;/p&gt;
+&lt;p&gt;目前还不知道微软什么时候想恢复推出，但随着10月的周二补丁日即将到来，预计下周会有更多这方面的新闻。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Tue, 09 Oct 2018 18:08:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-10-09:/microsoft-win10-oct-update.html</guid><category>win10</category><category>microsoft</category><category>update</category><category>201810</category></item><item><title>install and config openresty</title><link>https://yull.in/install-and-config-openresty.html</link><description>&lt;h3&gt;安装配置openresty&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;下载源码  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /usr/local/src
+wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;解压后编译安装  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install pcre-devel openssl-devel gcc curl  #需要事先准备好需要的依赖包
+tar xzf openresty-1.13.6.2.tar.gz
+cd openresty-1.13.6.2
+ ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug
+gmake -j2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Thu, 30 Aug 2018 10:38:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-08-30:/install-and-config-openresty.html</guid><category>openresty</category></item><item><title>configure elasticsearch ingest node</title><link>https://yull.in/config-elasticsearch-ingest-node.html</link><description>&lt;p&gt;在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  &lt;/p&gt;
+&lt;h3&gt;1.测试可以用如下命令&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;filebeat.test.json的内容如下：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{
+  &amp;quot;pipeline&amp;quot; : {
+    &amp;quot;description&amp;quot; : &amp;quot;nginx access log&amp;quot;,
+    &amp;quot;processors&amp;quot;: [
+      {
+        &amp;quot;grok&amp;quot;: {
+          &amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,
+          &amp;quot;patterns&amp;quot;: [&amp;quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Mon, 20 Aug 2018 18:08:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-08-20:/config-elasticsearch-ingest-node.html</guid><category>elk</category><category>elasticsearch</category><category>logstash</category><category>kibana</category><category>ingest node</category></item><item><title>install php extension imagick</title><link>https://yull.in/install-php-extension-imagick.html</link><description>&lt;p&gt;linux下配置imagick的步骤为(以centOS为例):&lt;/p&gt;
+&lt;h3&gt;1. 安装ImageMagick&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install ImageMagick-devel
+/usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;2.  安装php的imagick扩展模块 (http://pecl.php.net/package/imagick)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz
+tar -zxvf imagick-3.1.0RC2.tgz
+/usr/local/php/bin/phpize                   #在项目目录下运行phpize …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Thu, 09 Aug 2018 16:06:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-08-09:/install-php-extension-imagick.html</guid><category>php</category><category>imagick</category><category>php extension</category></item></channel></rss>
