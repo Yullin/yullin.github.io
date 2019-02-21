@@ -1,0 +1,86 @@
+Title: chrome 73 released 自动画中画 支持硬件媒体按钮  
+Date: 2019-02-11 10:58  
+Modified: 2019-02-11 10:58  
+Category: TECH INFO  
+Tags: chrome, 浏览器, 新版本, beta  
+Slug: chrome-73-released
+Authors: Yullin
+
+
+桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+
+
+
+### <b>支持硬件多媒体按钮</b>
+
+用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+
+![img](https://oscimg.oschina.net/oscnet/79457c674363241c0ff32eb6617dfdc88c3.jpg){:height="60%" width="700px"}
+
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。
+![多媒体交互](https://static.cnbetacdn.com/thumb/article/2019/0211/e14d9ddc8a4241b.jpg)
+
+### <b>可跟随系统的黑暗主题</b>
+
+现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。
+![跟随系统黑暗主题](https://static.cnbetacdn.com/article/2019/02/a0777d699c4afed.gif){:height="60%" width="700px"}
+
+
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。
+
+![Chrome-shortcuts.jpg](https://static.cnbetacdn.com/article/2019/0208/4eb7732c7353de0.jpg)
+
+![Chrome-menu-1-663x420.jpg](https://static.cnbetacdn.com/article/2019/0208/09d5d8c1a82109b.jpg)
+
+从外观上看，Google Chrome的黑暗外观已经完成，很快就会发布给测试用户。根据Chromium的帖子提交的信息，谷歌也在努力修复图标对黑暗模式的兼容性。
+
+自动画中画功能
+
+自动画中画（Automatic Picture-in-Picture）适用于已经安装到系统上的PWA应用程序。Chrome 70版本中引入了在Windows 10平台安装PWA应用的功能，从网页应用的交互体验接近于原生应用，可以将其固定到开始菜单，并且通过Action Center来获得原生通知。不过在此前只有用户手动方式才能将视频切换至画中画模式。
+![自动画中画](https://static.cnbetacdn.com/article/2018/1221/51c2c6cb7e2ff66.png)
+
+
+启用自动画中画功能之后，应用中嵌入的视频元素可以自动激活，并且会根据用户焦点自动离开画中画状态。一个案例就是在视频会议应用中，当用户导航切换不同的网页应用或者在浏览器不同标签之后可以自动将视频切换至画中画模式。包括Teams在内的诸多PWA应用程序将会因此获益。
+
+除了自动画中画功能之外，还可以使用Chrome 73添加使用画中画行为跳过视频中广告的功能。在Chrome 73版本中，PWA应用程序可以在桌面上自动播放带声音的多媒体文件。
+
+Chrome 73 Beta版本下载：
+
+Windows x64版本
+
+```
+最新版本：73.0.3683.27
+
+文件大小：52.93 MB
+
+SHA1：F7A9CEBB55B53FE6DDCC8581D1E375CE29095D19
+
+SHA256：9F0E229D28ED0F528A1BE15B8F0ECF41C6C92DB247F75A5486C7BFA9F9E31344
+
+http://dl.google.com/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://dl.google.com/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+http://www.google.com/dl/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://www.google.com/dl/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+```
+Windows 版本
+```
+
+最新版本：73.0.3683.27
+
+文件大小：51.92 MB
+
+SHA1：7987A6618279C64C25576A3A28256DBEFBE1D3F7
+
+SHA256：CF1B334D666A21F75C182E60E51E08799A6DCF8282826064762D826F282709B5
+
+http://dl.google.com/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://dl.google.com/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+http://www.google.com/dl/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://www.google.com/dl/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+```
