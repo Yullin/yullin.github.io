@@ -131,6 +131,37 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/kvm-virtual-monitor-resolution.html#kvm-virtual-monitor-resolution">kvm虚拟机系统的高分辨率调整</a></h2>
+    <p>
+      在 四 21 二月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/kvm.html">kvm</a>,              <a href="https://yull.in/tag/fen-bian-lu.html">分辨率</a>,              <a href="https://yull.in/tag/linux.html">linux</a>,              <a href="https://yull.in/tag/mint.html">mint</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。</p>
+<p>系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有<code>1024X768</code>，无法再调整到更高。  </p>
+<p>经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。  </p>
+<p>默认情况下，显存设置为<code>16MB</code>，所以分辨率最高只能到<code>1024X768</code>，具体代码如下：</p>
+<div class="highlight"><pre><span></span>    <span class="nt">&lt;video&gt;</span>
+      <span class="nt">&lt;model</span> <span class="na">type=</span><span class="s">&#39;cirrus&#39;</span> <span class="na">vram=</span><span class="s">&#39;16384&#39;</span> <span class="na">heads=</span><span class="s">&#39;1&#39;</span> <span class="na">primary=</span><span class="s">&#39;yes&#39;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;address</span> <span class="na">type=</span><span class="s">&#39;pci&#39;</span> <span class="na">domain=</span><span class="s">&#39;0x0000&#39;</span> <span class="na">bus=</span><span class="s">&#39;0x00&#39;</span> <span class="na">slot=</span><span class="s">&#39;0x02&#39;</span> <span class="na">function=</span><span class="s">&#39;0x0&#39;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/video&gt;</span>
+</pre></div>
+
+
+<p>我们需要将vram调整得大一些，但是具体应该调整为多少呢？  </p>
+<p>以4K分辨率(3840 x 2160)为例：</p>
+<div class="highlight"><pre><span></span>3840 x 2160 …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/kvm-virtual-monitor-resolution.html#kvm-virtual-monitor-resolution">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/chrome-73-released.html#chrome-73-released">chrome 73 released 自动画中画 支持硬件媒体按钮</a></h2>
     <p>
       在 一 11 二月 2019 发布于 <a href="https://yull.in/category/tech-info.html">TECH INFO</a> 分类
@@ -451,37 +482,6 @@ cd openresty-1.13.6.2
 gmake -j2 …</pre></div>
         <br>
         <a class="btn" href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">configure elasticsearch ingest node</a></h2>
-    <p>
-      在 一 20 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
-<h3>1.测试可以用如下命令</h3>
-<blockquote>
-<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
-</blockquote>
-<p>filebeat.test.json的内容如下：  </p>
-<div class="highlight"><pre><span></span>{
-  &quot;pipeline&quot; : {
-    &quot;description&quot; : &quot;nginx access log&quot;,
-    &quot;processors&quot;: [
-      {
-        &quot;grok&quot;: {
-          &quot;field&quot;: &quot;message&quot;,
-          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div>
-        <br>
-        <a class="btn" href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">阅读全文</a>
   </div>
 </article>
 

@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog - Yullin</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/yullin.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-02-11T10:58:00+08:00</updated><entry><title>chrome 73 released 自动画中画 支持硬件媒体按钮</title><link href="https://yull.in/chrome-73-released.html" rel="alternate"></link><published>2019-02-11T10:58:00+08:00</published><updated>2019-02-11T10:58:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-11:/chrome-73-released.html</id><summary type="html">&lt;p&gt;桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog - Yullin</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/yullin.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-02-21T20:26:00+08:00</updated><entry><title>kvm虚拟机系统的高分辨率调整</title><link href="https://yull.in/kvm-virtual-monitor-resolution.html" rel="alternate"></link><published>2019-02-21T20:26:00+08:00</published><updated>2019-02-21T20:26:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-21:/kvm-virtual-monitor-resolution.html</id><summary type="html">&lt;p&gt;最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。&lt;/p&gt;
+&lt;p&gt;系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有&lt;code&gt;1024X768&lt;/code&gt;，无法再调整到更高。  &lt;/p&gt;
+&lt;p&gt;经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。  &lt;/p&gt;
+&lt;p&gt;默认情况下，显存设置为&lt;code&gt;16MB&lt;/code&gt;，所以分辨率最高只能到&lt;code&gt;1024X768&lt;/code&gt;，具体代码如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;video&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;model&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;cirrus&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;vram=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;16384&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;heads=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;primary=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;yes&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pci&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0000&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x00&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x02&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/video&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我们需要将vram调整得大一些，但是具体应该调整为多少呢？  &lt;/p&gt;
+&lt;p&gt;以4K分辨率(3840 x 2160)为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;3840 x 2160 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。&lt;/p&gt;
+&lt;p&gt;系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有&lt;code&gt;1024X768&lt;/code&gt;，无法再调整到更高。  &lt;/p&gt;
+&lt;p&gt;经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。  &lt;/p&gt;
+&lt;p&gt;默认情况下，显存设置为&lt;code&gt;16MB&lt;/code&gt;，所以分辨率最高只能到&lt;code&gt;1024X768&lt;/code&gt;，具体代码如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;video&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;model&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;cirrus&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;vram=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;16384&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;heads=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;primary=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;yes&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pci&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0000&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x00&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x02&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/video&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我们需要将vram调整得大一些，但是具体应该调整为多少呢？  &lt;/p&gt;
+&lt;p&gt;以4K分辨率(3840 x 2160)为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;3840 x 2160 = 8294400     # 总共像素点
+8294400 x 32 = 265420800  # 每个像素点占 4 个字节
+265420800/8 = 33177600    # 转为 Byte 单位
+33177600 /（1024 * 1024）= 31.640625 MB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可以看到基本上&lt;code&gt;32MB&lt;/code&gt;足以支持4K显示，再考虑到其他的一些开销，我们将显存设置为&lt;code&gt;64MB&lt;/code&gt;。
+视频类型设置为 qxl ，修改后配置如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;video&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;model&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;qxl&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;ram=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;65536&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;vram=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;65536&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;vgamem=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;65536&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;heads=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;1&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;primary=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;yes&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;address&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pci&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;domain=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0000&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;bus=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x00&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;slot=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x02&amp;#39;&lt;/span&gt; &lt;span class="na"&gt;function=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;0x0&amp;#39;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/video&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;重启虚拟机之后，再看就可以调整为自己想要的分辨率了。&lt;/p&gt;</content><category term="kvm"></category><category term="分辨率"></category><category term="linux"></category><category term="mint"></category></entry><entry><title>chrome 73 released 自动画中画 支持硬件媒体按钮</title><link href="https://yull.in/chrome-73-released.html" rel="alternate"></link><published>2019-02-11T10:58:00+08:00</published><updated>2019-02-11T10:58:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-11:/chrome-73-released.html</id><summary type="html">&lt;p&gt;桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。&lt;/p&gt;
 &lt;h3&gt;&lt;b&gt;支持硬件多媒体按钮&lt;/b&gt;&lt;/h3&gt;
 &lt;p&gt;用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="img" height="60%" src="https://oscimg.oschina.net/oscnet/79457c674363241c0ff32eb6617dfdc88c3.jpg" width="700px"&gt;&lt;/p&gt;

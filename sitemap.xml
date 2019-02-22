@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yull.in/</loc>
-<lastmod>2019-02-13T19:35:25-00:00</lastmod>
+<lastmod>2019-02-21T20:48:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yull.in/archives.html</loc>
-<lastmod>2019-02-13T19:35:25-00:00</lastmod>
+<lastmod>2019-02-21T20:48:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yull.in/tags.html</loc>
-<lastmod>2019-02-13T19:35:25-00:00</lastmod>
+<lastmod>2019-02-21T20:48:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://yull.in/categories.html</loc>
-<lastmod>2019-02-13T19:35:25-00:00</lastmod>
+<lastmod>2019-02-21T20:48:38-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yull.in/kvm-virtual-monitor-resolution.html</loc>
+<lastmod>2019-02-21T20:26:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -117,7 +124,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yull.in/category/tech-skills.html</loc>
-<lastmod>2019-01-14T12:00:00+08:06</lastmod>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yull.in/tag/fen-bian-lu.html</loc>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +166,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yull.in/tag/linux.html</loc>
-<lastmod>2019-01-14T12:00:00+08:06</lastmod>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -160,6 +174,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://yull.in/tag/curl.html</loc>
 <lastmod>2018-11-02T11:08:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yull.in/tag/mint.html</loc>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -237,6 +258,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://yull.in/tag/python.html</loc>
 <lastmod>2018-12-18T14:40:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://yull.in/tag/kvm.html</loc>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -348,7 +376,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://yull.in/author/yullin.html</loc>
-<lastmod>2019-02-11T10:58:00+08:06</lastmod>
+<lastmod>2019-02-21T20:26:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
