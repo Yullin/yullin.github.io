@@ -57,7 +57,7 @@
 <meta property="og:url" content="https://yull.in"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
-  <title>Yullin's Blog &ndash; Yullin 发布的文章:</title>
+  <title>Yullin's Blog &ndash; TECH SKILLS 分类</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -131,71 +131,6 @@
 
 <article>
   <header>
-    <h2><a href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">install and config openresty</a></h2>
-    <p>
-      在 四 30 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/openresty.html">openresty</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <h3>安装配置openresty</h3>
-<ol>
-<li>下载源码  </li>
-</ol>
-<div class="highlight"><pre><span></span>cd /usr/local/src
-wget https://openresty.org/download/openresty-1.13.6.2.tar.gz
-</pre></div>
-
-
-<ol>
-<li>解压后编译安装  </li>
-</ol>
-<div class="highlight"><pre><span></span>yum install pcre-devel openssl-devel gcc curl  #需要事先准备好需要的依赖包
-tar xzf openresty-1.13.6.2.tar.gz
-cd openresty-1.13.6.2
- ./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debug
-gmake -j2 …</pre></div>
-        <br>
-        <a class="btn" href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">configure elasticsearch ingest node</a></h2>
-    <p>
-      在 一 20 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
-<h3>1.测试可以用如下命令</h3>
-<blockquote>
-<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
-</blockquote>
-<p>filebeat.test.json的内容如下：  </p>
-<div class="highlight"><pre><span></span>{
-  &quot;pipeline&quot; : {
-    &quot;description&quot; : &quot;nginx access log&quot;,
-    &quot;processors&quot;: [
-      {
-        &quot;grok&quot;: {
-          &quot;field&quot;: &quot;message&quot;,
-          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div>
-        <br>
-        <a class="btn" href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
     <h2><a href="https://yull.in/install-php-extension-imagick.html#install-php-extension-imagick">install php extension imagick</a></h2>
     <p>
       在 四 09 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
@@ -223,7 +158,7 @@ tar -zxvf imagick-3.1.0RC2.tgz
 </article>
 
   <div class="pagination">
-    <a class="btn float-right" href="https://yull.in/author/yullin.html">
+    <a class="btn float-right" href="https://yull.in/category/tech-skills.html">
       更新的文章 <i class="fa fa-angle-right"></i>
     </a>
   </div>
