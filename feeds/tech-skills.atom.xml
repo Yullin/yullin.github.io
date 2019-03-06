@@ -1,35 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog - TECH SKILLS</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/tech-skills.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-02-25T15:22:00+08:00</updated><entry><title>Linux Mint 19 修改系统菜单字体</title><link href="https://yull.in/linux-mint-font-manager.html" rel="alternate"></link><published>2019-02-25T15:22:00+08:00</published><updated>2019-02-25T15:22:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-25:/linux-mint-font-manager.html</id><summary type="html">&lt;p&gt;在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题&lt;code&gt;Adapta-Nokto&lt;/code&gt;，然后字体再修改为&lt;code&gt;文泉驿等宽字体&lt;/code&gt;，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog - TECH SKILLS</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/tech-skills.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-03-06T17:49:00+08:00</updated><entry><title>CentOS 7 主机名大小字母的问题</title><link href="https://yull.in/centos-7-hostname-uppercase.html" rel="alternate"></link><published>2019-03-06T17:49:00+08:00</published><updated>2019-03-06T17:49:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-03-06:/centos-7-hostname-uppercase.html</id><summary type="html">&lt;p&gt;CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; # hostnamectl set-hostname TestHostname
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是&lt;code&gt;testhostname&lt;/code&gt;。&lt;br&gt;
+如果我们还是想要驼峰规则的主机名怎么办。&lt;br&gt;
+这样就可以了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# hostnamectl --static set-hostname TestHostname
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; # hostnamectl set-hostname TestHostname
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是&lt;code&gt;testhostname&lt;/code&gt;。&lt;br&gt;
+如果我们还是想要驼峰规则的主机名怎么办。&lt;br&gt;
+这样就可以了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# hostnamectl --static set-hostname TestHostname
+&lt;/pre&gt;&lt;/div&gt;</content><category term="主机名"></category><category term="hostname"></category><category term="linux"></category><category term="centos"></category><category term="7"></category></entry><entry><title>Linux Mint 19 修改系统菜单字体</title><link href="https://yull.in/linux-mint-font-manager.html" rel="alternate"></link><published>2019-02-25T15:22:00+08:00</published><updated>2019-02-25T15:22:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-25:/linux-mint-font-manager.html</id><summary type="html">&lt;p&gt;在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题&lt;code&gt;Adapta-Nokto&lt;/code&gt;，然后字体再修改为&lt;code&gt;文泉驿等宽字体&lt;/code&gt;，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。&lt;/p&gt;
 &lt;p&gt;安装主题其实很简单，只是安装好之后，如果不修改&lt;code&gt;软件源&lt;/code&gt;的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到&lt;code&gt;/etc/apt/&lt;/code&gt;目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;菜单&lt;/li&gt;
-&lt;li&gt;系统管理&lt;/li&gt;
-&lt;li&gt;软件源&lt;/li&gt;
+&lt;li&gt;菜单  &lt;/li&gt;
+&lt;li&gt;系统管理  &lt;/li&gt;
+&lt;li&gt;软件源  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;然后直接选择自己最合适的就可以了。  &lt;/p&gt;
 &lt;p&gt;下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：&lt;code&gt;菜单-&amp;gt;首选项-&amp;gt;字体&lt;/code&gt;，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到&lt;code&gt;font-manager&lt;/code&gt;这个工具了，首先还是需要安装这个工具：  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;直接使用Mint自带的&lt;code&gt;软件管理器&lt;/code&gt;安装就可以了。&lt;/li&gt;
-&lt;li&gt;安装完成后，打开这个工具。&lt;/li&gt;
+&lt;li&gt;直接使用Mint自带的&lt;code&gt;软件管理器&lt;/code&gt;安装就可以了。  &lt;/li&gt;
+&lt;li&gt;安装完成后，打开这个工具。  &lt;/li&gt;
 &lt;li&gt;禁用所有以 …&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题&lt;code&gt;Adapta-Nokto&lt;/code&gt;，然后字体再修改为&lt;code&gt;文泉驿等宽字体&lt;/code&gt;，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。&lt;/p&gt;
 &lt;p&gt;安装主题其实很简单，只是安装好之后，如果不修改&lt;code&gt;软件源&lt;/code&gt;的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到&lt;code&gt;/etc/apt/&lt;/code&gt;目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;菜单&lt;/li&gt;
-&lt;li&gt;系统管理&lt;/li&gt;
-&lt;li&gt;软件源&lt;/li&gt;
+&lt;li&gt;菜单  &lt;/li&gt;
+&lt;li&gt;系统管理  &lt;/li&gt;
+&lt;li&gt;软件源  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;然后直接选择自己最合适的就可以了。  &lt;/p&gt;
 &lt;p&gt;下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：&lt;code&gt;菜单-&amp;gt;首选项-&amp;gt;字体&lt;/code&gt;，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到&lt;code&gt;font-manager&lt;/code&gt;这个工具了，首先还是需要安装这个工具：  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;直接使用Mint自带的&lt;code&gt;软件管理器&lt;/code&gt;安装就可以了。&lt;/li&gt;
-&lt;li&gt;安装完成后，打开这个工具。&lt;/li&gt;
-&lt;li&gt;禁用所有以 AR PL 开头的字体&lt;/li&gt;
+&lt;li&gt;直接使用Mint自带的&lt;code&gt;软件管理器&lt;/code&gt;安装就可以了。  &lt;/li&gt;
+&lt;li&gt;安装完成后，打开这个工具。  &lt;/li&gt;
+&lt;li&gt;禁用所有以 AR PL 开头的字体  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;这就可以啦&lt;/p&gt;</content><category term="系统"></category><category term="字体"></category><category term="linux"></category><category term="mint"></category></entry><entry><title>kvm虚拟机系统的高分辨率调整</title><link href="https://yull.in/kvm-virtual-monitor-resolution.html" rel="alternate"></link><published>2019-02-21T20:26:00+08:00</published><updated>2019-02-21T20:26:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-02-21:/kvm-virtual-monitor-resolution.html</id><summary type="html">&lt;p&gt;最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。&lt;/p&gt;

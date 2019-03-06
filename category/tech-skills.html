@@ -131,6 +131,31 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/centos-7-hostname-uppercase.html#centos-7-hostname-uppercase">CentOS 7 主机名大小字母的问题</a></h2>
+    <p>
+      在 三 06 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/zhu-ji-ming.html">主机名</a>,              <a href="https://yull.in/tag/hostname.html">hostname</a>,              <a href="https://yull.in/tag/linux.html">linux</a>,              <a href="https://yull.in/tag/centos.html">centos</a>,              <a href="https://yull.in/tag/7.html">7</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：</p>
+<div class="highlight"><pre><span></span> # hostnamectl set-hostname TestHostname
+</pre></div>
+
+
+<p>但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是<code>testhostname</code>。<br>
+如果我们还是想要驼峰规则的主机名怎么办。<br>
+这样就可以了</p>
+<div class="highlight"><pre><span></span># hostnamectl --static set-hostname TestHostname
+</pre></div>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/linux-mint-font-manager.html#linux-mint-font-manager">Linux Mint 19 修改系统菜单字体</a></h2>
     <p>
       在 一 25 二月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
@@ -145,17 +170,17 @@
 <p>安装主题其实很简单，只是安装好之后，如果不修改<code>软件源</code>的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到<code>/etc/apt/</code>目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：  </p>
 <blockquote>
 <ol>
-<li>菜单</li>
-<li>系统管理</li>
-<li>软件源</li>
+<li>菜单  </li>
+<li>系统管理  </li>
+<li>软件源  </li>
 </ol>
 </blockquote>
 <p>然后直接选择自己最合适的就可以了。  </p>
 <p>下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：<code>菜单-&gt;首选项-&gt;字体</code>，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到<code>font-manager</code>这个工具了，首先还是需要安装这个工具：  </p>
 <blockquote>
 <ol>
-<li>直接使用Mint自带的<code>软件管理器</code>安装就可以了。</li>
-<li>安装完成后，打开这个工具。</li>
+<li>直接使用Mint自带的<code>软件管理器</code>安装就可以了。  </li>
+<li>安装完成后，打开这个工具。  </li>
 <li>禁用所有以 …</li></ol></blockquote>
         <br>
         <a class="btn" href="https://yull.in/linux-mint-font-manager.html#linux-mint-font-manager">阅读全文</a>
@@ -467,37 +492,6 @@ cd openresty-1.13.6.2
 gmake -j2 …</pre></div>
         <br>
         <a class="btn" href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">configure elasticsearch ingest node</a></h2>
-    <p>
-      在 一 20 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <p>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。  </p>
-<h3>1.测试可以用如下命令</h3>
-<blockquote>
-<p>curl  -v -H 'Content-Type: application/json' -X POST 'http://10.2.4.34:9200/_ingest/pipeline/_simulate' -d@filebeat.test.json</p>
-</blockquote>
-<p>filebeat.test.json的内容如下：  </p>
-<div class="highlight"><pre><span></span>{
-  &quot;pipeline&quot; : {
-    &quot;description&quot; : &quot;nginx access log&quot;,
-    &quot;processors&quot;: [
-      {
-        &quot;grok&quot;: {
-          &quot;field&quot;: &quot;message&quot;,
-          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM …</pre></div>
-        <br>
-        <a class="btn" href="https://yull.in/config-elasticsearch-ingest-node.html#config-elasticsearch-ingest-node">阅读全文</a>
   </div>
 </article>
 
