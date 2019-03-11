@@ -148,6 +148,7 @@
 
 
 <p>但是用ngx.log方法一般是没有问题的</p>
+<hr>
 <p>另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁</p>
 <div class="highlight"><pre><span></span>string.split = function(s, p)
 
@@ -159,7 +160,8 @@ end
 </pre></div>
 
 
-<p>× 使用示例：</p>
+<hr>
+<p><strong>使用示例：</strong>  </p>
 <div class="highlight"><pre><span></span>local str = &#39;abc,123,hello,ok&#39;
 
 local list = string.split(str, &#39;,&#39;)
@@ -183,7 +185,8 @@ ok
 </pre></div>
 
 
-<p>× 另外一个示例：</p>
+<hr>
+<p><strong>另外一个示例：</strong></p>
 <div class="highlight"><pre><span></span>local str = &#39;abc \n123 \t hello ok&#39;
 
 local list = string.split(str, &#39;%s&#39;)

@@ -5,6 +5,7 @@
 
 
 &lt;p&gt;但是用ngx.log方法一般是没有问题的&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;string.split = function(s, p)
 
@@ -18,6 +19,7 @@ end …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;在日常
 
 
 &lt;p&gt;但是用ngx.log方法一般是没有问题的&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;string.split = function(s, p)
 
@@ -29,7 +31,8 @@ end
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;× 使用示例：&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;使用示例：&lt;/strong&gt;  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;local str = &amp;#39;abc,123,hello,ok&amp;#39;
 
 local list = string.split(str, &amp;#39;,&amp;#39;)
@@ -53,7 +56,8 @@ ok
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;× 另外一个示例：&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;另外一个示例：&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;local str = &amp;#39;abc \n123 \t hello ok&amp;#39;
 
 local list = string.split(str, &amp;#39;%s&amp;#39;)
