@@ -57,7 +57,7 @@
 <meta property="og:url" content="https://yull.in"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
-  <title>Yullin's Blog &ndash; 归档</title>
+  <title>Yullin's Blog &ndash; Lua 标签</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -120,45 +120,58 @@
 
     </nav>
 
-<article class="single">
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+<article>
   <header>
-    <h1>归档</h1>
+    <h2><a href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">Nginx Lua中的小陷阱</a></h2>
+    <p>
+      在 一 11 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/openresty.html">Openresty</a>,              <a href="https://yull.in/tag/nginx.html">Nginx</a>,              <a href="https://yull.in/tag/lua.html">Lua</a>
+        &#8226; 1 min read
+    </p>
   </header>
   <div>
-    <dl>
-      <dt>一 11 三月 2019</dt>
-      <dd><a href="https://yull.in/nginx-lua-traps.html">Nginx Lua中的小陷阱</a></dd>
-      <dt>三 06 三月 2019</dt>
-      <dd><a href="https://yull.in/centos-7-hostname-uppercase.html">CentOS 7 主机名大小字母的问题</a></dd>
-      <dt>一 25 二月 2019</dt>
-      <dd><a href="https://yull.in/linux-mint-font-manager.html">Linux Mint 19 修改系统菜单字体</a></dd>
-      <dt>四 21 二月 2019</dt>
-      <dd><a href="https://yull.in/kvm-virtual-monitor-resolution.html">kvm虚拟机系统的高分辨率调整</a></dd>
-      <dt>一 11 二月 2019</dt>
-      <dd><a href="https://yull.in/chrome-73-released.html">chrome 73 released 自动画中画 支持硬件媒体按钮</a></dd>
-      <dt>一 14 一月 2019</dt>
-      <dd><a href="https://yull.in/about-redirect-output.html">输出重定向到文件的时效性</a></dd>
-      <dt>三 09 一月 2019</dt>
-      <dd><a href="https://yull.in/install-php5.6-on-centos6.html">install php5.6 on centos6</a></dd>
-      <dt>三 19 十二月 2018</dt>
-      <dd><a href="https://yull.in/nginx-reverse-proxy-pass.html">Nginx反向代理配置</a></dd>
-      <dt>二 18 十二月 2018</dt>
-      <dd><a href="https://yull.in/python-dict-and-list-copy.html">python字典和列表赋值的坑</a></dd>
-      <dt>五 02 十一月 2018</dt>
-      <dd><a href="https://yull.in/curl-usage-note.html">curl usage note</a></dd>
-      <dt>五 26 十月 2018</dt>
-      <dd><a href="https://yull.in/config-elasticsearch-logstash-kibana.html">configure elasticsearch logstash kibana</a></dd>
-      <dt>二 09 十月 2018</dt>
-      <dd><a href="https://yull.in/microsoft-win10-oct-update.html">win10十月更新坑用户</a></dd>
-      <dt>四 30 八月 2018</dt>
-      <dd><a href="https://yull.in/install-and-config-openresty.html">install and config openresty</a></dd>
-      <dt>一 20 八月 2018</dt>
-      <dd><a href="https://yull.in/config-elasticsearch-ingest-node.html">configure elasticsearch ingest node</a></dd>
-      <dt>四 09 八月 2018</dt>
-      <dd><a href="https://yull.in/install-php-extension-imagick.html">install php extension imagick</a></dd>
-    </dl>
+      <p>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  </p>
+<div class="highlight"><pre><span></span>lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
+</pre></div>
+
+
+<p>但是用ngx.log方法一般是没有问题的</p>
+<p>另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁</p>
+<div class="highlight"><pre><span></span>string.split = function(s, p)
+
+    local rt= {}
+    string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end )
+    return rt
+
+end …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">阅读全文</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+
 
     <footer>
 <p>

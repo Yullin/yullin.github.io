@@ -131,6 +131,63 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">configure elasticsearch logstash kibana</a></h2>
+    <p>
+      在 五 26 十月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.30</td>
+<td>centosT-AutomELK-8030</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.31</td>
+<td>centosT-AutomELK-8031</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.8.32</td>
+<td>centosT-AutomELK-8032</td>
+<td>ElasticSearch</td>
+</tr>
+</tbody>
+</table>
+<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
+首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
+由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
+<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/microsoft-win10-oct-update.html#microsoft-win10-oct-update">win10十月更新坑用户</a></h2>
     <p>
       在 二 09 十月 2018 发布于 <a href="https://yull.in/category/tech-info.html">TECH INFO</a> 分类

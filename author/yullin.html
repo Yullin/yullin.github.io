@@ -131,6 +131,37 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">Nginx Lua中的小陷阱</a></h2>
+    <p>
+      在 一 11 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/openresty.html">Openresty</a>,              <a href="https://yull.in/tag/nginx.html">Nginx</a>,              <a href="https://yull.in/tag/lua.html">Lua</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  </p>
+<div class="highlight"><pre><span></span>lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
+</pre></div>
+
+
+<p>但是用ngx.log方法一般是没有问题的</p>
+<p>另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁</p>
+<div class="highlight"><pre><span></span>string.split = function(s, p)
+
+    local rt= {}
+    string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end )
+    return rt
+
+end …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/centos-7-hostname-uppercase.html#centos-7-hostname-uppercase">CentOS 7 主机名大小字母的问题</a></h2>
     <p>
       在 三 06 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
@@ -426,63 +457,6 @@ time_total：总时间</p>
 <h3>2.命令使用方法 …</h3>
         <br>
         <a class="btn" href="https://yull.in/curl-usage-note.html#curl-usage-note">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">configure elasticsearch logstash kibana</a></h2>
-    <p>
-      在 五 26 十月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <p>本文主要记录ELK的测试环境的搭建过程   </p>
-<h3>1.环境以及架构</h3>
-<table>
-<thead>
-<tr>
-<th>Jumper</th>
-<th>系统版本</th>
-<th align="center">IP地址</th>
-<th>主机名</th>
-<th>角色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.30</td>
-<td>centosT-AutomELK-8030</td>
-<td>Kibana</td>
-</tr>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.31</td>
-<td>centosT-AutomELK-8031</td>
-<td>Logstash</td>
-</tr>
-<tr>
-<td>d1000</td>
-<td>CENTOS 7</td>
-<td align="center">10.2.8.32</td>
-<td>centosT-AutomELK-8032</td>
-<td>ElasticSearch</td>
-</tr>
-</tbody>
-</table>
-<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
-<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div>
-        <br>
-        <a class="btn" href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">阅读全文</a>
   </div>
 </article>
 

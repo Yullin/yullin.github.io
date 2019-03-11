@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Wed, 06 Mar 2019 17:49:00 +0800</lastBuildDate><item><title>CentOS 7 主机名大小字母的问题</title><link>https://yull.in/centos-7-hostname-uppercase.html</link><description>&lt;p&gt;CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：&lt;/p&gt;
+<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Mon, 11 Mar 2019 21:40:00 +0800</lastBuildDate><item><title>Nginx Lua中的小陷阱</title><link>https://yull.in/nginx-lua-traps.html</link><description>&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是用ngx.log方法一般是没有问题的&lt;/p&gt;
+&lt;p&gt;另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;string.split = function(s, p)
+
+    local rt= {}
+    string.gsub(s, &amp;#39;[^&amp;#39;..p..&amp;#39;]+&amp;#39;, function(w) table.insert(rt, w) end )
+    return rt
+
+end …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Mon, 11 Mar 2019 21:40:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-03-11:/nginx-lua-traps.html</guid><category>Openresty</category><category>Nginx</category><category>Lua</category></item><item><title>CentOS 7 主机名大小字母的问题</title><link>https://yull.in/centos-7-hostname-uppercase.html</link><description>&lt;p&gt;CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; # hostnamectl set-hostname TestHostname
 &lt;/pre&gt;&lt;/div&gt;
 

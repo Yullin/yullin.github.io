@@ -57,7 +57,7 @@
 <meta property="og:url" content="https://yull.in"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
-  <title>Yullin's Blog &ndash; openresty 标签</title>
+  <title>Yullin's Blog &ndash; Openresty 标签</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -129,6 +129,37 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
 
+<article>
+  <header>
+    <h2><a href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">Nginx Lua中的小陷阱</a></h2>
+    <p>
+      在 一 11 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/openresty.html">Openresty</a>,              <a href="https://yull.in/tag/nginx.html">Nginx</a>,              <a href="https://yull.in/tag/lua.html">Lua</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  </p>
+<div class="highlight"><pre><span></span>lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
+</pre></div>
+
+
+<p>但是用ngx.log方法一般是没有问题的</p>
+<p>另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁</p>
+<div class="highlight"><pre><span></span>string.split = function(s, p)
+
+    local rt= {}
+    string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end )
+    return rt
+
+end …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">阅读全文</a>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">install and config openresty</a></h2>
