@@ -93,7 +93,7 @@ ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
 #如果存在/usr/share/elasticsearch/lib/tools.jar这个文件，则先删除，再做链接
 rm -f /usr/share/elasticsearch/lib/tools.jar
 ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
-&lt;/pre&gt;&lt;/div&gt;</content><category term="elk"></category><category term="elasticsearch"></category><category term="opendistro"></category><category term="kibana"></category><category term="ingest node"></category></entry><entry><title>Nginx Lua中的小陷阱</title><link href="https://yull.in/nginx-lua-traps.html" rel="alternate"></link><published>2019-03-11T21:40:00+08:00</published><updated>2019-03-11T21:40:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-03-11:/nginx-lua-traps.html</id><summary type="html">&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="elk"></category><category term="elasticsearch"></category><category term="opendistro"></category><category term="kibana"></category></entry><entry><title>Nginx Lua中的小陷阱</title><link href="https://yull.in/nginx-lua-traps.html" rel="alternate"></link><published>2019-03-11T21:40:00+08:00</published><updated>2019-03-11T21:40:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-03-11:/nginx-lua-traps.html</id><summary type="html">&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
 &lt;/pre&gt;&lt;/div&gt;
 

@@ -49,7 +49,7 @@
 
 <meta name="author" content="Yullin" />
 <meta name="description" content="系统环境：Centos 7 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址) cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &#39;UseParNewGC&#39;参考链接https://github.com …" />
-<meta name="keywords" content="elk, elasticsearch, opendistro, kibana, ingest node">
+<meta name="keywords" content="elk, elasticsearch, opendistro, kibana">
 
 <meta property="og:site_name" content="Yullin's Blog"/>
 <meta property="og:title" content="configure opendistro elasticsearch"/>
@@ -65,7 +65,6 @@
 <meta property="article:tag" content="elasticsearch"/>
 <meta property="article:tag" content="opendistro"/>
 <meta property="article:tag" content="kibana"/>
-<meta property="article:tag" content="ingest node"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
   <title>Yullin's Blog &ndash; configure opendistro elasticsearch</title>
@@ -237,7 +236,6 @@ ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
       <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>
       <a href="https://yull.in/tag/opendistro.html">opendistro</a>
       <a href="https://yull.in/tag/kibana.html">kibana</a>
-      <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
     </p>
   </div>
 
