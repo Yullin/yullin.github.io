@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Mon, 11 Mar 2019 21:40:00 +0800</lastBuildDate><item><title>Nginx Lua中的小陷阱</title><link>https://yull.in/nginx-lua-traps.html</link><description>&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
+<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Mon, 10 Jun 2019 17:15:00 +0800</lastBuildDate><item><title>configure opendistro elasticsearch</title><link>https://yull.in/config-opendistro-elasticsearch-kibana.html</link><description>&lt;p&gt;系统环境：Centos 7  &lt;/p&gt;
+&lt;h2&gt;安装ELASTICSEARCH&lt;/h2&gt;
+&lt;p&gt;按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option 'UseParNewGC'参考链接https://github.com …&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Mon, 10 Jun 2019 17:15:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-06-10:/config-opendistro-elasticsearch-kibana.html</guid><category>elk</category><category>elasticsearch</category><category>opendistro</category><category>kibana</category><category>ingest node</category></item><item><title>Nginx Lua中的小陷阱</title><link>https://yull.in/nginx-lua-traps.html</link><description>&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -171,30 +180,35 @@ time_total：总时间&lt;/p&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.30&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8030&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.10&lt;/td&gt;
+&lt;td&gt;centosELK10&lt;/td&gt;
 &lt;td&gt;Kibana&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.31&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8031&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.11&lt;/td&gt;
+&lt;td&gt;centosELK11&lt;/td&gt;
 &lt;td&gt;Logstash&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.32&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8032&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.12&lt;/td&gt;
+&lt;td&gt;centosELK12&lt;/td&gt;
 &lt;td&gt;ElasticSearch&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;本次的所有环境均是基于CENTOS7系统进行搭建。&lt;br&gt;
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://10.2 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Fri, 26 Oct 2018 11:20:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-10-26:/config-elasticsearch-logstash-kibana.html</guid><category>elk</category><category>elasticsearch</category><category>logstash</category><category>kibana</category><category>ingest node</category></item><item><title>win10十月更新坑用户</title><link>https://yull.in/microsoft-win10-oct-update.html</link><description>&lt;p&gt;昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。&lt;/p&gt;
+首先是准备环境，安装JAVA运行环境JDK。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install java-1.8.0-openjdk-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;2.安装配置Elasticsearch&lt;/h3&gt;
+&lt;p&gt;首先需要下载最新版本：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://artifacts.elastic …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Fri, 26 Oct 2018 11:20:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2018-10-26:/config-elasticsearch-logstash-kibana.html</guid><category>elk</category><category>elasticsearch</category><category>logstash</category><category>kibana</category><category>ingest node</category></item><item><title>win10十月更新坑用户</title><link>https://yull.in/microsoft-win10-oct-update.html</link><description>&lt;p&gt;昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。&lt;/p&gt;
 &lt;p&gt;换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。&lt;/p&gt;
 &lt;p&gt;虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。&lt;/p&gt;
 &lt;p&gt;reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。&lt;/p&gt;

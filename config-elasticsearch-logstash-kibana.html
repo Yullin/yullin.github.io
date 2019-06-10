@@ -48,12 +48,12 @@
     <meta name="msapplication-TileColor" content="#333333">
 
 <meta name="author" content="Yullin" />
-<meta name="description" content="本文主要记录ELK的测试环境的搭建过程 1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.8.30 centosT-AutomELK-8030 Kibana d1000 CENTOS 7 10.2.8.31 centosT-AutomELK-8031 Logstash d1000 CENTOS 7 10.2.8.32 centosT-AutomELK-8032 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。 首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。 由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。 wget http://10.2 …" />
+<meta name="description" content="本文主要记录ELK的测试环境的搭建过程 1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。 首先是准备环境，安装JAVA运行环境JDK。 yum install java-1.8.0-openjdk-devel 2.安装配置Elasticsearch 首先需要下载最新版本： wget https://artifacts.elastic …" />
 <meta name="keywords" content="elk, elasticsearch, logstash, kibana, ingest node">
 
 <meta property="og:site_name" content="Yullin's Blog"/>
 <meta property="og:title" content="configure elasticsearch logstash kibana"/>
-<meta property="og:description" content="本文主要记录ELK的测试环境的搭建过程 1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.8.30 centosT-AutomELK-8030 Kibana d1000 CENTOS 7 10.2.8.31 centosT-AutomELK-8031 Logstash d1000 CENTOS 7 10.2.8.32 centosT-AutomELK-8032 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。 首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。 由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。 wget http://10.2 …"/>
+<meta property="og:description" content="本文主要记录ELK的测试环境的搭建过程 1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。 首先是准备环境，安装JAVA运行环境JDK。 yum install java-1.8.0-openjdk-devel 2.安装配置Elasticsearch 首先需要下载最新版本： wget https://artifacts.elastic …"/>
 <meta property="og:locale" content="zh_CN.UTF-8"/>
 <meta property="og:url" content="https://yull.in/config-elasticsearch-logstash-kibana.html"/>
 <meta property="og:type" content="article"/>
@@ -160,31 +160,29 @@
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.30</td>
-<td>centosT-AutomELK-8030</td>
+<td align="center">10.2.0.10</td>
+<td>centosELK10</td>
 <td>Kibana</td>
 </tr>
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.31</td>
-<td>centosT-AutomELK-8031</td>
+<td align="center">10.2.0.11</td>
+<td>centosELK11</td>
 <td>Logstash</td>
 </tr>
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.32</td>
-<td>centosT-AutomELK-8032</td>
+<td align="center">10.2.0.12</td>
+<td>centosELK12</td>
 <td>ElasticSearch</td>
 </tr>
 </tbody>
 </table>
 <p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
-<div class="highlight"><pre><span></span>wget http://10.2.4.11/bin_deng/packagename.rpm  
-rpm -ivh packagename.rpm
+首先是准备环境，安装JAVA运行环境JDK。</p>
+<div class="highlight"><pre><span></span>yum install java-1.8.0-openjdk-devel
 </pre></div>
 
 
@@ -200,7 +198,7 @@ rpm -ivh packagename.rpm
 
 
 <p>修改配置文件<code>/usr/local/elasticsearch/config/elasticsearch.yml</code>，需要修改以下几项：</p>
-<div class="highlight"><pre><span></span>network.host: 10.2.8.32  #设置为本机外网可访问的IP
+<div class="highlight"><pre><span></span>network.host: 10.2.0.12  #设置为本机外网可访问的IP
 http.port: 9200          #设置监听端口为9200  
 cluster.name: my-es      #设置集群名字
 node.name: node-1        #设置节点名字
@@ -283,7 +281,7 @@ sudo ln -s logstash-6.3.2 logstash
 
 output {
   elasticsearch {
-    hosts =&gt; &quot;10.2.8.32:9200&quot;
+    hosts =&gt; &quot;10.2.0.12:9200&quot;
     index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
     template_overwrite =&gt; true
   }
@@ -314,8 +312,8 @@ sudo ln -s kibana-6.3.2-linux-x86_64 kibana
 
 <p>修改配置文件<code>/usr/local/kibana/config/kibana.yml</code>中的以下参数：</p>
 <div class="highlight"><pre><span></span>server.port: 5601                           #kibana的监听端口
-server.host: &quot;10.2.8.30&quot;                    #kibana的绑定IP
-elasticsearch.url: &quot;http://10.2.8.32:9200&quot;  #kibana的后端数据查询链接
+server.host: &quot;10.2.0.10&quot;                    #kibana的绑定IP
+elasticsearch.url: &quot;http://10.2.0.12:9200&quot;  #kibana的后端数据查询链接
 </pre></div>
 
 

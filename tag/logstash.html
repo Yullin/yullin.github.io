@@ -157,30 +157,35 @@
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.30</td>
-<td>centosT-AutomELK-8030</td>
+<td align="center">10.2.0.10</td>
+<td>centosELK10</td>
 <td>Kibana</td>
 </tr>
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.31</td>
-<td>centosT-AutomELK-8031</td>
+<td align="center">10.2.0.11</td>
+<td>centosELK11</td>
 <td>Logstash</td>
 </tr>
 <tr>
 <td>d1000</td>
 <td>CENTOS 7</td>
-<td align="center">10.2.8.32</td>
-<td>centosT-AutomELK-8032</td>
+<td align="center">10.2.0.12</td>
+<td>centosELK12</td>
 <td>ElasticSearch</td>
 </tr>
 </tbody>
 </table>
 <p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  </p>
-<div class="highlight"><pre><span></span>wget http://10.2 …</pre></div>
+首先是准备环境，安装JAVA运行环境JDK。</p>
+<div class="highlight"><pre><span></span>yum install java-1.8.0-openjdk-devel
+</pre></div>
+
+
+<h3>2.安装配置Elasticsearch</h3>
+<p>首先需要下载最新版本：  </p>
+<div class="highlight"><pre><span></span>wget https://artifacts.elastic …</pre></div>
         <br>
         <a class="btn" href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">阅读全文</a>
   </div>

@@ -131,6 +131,33 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/config-opendistro-elasticsearch-kibana.html#config-opendistro-elasticsearch-kibana">configure opendistro elasticsearch</a></h2>
+    <p>
+      在 一 10 六月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/opendistro.html">opendistro</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>系统环境：Centos 7  </p>
+<h2>安装ELASTICSEARCH</h2>
+<p>按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  </p>
+<div class="highlight"><pre><span></span>cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+</pre></div>
+
+
+<p><em>因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option 'UseParNewGC'参考链接https://github.com …</em></p>
+        <br>
+        <a class="btn" href="https://yull.in/config-opendistro-elasticsearch-kibana.html#config-opendistro-elasticsearch-kibana">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/nginx-lua-traps.html#nginx-lua-traps">Nginx Lua中的小陷阱</a></h2>
     <p>
       在 一 11 三月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
@@ -416,48 +443,6 @@ end …</pre></div>
 <p>其实还可以有更简单的验证方式 …</p>
         <br>
         <a class="btn" href="https://yull.in/python-dict-and-list-copy.html#python-dict-and-list-copy">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/curl-usage-note.html#curl-usage-note">curl usage note</a></h2>
-    <p>
-      在 五 02 十一月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/curl.html">curl</a>,              <a href="https://yull.in/tag/usage.html">usage</a>,              <a href="https://yull.in/tag/get.html">get</a>,              <a href="https://yull.in/tag/post.html">post</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
-下面说一下具体的使用方法：  </p>
-<h3>1.建立一个命令格式文件</h3>
-<div class="highlight"><pre><span></span>\n 
-　　　　　　　time_namelookup:  %{time_namelookup}\n
-               time_connect:  %{time_connect}\n
-            time_appconnect:  %{time_appconnect}\n
-           time_pretransfer:  %{time_pretransfer}\n
-              time_redirect:  %{time_redirect}\n
-         time_starttransfer:  %{time_starttransfer}\n
-                            ----------\n
-                 time_total:  %{time_total}\n
-\n
-</pre></div>
-
-
-<p>说明：<br>
-time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间<br>
-time_connect：TCP连接的时间，三次握手的时间<br>
-time_appconnect：SSL|SSH等上层连接建立的时间<br>
-time_pretransfer：从请求开始到到响应开始传输的时间<br>
-time_redirect：从开始到最后一个请求事务的时间<br>
-time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
-time_total：总时间</p>
-<h3>2.命令使用方法 …</h3>
-        <br>
-        <a class="btn" href="https://yull.in/curl-usage-note.html#curl-usage-note">阅读全文</a>
   </div>
 </article>
 

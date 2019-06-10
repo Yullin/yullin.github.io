@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/all-zh_cn.utf-8.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-03-11T21:40:00+08:00</updated><entry><title>Nginx Lua中的小陷阱</title><link href="https://yull.in/nginx-lua-traps.html" rel="alternate"></link><published>2019-03-11T21:40:00+08:00</published><updated>2019-03-11T21:40:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-03-11:/nginx-lua-traps.html</id><summary type="html">&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yullin's Blog</title><link href="https://yull.in/" rel="alternate"></link><link href="https://yull.in/feeds/all-zh_cn.utf-8.atom.xml" rel="self"></link><id>https://yull.in/</id><updated>2019-06-10T17:15:00+08:00</updated><entry><title>configure opendistro elasticsearch</title><link href="https://yull.in/config-opendistro-elasticsearch-kibana.html" rel="alternate"></link><published>2019-06-10T17:15:00+08:00</published><updated>2019-06-10T17:15:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-06-10:/config-opendistro-elasticsearch-kibana.html</id><summary type="html">&lt;p&gt;系统环境：Centos 7  &lt;/p&gt;
+&lt;h2&gt;安装ELASTICSEARCH&lt;/h2&gt;
+&lt;p&gt;按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option 'UseParNewGC'参考链接https://github.com …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;系统环境：Centos 7  &lt;/p&gt;
+&lt;h2&gt;安装ELASTICSEARCH&lt;/h2&gt;
+&lt;p&gt;按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option 'UseParNewGC'参考链接https://github.com/elastic/logstash/issues/9345&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。&lt;/p&gt;
+&lt;p&gt;下面开始安装：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install opendistroforelasticsearch
+systemctl start elasticsearch.service
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;opendistro for elasticsearch实际上是将searchguard的功能与elasticsearch做了集成，相当于省去了安装searchguard插件的过程，这样能节省不少时间，且能让你少踩很多坑，配置searchguard有很多坑的。  &lt;/p&gt;
+&lt;p&gt;所以安装好之后，可以直接启动了，已经默认配置好了。启动好之后，可以用以下命令测试一下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -XGET https://localhost:9200 -u admin:admin --insecure
+curl -XGET https://localhost:9200/_cat/nodes?v -u admin:admin --insecure
+curl -XGET https://localhost:9200/_cat/plugins?v -u admin:admin --insecure
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;默认用户名密码是admin ，如果想要修改admin的密码，修改方法与searchguard的方法是一样的&lt;/p&gt;
+&lt;p&gt;用/usr/share/elasticsearch/plugins/opendistro_security/tools/目录下的hash.sh脚本生成你想要修改的密码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /usr/share/elasticsearch/plugins/opendistro_security/tools/
+sh hash.sh -p yourpassword
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;复制得到的字符串，然后编辑/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml，然后修改对应账号的hash字段即可。&lt;/p&gt;
+&lt;p&gt;修改完成，保存退出之后，需要重载一下，使我们的修改生效，重载命令如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /usr/share/elasticsearch/plugins/opendistro_security/tools/
+sh securityadmin.sh -cd ../securityconfig/ -icl -nhnv -cacert /etc/elasticsearch/root-ca.pem -cert /etc/elasticsearch/kirk.pem -key /etc/elasticsearch/kirk-key.pem
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;安装KIBANA&lt;/h2&gt;
+&lt;p&gt;安装好elasticsearch之后，下面就可以安装kibana了，同样kibana需要与elasticsearch配合，所以也需要安装opendistro的版本，依然是使用opendistro的源来进行安装&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install opendistroforelasticsearch-kibana
+systemctl start kibana.service
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;由于默认的kibana配置是监听的localhost，所以需要修改一下配置，修改server.host为0.0.0.0或者你想监听的IP地址&lt;/p&gt;
+&lt;p&gt;由于opendistro实际也是基于searchguard做的集成，所以KIBANA的前端同样需要一个代理服务器来传递账号信息，nginx的代理配置如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;auth_basic&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;web&lt;/span&gt; &lt;span class="err"&gt;log&lt;/span&gt; &lt;span class="err"&gt;elk&lt;/span&gt; &lt;span class="err"&gt;sandbox2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="err"&gt;auth_basic_user_file&lt;/span&gt; &lt;span class="err"&gt;auth_passwd/kibana_auth&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
+    &lt;span class="err"&gt;proxy_set_header&lt;/span&gt; &lt;span class="err"&gt;X-PROXY-USER&lt;/span&gt; &lt;span class="err"&gt;$remote_user&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="err"&gt;proxy_pass&lt;/span&gt; &lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="mf"&gt;10.2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5601&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;             &lt;span class="err"&gt;#这里的地址应为KIBANA的IP地址&lt;/span&gt;    
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;补充&lt;/h3&gt;
+&lt;p&gt;如果遇到如下报错：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;elasticsearch[3969]: java.security.policy: error adding Entry:
+elasticsearch[3969]: java.net.MalformedURLException: unknown protocol: jrt
+elasticsearch[3969]: java.security.policy: error adding Entry:
+elasticsearch[3969]: java.net.MalformedURLException: unknown protocol: jrt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;可按照下列处理方法：&lt;/p&gt;
+&lt;p&gt;1.首先找到tools.jar这个文件所在路径，一般是在jdk的lib目录里面&lt;/p&gt;
+&lt;p&gt;2.然后查看/usr/share/elasticsearch/lib/tools.jar这个路径是否存在，若不存在，则将第1步的文件链接过来，若存在，则删除之后，再将第1步的文件链接过来&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#比如我的路径是在
+/usr/java/jdk1.8.0_181-amd64/lib/tools.jar
+
+#而/usr/share/elasticsearch/lib/tools.jar这个文件是不存在的，所以我直接做了链接
+ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
+
+#如果存在/usr/share/elasticsearch/lib/tools.jar这个文件，则先删除，再做链接
+rm -f /usr/share/elasticsearch/lib/tools.jar
+ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
+&lt;/pre&gt;&lt;/div&gt;</content><category term="elk"></category><category term="elasticsearch"></category><category term="opendistro"></category><category term="kibana"></category><category term="ingest node"></category></entry><entry><title>Nginx Lua中的小陷阱</title><link href="https://yull.in/nginx-lua-traps.html" rel="alternate"></link><published>2019-03-11T21:40:00+08:00</published><updated>2019-03-11T21:40:00+08:00</updated><author><name>Yullin</name></author><id>tag:yull.in,2019-03-11:/nginx-lua-traps.html</id><summary type="html">&lt;p&gt;在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -718,30 +812,35 @@ TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.30&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8030&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.10&lt;/td&gt;
+&lt;td&gt;centosELK10&lt;/td&gt;
 &lt;td&gt;Kibana&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.31&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8031&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.11&lt;/td&gt;
+&lt;td&gt;centosELK11&lt;/td&gt;
 &lt;td&gt;Logstash&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.32&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8032&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.12&lt;/td&gt;
+&lt;td&gt;centosELK12&lt;/td&gt;
 &lt;td&gt;ElasticSearch&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;本次的所有环境均是基于CENTOS7系统进行搭建。&lt;br&gt;
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://10.2 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;本文主要记录ELK的测试环境的搭建过程   &lt;/p&gt;
+首先是准备环境，安装JAVA运行环境JDK。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install java-1.8.0-openjdk-devel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;2.安装配置Elasticsearch&lt;/h3&gt;
+&lt;p&gt;首先需要下载最新版本：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://artifacts.elastic …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;本文主要记录ELK的测试环境的搭建过程   &lt;/p&gt;
 &lt;h3&gt;1.环境以及架构&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -757,31 +856,29 @@ TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.30&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8030&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.10&lt;/td&gt;
+&lt;td&gt;centosELK10&lt;/td&gt;
 &lt;td&gt;Kibana&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.31&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8031&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.11&lt;/td&gt;
+&lt;td&gt;centosELK11&lt;/td&gt;
 &lt;td&gt;Logstash&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;d1000&lt;/td&gt;
 &lt;td&gt;CENTOS 7&lt;/td&gt;
-&lt;td align="center"&gt;10.2.8.32&lt;/td&gt;
-&lt;td&gt;centosT-AutomELK-8032&lt;/td&gt;
+&lt;td align="center"&gt;10.2.0.12&lt;/td&gt;
+&lt;td&gt;centosELK12&lt;/td&gt;
 &lt;td&gt;ElasticSearch&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;本次的所有环境均是基于CENTOS7系统进行搭建。&lt;br&gt;
-首先是准备环境，安装JAVA运行环境JDK，需要先上传下载好的JDK,这里我下载的是rpm安装包。
-由于安全原因，不能直接上传，只能先上传到d1000.intsig.net的FTP服务器上，然后通过wget命令进行下载。  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://10.2.4.11/bin_deng/packagename.rpm  
-rpm -ivh packagename.rpm
+首先是准备环境，安装JAVA运行环境JDK。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install java-1.8.0-openjdk-devel
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -797,7 +894,7 @@ rpm -ivh packagename.rpm
 
 
 &lt;p&gt;修改配置文件&lt;code&gt;/usr/local/elasticsearch/config/elasticsearch.yml&lt;/code&gt;，需要修改以下几项：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;network.host: 10.2.8.32  #设置为本机外网可访问的IP
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;network.host: 10.2.0.12  #设置为本机外网可访问的IP
 http.port: 9200          #设置监听端口为9200  
 cluster.name: my-es      #设置集群名字
 node.name: node-1        #设置节点名字
@@ -880,7 +977,7 @@ sudo ln -s logstash-6.3.2 logstash
 
 output {
   elasticsearch {
-    hosts =&amp;gt; &amp;quot;10.2.8.32:9200&amp;quot;
+    hosts =&amp;gt; &amp;quot;10.2.0.12:9200&amp;quot;
     index =&amp;gt; &amp;quot;logstash-%{type}-%{+YYYY.MM.dd}&amp;quot;
     template_overwrite =&amp;gt; true
   }
@@ -911,8 +1008,8 @@ sudo ln -s kibana-6.3.2-linux-x86_64 kibana
 
 &lt;p&gt;修改配置文件&lt;code&gt;/usr/local/kibana/config/kibana.yml&lt;/code&gt;中的以下参数：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;server.port: 5601                           #kibana的监听端口
-server.host: &amp;quot;10.2.8.30&amp;quot;                    #kibana的绑定IP
-elasticsearch.url: &amp;quot;http://10.2.8.32:9200&amp;quot;  #kibana的后端数据查询链接
+server.host: &amp;quot;10.2.0.10&amp;quot;                    #kibana的绑定IP
+elasticsearch.url: &amp;quot;http://10.2.0.12:9200&amp;quot;  #kibana的后端数据查询链接
 &lt;/pre&gt;&lt;/div&gt;
 
 

@@ -131,6 +131,68 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">configure elasticsearch logstash kibana</a></h2>
+    <p>
+      在 五 26 十月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/logstash.html">logstash</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>本文主要记录ELK的测试环境的搭建过程   </p>
+<h3>1.环境以及架构</h3>
+<table>
+<thead>
+<tr>
+<th>Jumper</th>
+<th>系统版本</th>
+<th align="center">IP地址</th>
+<th>主机名</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.0.10</td>
+<td>centosELK10</td>
+<td>Kibana</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.0.11</td>
+<td>centosELK11</td>
+<td>Logstash</td>
+</tr>
+<tr>
+<td>d1000</td>
+<td>CENTOS 7</td>
+<td align="center">10.2.0.12</td>
+<td>centosELK12</td>
+<td>ElasticSearch</td>
+</tr>
+</tbody>
+</table>
+<p>本次的所有环境均是基于CENTOS7系统进行搭建。<br>
+首先是准备环境，安装JAVA运行环境JDK。</p>
+<div class="highlight"><pre><span></span>yum install java-1.8.0-openjdk-devel
+</pre></div>
+
+
+<h3>2.安装配置Elasticsearch</h3>
+<p>首先需要下载最新版本：  </p>
+<div class="highlight"><pre><span></span>wget https://artifacts.elastic …</pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/install-and-config-openresty.html#install-and-config-openresty">install and config openresty</a></h2>
     <p>
       在 四 30 八月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类

@@ -57,7 +57,7 @@
 <meta property="og:url" content="https://yull.in"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
-  <title>Yullin's Blog &ndash; 分类</title>
+  <title>Yullin's Blog &ndash; opendistro 标签</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -120,17 +120,54 @@
 
     </nav>
 
-<article class="single">
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+<article>
   <header>
-    <h1>分类</h1>
+    <h2><a href="https://yull.in/config-opendistro-elasticsearch-kibana.html#config-opendistro-elasticsearch-kibana">configure opendistro elasticsearch</a></h2>
+    <p>
+      在 一 10 六月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/elk.html">elk</a>,              <a href="https://yull.in/tag/elasticsearch.html">elasticsearch</a>,              <a href="https://yull.in/tag/opendistro.html">opendistro</a>,              <a href="https://yull.in/tag/kibana.html">kibana</a>,              <a href="https://yull.in/tag/ingest-node.html">ingest node</a>
+        &#8226; 1 min read
+    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="https://yull.in/category/tech-info.html">TECH INFO</a> (2)</li>
-      <li><a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> (14)</li>
-    </ul>
+      <p>系统环境：Centos 7  </p>
+<h2>安装ELASTICSEARCH</h2>
+<p>按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  </p>
+<div class="highlight"><pre><span></span>cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+</pre></div>
+
+
+<p><em>因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option 'UseParNewGC'参考链接https://github.com …</em></p>
+        <br>
+        <a class="btn" href="https://yull.in/config-opendistro-elasticsearch-kibana.html#config-opendistro-elasticsearch-kibana">阅读全文</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+
 
     <footer>
 <p>
