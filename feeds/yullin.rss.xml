@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Mon, 10 Jun 2019 17:15:00 +0800</lastBuildDate><item><title>configure opendistro elasticsearch</title><link>https://yull.in/config-opendistro-elasticsearch-kibana.html</link><description>&lt;p&gt;系统环境：Centos 7  &lt;/p&gt;
+<rss version="2.0"><channel><title>Yullin's Blog - Yullin</title><link>https://yull.in/</link><description>Ops DevOps</description><lastBuildDate>Wed, 10 Jul 2019 20:10:00 +0800</lastBuildDate><item><title>install ElastAlert</title><link>https://yull.in/install-elastalert.html</link><description>&lt;h3&gt;准备工作&lt;/h3&gt;
+&lt;p&gt;对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。&lt;br&gt;
+1. 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下  &lt;code&gt;https://github.com/bitsensor/elastalert-kibana-plugin/releases&lt;/code&gt;&lt;br&gt;
+2. 下载ElastAlert程序本身，到这里去下  &lt;code&gt;https://github.com/Yelp/elastalert&lt;/code&gt;  &lt;/p&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;进入ElastAlert目录，执行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# yum install python-setuptools
+# git clone https://github.com/Yelp/elastalert.git
+# cd elastalert
+# python setup.py install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# yum install gcc …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yullin</dc:creator><pubDate>Wed, 10 Jul 2019 20:10:00 +0800</pubDate><guid isPermaLink="false">tag:yull.in,2019-07-10:/install-elastalert.html</guid><category>elk</category><category>alert</category><category>elastalert</category></item><item><title>configure opendistro elasticsearch</title><link>https://yull.in/config-opendistro-elasticsearch-kibana.html</link><description>&lt;p&gt;系统环境：Centos 7  &lt;/p&gt;
 &lt;h2&gt;安装ELASTICSEARCH&lt;/h2&gt;
 &lt;p&gt;按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd /etc/yum.repos.d/  

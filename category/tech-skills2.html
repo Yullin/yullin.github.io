@@ -131,6 +131,48 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/curl-usage-note.html#curl-usage-note">curl usage note</a></h2>
+    <p>
+      在 五 02 十一月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/curl.html">curl</a>,              <a href="https://yull.in/tag/usage.html">usage</a>,              <a href="https://yull.in/tag/get.html">get</a>,              <a href="https://yull.in/tag/post.html">post</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
+下面说一下具体的使用方法：  </p>
+<h3>1.建立一个命令格式文件</h3>
+<div class="highlight"><pre><span></span>\n 
+　　　　　　　time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                 time_total:  %{time_total}\n
+\n
+</pre></div>
+
+
+<p>说明：<br>
+time_namelookup：DNS解析域名时间，把域名---&gt;ip的时间<br>
+time_connect：TCP连接的时间，三次握手的时间<br>
+time_appconnect：SSL|SSH等上层连接建立的时间<br>
+time_pretransfer：从请求开始到到响应开始传输的时间<br>
+time_redirect：从开始到最后一个请求事务的时间<br>
+time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
+time_total：总时间</p>
+<h3>2.命令使用方法 …</h3>
+        <br>
+        <a class="btn" href="https://yull.in/curl-usage-note.html#curl-usage-note">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/config-elasticsearch-logstash-kibana.html#config-elasticsearch-logstash-kibana">configure elasticsearch logstash kibana</a></h2>
     <p>
       在 五 26 十月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
