@@ -36,7 +36,7 @@
 
 
 &lt;p&gt;下面就是安装kibana的插件&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /usr/share/kibana/bin/kibana-plugin install file:///home/bin_deng/elastalert-kibana-plugin-1.0.3-6.7.1.zip
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.0.3-6.7.1.zip
 &lt;/pre&gt;&lt;/div&gt;
 
 
