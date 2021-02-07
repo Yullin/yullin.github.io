@@ -131,6 +131,44 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/random-string-in-golang.html">random string in golang</a></h2>
+    <p>
+      在 日 07 二月 2021 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/golang.html">golang</a>,              <a href="https://yull.in/tag/random-string.html">random string</a>
+        &#8226; 3 min read
+    </p>
+  </header>
+  <div>
+      <p>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。</p>
+<h3>第一种 通用方案</h3>
+<p>最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。</p>
+<div class="highlight"><pre><span></span>func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
+
+func RandStringRunes(n int) string {
+    b := make([]rune, n)
+    for i := range b {
+        b[i] = letterRuens[rand.Intn(len(letterRunes))]
+    }
+    return string(b)
+}
+</pre></div>
+
+
+<h3>第二种 字节替换rune</h3>
+<p>如果需求是只使用英语字母字符(包括大小写)，那么我们可以使用byte替换rune,因为UTF-8编码中英语字母和byte是一一对应的 …</p>
+        <br>
+        <a class="btn" href="https://yull.in/random-string-in-golang.html">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/install-elastalert.html">install ElastAlert</a></h2>
     <p>
       在 三 10 七月 2019 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
@@ -408,50 +446,6 @@ end …</pre></div>
     <span class="nt">proxy_pass</span> <span class="nt">http</span><span class="o">://</span><span class="nt">backend</span><span class="o">$</span><span class="nt">id</span><span class="p">.</span><span class="nc">domain …</span></pre></div>
         <br>
         <a class="btn" href="https://yull.in/nginx-reverse-proxy-pass.html">阅读全文</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://yull.in/python-dict-and-list-copy.html">python字典和列表赋值的坑</a></h2>
-    <p>
-      在 二 18 十二月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
-
-          &#8226; 标签为
-              <a href="https://yull.in/tag/python.html">python</a>,              <a href="https://yull.in/tag/dict.html">dict</a>,              <a href="https://yull.in/tag/list.html">list</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <p>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  </p>
-<p>列表的具体测试如下：</p>
-<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = [&#39;1&#39;]
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a.append(&#39;2&#39;)
-&gt;&gt;&gt; a
-[&#39;1&#39;, &#39;2&#39;]
-&gt;&gt;&gt; b
-[&#39;1&#39;, &#39;2&#39;]
-</pre></div>
-
-
-<p>可以看到当改变a的值时，b的值也跟着一起改变了。
-再看字典的例子：</p>
-<div class="highlight"><pre><span></span>&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}
-&gt;&gt;&gt; br = ar
-&gt;&gt;&gt; br
-{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}
-&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;
-&gt;&gt;&gt; br
-{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
-&gt;&gt;&gt; ar
-{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
-</pre></div>
-
-
-<p>其实还可以有更简单的验证方式 …</p>
-        <br>
-        <a class="btn" href="https://yull.in/python-dict-and-list-copy.html">阅读全文</a>
   </div>
 </article>
 

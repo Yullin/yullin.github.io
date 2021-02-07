@@ -57,7 +57,7 @@
 <meta property="og:url" content="https://yull.in"/>
 <meta property="og:image" content="https://yull.in/images/profile.png">
 
-  <title>Yullin's Blog &ndash; 作者</title>
+  <title>Yullin's Blog &ndash; random string 标签</title>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -120,16 +120,65 @@
 
     </nav>
 
-<article class="single">
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+<article>
   <header>
-    <h1>作者</h1>
+    <h2><a href="https://yull.in/random-string-in-golang.html">random string in golang</a></h2>
+    <p>
+      在 日 07 二月 2021 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/golang.html">golang</a>,              <a href="https://yull.in/tag/random-string.html">random string</a>
+        &#8226; 3 min read
+    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="https://yull.in/author/yullin.html">Yullin</a> (18)</li>
-    </ul>
+      <p>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。</p>
+<h3>第一种 通用方案</h3>
+<p>最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。</p>
+<div class="highlight"><pre><span></span>func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
+
+func RandStringRunes(n int) string {
+    b := make([]rune, n)
+    for i := range b {
+        b[i] = letterRuens[rand.Intn(len(letterRunes))]
+    }
+    return string(b)
+}
+</pre></div>
+
+
+<h3>第二种 字节替换rune</h3>
+<p>如果需求是只使用英语字母字符(包括大小写)，那么我们可以使用byte替换rune,因为UTF-8编码中英语字母和byte是一一对应的 …</p>
+        <br>
+        <a class="btn" href="https://yull.in/random-string-in-golang.html">阅读全文</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <ins class="adsbygoogle ads-responsive"
+       data-ad-client="ca-pub-7268840106840339"
+       data-ad-slot="4525891349"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+
 
     <footer>
 <p>

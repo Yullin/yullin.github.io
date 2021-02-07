@@ -131,6 +131,50 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/python-dict-and-list-copy.html">python字典和列表赋值的坑</a></h2>
+    <p>
+      在 二 18 十二月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/python.html">python</a>,              <a href="https://yull.in/tag/dict.html">dict</a>,              <a href="https://yull.in/tag/list.html">list</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。  </p>
+<p>列表的具体测试如下：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; a = [&#39;1&#39;]
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; a.append(&#39;2&#39;)
+&gt;&gt;&gt; a
+[&#39;1&#39;, &#39;2&#39;]
+&gt;&gt;&gt; b
+[&#39;1&#39;, &#39;2&#39;]
+</pre></div>
+
+
+<p>可以看到当改变a的值时，b的值也跟着一起改变了。
+再看字典的例子：</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}
+&gt;&gt;&gt; br = ar
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}
+&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;
+&gt;&gt;&gt; br
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
+&gt;&gt;&gt; ar
+{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}
+</pre></div>
+
+
+<p>其实还可以有更简单的验证方式 …</p>
+        <br>
+        <a class="btn" href="https://yull.in/python-dict-and-list-copy.html">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/curl-usage-note.html">curl usage note</a></h2>
     <p>
       在 五 02 十一月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类

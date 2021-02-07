@@ -131,6 +131,51 @@
 
 <article>
   <header>
+    <h2><a href="https://yull.in/nginx-reverse-proxy-pass.html">Nginx反向代理配置</a></h2>
+    <p>
+      在 三 19 十二月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
+
+          &#8226; 标签为
+              <a href="https://yull.in/tag/nginx.html">nginx</a>,              <a href="https://yull.in/tag/reverse.html">reverse</a>,              <a href="https://yull.in/tag/proxy.html">proxy</a>,              <a href="https://yull.in/tag/fan-xiang-dai-li.html">反向代理</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下</p>
+<h2>普通反向代理</h2>
+<p>Nginx的普通的反向代理配置还是比较简单的，如：</p>
+<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">~</span> <span class="o">/*</span>
+<span class="p">{</span>
+    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">8080</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>或者可以</p>
+<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">/</span>
+<span class="p">{</span>
+    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.12</span><span class="o">:</span><span class="mi">8080</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上<br>
+可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息</p>
+<div class="highlight"><pre><span></span><span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">test</span><span class="o">/</span>
+<span class="p">{</span>
+    <span class="err">if</span> <span class="err">($request_uri</span> <span class="err">~</span> <span class="err">/test/(\d+)/(.+))</span>
+    <span class="err">{</span>
+        <span class="err">set</span> <span class="err">$id</span> <span class="err">$1</span><span class="p">;</span>
+        <span class="err">set</span> <span class="err">$params</span> <span class="err">$2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">proxy_pass</span> <span class="nt">http</span><span class="o">://</span><span class="nt">backend</span><span class="o">$</span><span class="nt">id</span><span class="p">.</span><span class="nc">domain …</span></pre></div>
+        <br>
+        <a class="btn" href="https://yull.in/nginx-reverse-proxy-pass.html">阅读全文</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="https://yull.in/python-dict-and-list-copy.html">python字典和列表赋值的坑</a></h2>
     <p>
       在 二 18 十二月 2018 发布于 <a href="https://yull.in/category/tech-skills.html">TECH SKILLS</a> 分类
