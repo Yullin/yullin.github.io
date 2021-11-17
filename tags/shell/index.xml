@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/shell.html</link>
+    <description>Recent content in shell on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>输出重定向到文件的时效性</title>
+      <link>//yull.in/2019/01/about-redirect-output.html</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/01/about-redirect-output.html</guid>
+      <description>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
+# test.py &amp;gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？</description>
+    </item>
+    
+  </channel>
+</rss>

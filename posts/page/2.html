@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Posts",
+  
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "2021-02-07T17:52:02Z",
+  "author": {
+    "@type": "Person",
+    "name": "Yullin",
+    
+    "image": "//yull.in/profile.jpg"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "\/\/yull.in\/posts.html" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yullin Blog 运维 生活",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//yull.in/profile.jpg"
+    }
+    
+  },
+  "description": "",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yullin">
+<meta name="keywords" content="">
+<meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
+
+
+<meta property="og:description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Posts">
+<meta name="twitter:title" content="Posts">
+<meta property="og:url" content="//yull.in/posts.html">
+<meta property="twitter:url" content="//yull.in/posts.html">
+<meta property="og:site_name" content="Yullin Blog 运维 生活">
+<meta property="og:description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
+<meta name="twitter:description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
+<meta property="og:locale" content="zh-cn">
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//yull.in/profile.jpg">
+  <meta property="twitter:image" content="//yull.in/profile.jpg">
+
+
+
+
+
+
+    <title>Posts</title>
+
+    <link rel="icon" href="//yull.in/favicon.png">
+    
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="//yull.in/posts/index.xml">
+    
+
+    
+
+    <link rel="canonical" href="//yull.in/posts.html">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="//yull.in/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126720130-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="//yull.in/" aria-label="去首页">Yullin Blog 运维 生活</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="//yull.in/#about" aria-label="打开链接: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="//yull.in/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Yullin</h4>
+        
+          <h5 class="sidebar-profile-bio">Learn To Live</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/categories.html" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/tags.html" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/archives.html" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Yullin" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="8751190709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <section class="postShorten-group main-content-wrap">
+          
+          
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/02/chrome-73-released.html" aria-label="打开帖子: chrome 73 released 自动画中画 支持硬件媒体按钮">
+      
+          chrome 73 released 自动画中画 支持硬件媒体按钮
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-02-11T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-11
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。
+      
+      <p>
+        
+          <a href="//yull.in/2019/02/chrome-73-released.html" class="postShorten-excerpt_link link" aria-label="打开帖子: chrome 73 released 自动画中画 支持硬件媒体按钮">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/01/about-redirect-output.html" aria-label="打开帖子: 输出重定向到文件的时效性">
+      
+          输出重定向到文件的时效性
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-01-14T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-01-14
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
+# test.py &gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？
+      
+      <p>
+        
+          <a href="//yull.in/2019/01/about-redirect-output.html" class="postShorten-excerpt_link link" aria-label="打开帖子: 输出重定向到文件的时效性">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/01/install-php5.6-on-centos6.html" aria-label="打开帖子: install php5.6 on centos6">
+      
+          install php5.6 on centos6
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-01-09T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-01-09
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        本次安装系统环境为Centos6 x86_64
+# cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包
+# yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看）
+      
+      <p>
+        
+          <a href="//yull.in/2019/01/install-php5.6-on-centos6.html" class="postShorten-excerpt_link link" aria-label="打开帖子: install php5.6 on centos6">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2018/12/nginx-reverse-proxy-pass.html" aria-label="打开帖子: Nginx反向代理配置">
+      
+          Nginx反向代理配置
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-12-19T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-12-19
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
+普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
+location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以
+location / { proxy_pass http://192.168.1.12:8080; } 如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上
+可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息
+location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $params $2; } proxy_pass http://backend$id.
+      
+      <p>
+        
+          <a href="//yull.in/2018/12/nginx-reverse-proxy-pass.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx反向代理配置">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2018/12/python-dict-and-list-copy.html" aria-label="打开帖子: python字典和列表赋值的坑">
+      
+          python字典和列表赋值的坑
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-12-18T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-12-18
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
+列表的具体测试如下：
+&gt;&gt;&gt; a = ['1']&gt;&gt;&gt; b = a&gt;&gt;&gt; a.append('2')&gt;&gt;&gt; a['1', '2']&gt;&gt;&gt; b['1', '2']可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&gt;&gt;&gt; ar = {'x':'1','y':'2'}&gt;&gt;&gt; br = ar&gt;&gt;&gt; br{'y': '2', 'x': '1'}&gt;&gt;&gt; ar['x'] = '3'&gt;&gt;&gt; br{'y': '2', 'x': '3'}&gt;&gt;&gt; ar{'y': '2', 'x': '3'}其实还可以有更简单的验证方式，即查看变量的id值：
+      
+      <p>
+        
+          <a href="//yull.in/2018/12/python-dict-and-list-copy.html" class="postShorten-excerpt_link link" aria-label="打开帖子: python字典和列表赋值的坑">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2018/11/curl-usage-note.html" aria-label="打开帖子: curl usage note">
+      
+          curl usage note
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-11-02T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-11-02
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.
+      
+      <p>
+        
+          <a href="//yull.in/2018/11/curl-usage-note.html" class="postShorten-excerpt_link link" aria-label="打开帖子: curl usage note">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2018/10/config-elasticsearch-logstash-kibana.html" aria-label="打开帖子: configure elasticsearch logstash kibana">
+      
+          configure elasticsearch logstash kibana
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-10-26T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-10-26
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        本文主要记录ELK的测试环境的搭建过程
+1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.
+      
+      <p>
+        
+          <a href="//yull.in/2018/10/config-elasticsearch-logstash-kibana.html" class="postShorten-excerpt_link link" aria-label="打开帖子: configure elasticsearch logstash kibana">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+          
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="//yull.in/posts.html" aria-label="上一页">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>上一页</span>
+            </a>
+          </li>
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="//yull.in/posts/page/3.html" aria-label="下一页">
+              <span>下一页</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+      
+      <li class="pagination-number">第 2 页 共 3 页</li>
+    </ul>
+  </div>
+
+
+        </section>
+        <footer id="footer" class="main-content-wrap">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="4417624521"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <span class="copyrights">
+    &copy; 2021 Yullin. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Yullin</h4>
+    
+      <div id="about-card-bio">Learn To Live</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        DevOps
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('//yull.in/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="//yull.in/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

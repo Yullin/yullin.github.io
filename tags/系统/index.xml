@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统 on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/%E7%B3%BB%E7%BB%9F.html</link>
+    <description>Recent content in 系统 on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Mint 19 修改系统菜单字体</title>
+      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
+      <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
+安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
+  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
+下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&amp;gt;首选项-&amp;gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
+  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦</description>
+    </item>
+    
+  </channel>
+</rss>

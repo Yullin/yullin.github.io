@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>usage on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/usage.html</link>
+    <description>Recent content in usage on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/usage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>curl usage note</title>
+      <link>//yull.in/2018/11/curl-usage-note.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/11/curl-usage-note.html</guid>
+      <description>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&amp;mdash;&amp;gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &amp;ldquo;@curl&amp;rdquo; -o /dev/null -s -d &amp;ldquo;username=aaa&amp;amp;password=bbb&amp;rdquo; https://xxx.</description>
+    </item>
+    
+  </channel>
+</rss>

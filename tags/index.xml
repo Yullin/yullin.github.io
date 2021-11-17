@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags.html</link>
+    <description>Recent content in Tags on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Feb 2021 17:52:02 +0000</lastBuildDate><atom:link href="//yull.in/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>//yull.in/tags/golang.html</link>
+      <pubDate>Sun, 07 Feb 2021 17:52:02 +0000</pubDate>
+      
+      <guid>//yull.in/tags/golang.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>random string</title>
+      <link>//yull.in/tags/random-string.html</link>
+      <pubDate>Sun, 07 Feb 2021 17:52:02 +0000</pubDate>
+      
+      <guid>//yull.in/tags/random-string.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alert</title>
+      <link>//yull.in/tags/alert.html</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/alert.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elastalert</title>
+      <link>//yull.in/tags/elastalert.html</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/elastalert.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elk</title>
+      <link>//yull.in/tags/elk.html</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/elk.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>//yull.in/tags/elasticsearch.html</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/elasticsearch.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kibana</title>
+      <link>//yull.in/tags/kibana.html</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/kibana.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opendistro</title>
+      <link>//yull.in/tags/opendistro.html</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/opendistro.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>//yull.in/tags/lua.html</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/lua.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>//yull.in/tags/nginx.html</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/nginx.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openresty</title>
+      <link>//yull.in/tags/openresty.html</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/openresty.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos7</title>
+      <link>//yull.in/tags/centos7.html</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/centos7.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hostname</title>
+      <link>//yull.in/tags/hostname.html</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/hostname.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>//yull.in/tags/linux.html</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/linux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>主机名</title>
+      <link>//yull.in/tags/%E4%B8%BB%E6%9C%BA%E5%90%8D.html</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E4%B8%BB%E6%9C%BA%E5%90%8D.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mint</title>
+      <link>//yull.in/tags/mint.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/mint.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字体</title>
+      <link>//yull.in/tags/%E5%AD%97%E4%BD%93.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E5%AD%97%E4%BD%93.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统</title>
+      <link>//yull.in/tags/%E7%B3%BB%E7%BB%9F.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E7%B3%BB%E7%BB%9F.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kvm</title>
+      <link>//yull.in/tags/kvm.html</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/kvm.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分辨率</title>
+      <link>//yull.in/tags/%E5%88%86%E8%BE%A8%E7%8E%87.html</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E5%88%86%E8%BE%A8%E7%8E%87.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beta</title>
+      <link>//yull.in/tags/beta.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/beta.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chrome</title>
+      <link>//yull.in/tags/chrome.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/chrome.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新版本</title>
+      <link>//yull.in/tags/%E6%96%B0%E7%89%88%E6%9C%AC.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E6%96%B0%E7%89%88%E6%9C%AC.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>浏览器</title>
+      <link>//yull.in/tags/%E6%B5%8F%E8%A7%88%E5%99%A8.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E6%B5%8F%E8%A7%88%E5%99%A8.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file</title>
+      <link>//yull.in/tags/file.html</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/file.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>//yull.in/tags/shell.html</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/shell.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos6</title>
+      <link>//yull.in/tags/centos6.html</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/centos6.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>//yull.in/tags/php.html</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/php.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php extension</title>
+      <link>//yull.in/tags/php-extension.html</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/php-extension.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>//yull.in/tags/proxy.html</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/proxy.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reverse</title>
+      <link>//yull.in/tags/reverse.html</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/reverse.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>反向代理</title>
+      <link>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dict</title>
+      <link>//yull.in/tags/dict.html</link>
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/dict.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>list</title>
+      <link>//yull.in/tags/list.html</link>
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/list.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>//yull.in/tags/python.html</link>
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/python.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>curl</title>
+      <link>//yull.in/tags/curl.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/curl.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get</title>
+      <link>//yull.in/tags/get.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/get.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>post</title>
+      <link>//yull.in/tags/post.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/post.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usage</title>
+      <link>//yull.in/tags/usage.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/usage.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ingest node</title>
+      <link>//yull.in/tags/ingest-node.html</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/ingest-node.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logstash</title>
+      <link>//yull.in/tags/logstash.html</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/logstash.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microsoft</title>
+      <link>//yull.in/tags/microsoft.html</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/microsoft.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>update</title>
+      <link>//yull.in/tags/update.html</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/update.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>win10</title>
+      <link>//yull.in/tags/win10.html</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/win10.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>imagick</title>
+      <link>//yull.in/tags/imagick.html</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/imagick.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disqus</title>
+      <link>//yull.in/tags/disqus.html</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/disqus.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google analytics</title>
+      <link>//yull.in/tags/google-analytics.html</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/google-analytics.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gravatar</title>
+      <link>//yull.in/tags/gravatar.html</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/gravatar.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo theme</title>
+      <link>//yull.in/tags/hexo-theme.html</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/hexo-theme.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>responsive</title>
+      <link>//yull.in/tags/responsive.html</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/responsive.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html elements</title>
+      <link>//yull.in/tags/html-elements.html</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/html-elements.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>//yull.in/tags/markdown.html</link>
+      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/markdown.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cover image</title>
+      <link>//yull.in/tags/cover-image.html</link>
+      <pubDate>Wed, 13 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/cover-image.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github theme</title>
+      <link>//yull.in/tags/github-theme.html</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/github-theme.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>highlight code</title>
+      <link>//yull.in/tags/highlight-code.html</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/highlight-code.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>//yull.in/tags/test.html</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/test.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag plugins</title>
+      <link>//yull.in/tags/tag-plugins.html</link>
+      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/tag-plugins.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social</title>
+      <link>//yull.in/tags/social.html</link>
+      <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/social.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tags</title>
+      <link>//yull.in/tags/tags.html</link>
+      <pubDate>Sat, 16 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/tags.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pagination</title>
+      <link>//yull.in/tags/pagination.html</link>
+      <pubDate>Fri, 15 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/pagination.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dailymotion</title>
+      <link>//yull.in/tags/dailymotion.html</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/dailymotion.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>videos integration</title>
+      <link>//yull.in/tags/videos-integration.html</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/videos-integration.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vimeo</title>
+      <link>//yull.in/tags/vimeo.html</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/vimeo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube</title>
+      <link>//yull.in/tags/youtube.html</link>
+      <pubDate>Sat, 09 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/youtube.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chinese</title>
+      <link>//yull.in/tags/chinese.html</link>
+      <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/chinese.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image gallery</title>
+      <link>//yull.in/tags/image-gallery.html</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/image-gallery.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>japanese</title>
+      <link>//yull.in/tags/japanese.html</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/tags/japanese.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

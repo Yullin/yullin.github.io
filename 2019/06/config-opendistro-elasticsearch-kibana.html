@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "configure opendistro elasticsearch",
+  
+  "datePublished": "2019-06-10T00:00:00Z",
+  "dateModified": "2019-06-10T00:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Yullin",
+    
+    "image": "//yull.in/profile.jpg"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "\/\/yull.in\/2019\/06\/config-opendistro-elasticsearch-kibana.html" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yullin Blog 运维 生活",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//yull.in/profile.jpg"
+    }
+    
+  },
+  "description": "系统环境：Centos 7\n安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)\ncd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option \u0026lsquo;UseParNewGC\u0026rsquo;参考链接https://github.com/elastic/logstash/issues/9345\n 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。\n下面开始安装：\nyum install opendistroforelasticsearch systemctl start elasticsearch.",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yullin">
+<meta name="keywords" content="">
+<meta name="description" content="系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+ 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.">
+
+
+<meta property="og:description" content="系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+ 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="configure opendistro elasticsearch">
+<meta name="twitter:title" content="configure opendistro elasticsearch">
+<meta property="og:url" content="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html">
+<meta property="twitter:url" content="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html">
+<meta property="og:site_name" content="Yullin Blog 运维 生活">
+<meta property="og:description" content="系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+ 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.">
+<meta name="twitter:description" content="系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+ 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-06-10T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-06-10T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TECH SKILLS">
+    
+  
+  
+    
+      <meta property="article:tag" content="elk">
+    
+      <meta property="article:tag" content="elasticsearch">
+    
+      <meta property="article:tag" content="opendistro">
+    
+      <meta property="article:tag" content="kibana">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//yull.in/profile.jpg">
+  <meta property="twitter:image" content="//yull.in/profile.jpg">
+
+
+
+
+
+
+    <title>configure opendistro elasticsearch</title>
+
+    <link rel="icon" href="//yull.in/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="//yull.in/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126720130-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="//yull.in/" aria-label="去首页">Yullin Blog 运维 生活</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="//yull.in/#about" aria-label="打开链接: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="//yull.in/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Yullin</h4>
+        
+          <h5 class="sidebar-profile-bio">Learn To Live</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/categories.html" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/tags.html" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/archives.html" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Yullin" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="8751190709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      configure opendistro elasticsearch
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-10T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-06-10
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>系统环境：Centos 7</p>
+<h2 id="安装elasticsearch">安装ELASTICSEARCH</h2>
+<p>按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)</p>
+<pre tabindex="0"><code>cd /etc/yum.repos.d/  
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo  
+yum install java-11-openjdk-devel    #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel
+</code></pre><p><em>因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345</em></p>
+<ul>
+<li>如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch</li>
+</ul>
+<pre tabindex="0"><code>ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/
+</code></pre><p>我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。</p>
+<p>下面开始安装：</p>
+<pre tabindex="0"><code>yum install opendistroforelasticsearch
+systemctl start elasticsearch.service
+</code></pre><p>opendistro for elasticsearch实际上是将searchguard的功能与elasticsearch做了集成，相当于省去了安装searchguard插件的过程，这样能节省不少时间，且能让你少踩很多坑，配置searchguard有很多坑的。</p>
+<p>所以安装好之后，可以直接启动了，已经默认配置好了。启动好之后，可以用以下命令测试一下</p>
+<pre tabindex="0"><code>curl -XGET https://localhost:9200 -u admin:admin --insecure
+curl -XGET https://localhost:9200/_cat/nodes?v -u admin:admin --insecure
+curl -XGET https://localhost:9200/_cat/plugins?v -u admin:admin --insecure
+</code></pre><p>默认用户名密码是admin ，如果想要修改admin的密码，修改方法与searchguard的方法是一样的</p>
+<p>用/usr/share/elasticsearch/plugins/opendistro_security/tools/目录下的hash.sh脚本生成你想要修改的密码：</p>
+<pre tabindex="0"><code>cd /usr/share/elasticsearch/plugins/opendistro_security/tools/
+sh hash.sh -p yourpassword
+</code></pre><p>复制得到的字符串，然后编辑/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml，然后修改对应账号的hash字段即可。</p>
+<p>修改完成，保存退出之后，需要重载一下，使我们的修改生效，重载命令如下：</p>
+<pre tabindex="0"><code>cd /usr/share/elasticsearch/plugins/opendistro_security/tools/
+sh securityadmin.sh -cd ../securityconfig/ -icl -nhnv -cacert /etc/elasticsearch/root-ca.pem -cert /etc/elasticsearch/kirk.pem -key /etc/elasticsearch/kirk-key.pem
+</code></pre><h2 id="安装kibana">安装KIBANA</h2>
+<p>安装好elasticsearch之后，下面就可以安装kibana了，同样kibana需要与elasticsearch配合，所以也需要安装opendistro的版本，依然是使用opendistro的源来进行安装</p>
+<pre tabindex="0"><code>yum install opendistroforelasticsearch-kibana
+systemctl start kibana.service
+</code></pre><p>由于默认的kibana配置是监听的localhost，所以需要修改一下配置，修改server.host为0.0.0.0或者你想监听的IP地址</p>
+<p>由于opendistro实际也是基于searchguard做的集成，所以KIBANA的前端同样需要一个代理服务器来传递账号信息，nginx的代理配置如下：</p>
+<pre tabindex="0"><code>location / {
+    auth_basic &quot;web log elk sandbox2&quot;;
+    auth_basic_user_file auth_passwd/kibana_auth; 
+    proxy_set_header X-PROXY-USER $remote_user;
+    proxy_pass http://10.2.xx.xx:5601/;             #这里的地址应为KIBANA的IP地址    
+}
+</code></pre><h3 id="补充">补充</h3>
+<p>如果遇到如下报错：</p>
+<pre tabindex="0"><code>elasticsearch[3969]: java.security.policy: error adding Entry:
+elasticsearch[3969]: java.net.MalformedURLException: unknown protocol: jrt
+elasticsearch[3969]: java.security.policy: error adding Entry:
+elasticsearch[3969]: java.net.MalformedURLException: unknown protocol: jrt
+</code></pre><p>可按照下列处理方法：</p>
+<p>1.首先找到tools.jar这个文件所在路径，一般是在jdk的lib目录里面</p>
+<p>2.然后查看/usr/share/elasticsearch/lib/tools.jar这个路径是否存在，若不存在，则将第1步的文件链接过来，若存在，则删除之后，再将第1步的文件链接过来</p>
+<pre tabindex="0"><code>#比如我的路径是在
+/usr/java/jdk1.8.0_181-amd64/lib/tools.jar
+ 
+#而/usr/share/elasticsearch/lib/tools.jar这个文件是不存在的，所以我直接做了链接
+ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
+ 
+#如果存在/usr/share/elasticsearch/lib/tools.jar这个文件，则先删除，再做链接
+rm -f /usr/share/elasticsearch/lib/tools.jar
+ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
+</code></pre>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/elk/">elk</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/elasticsearch/">elasticsearch</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/opendistro/">opendistro</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/kibana/">kibana</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/07/install-elastalert.html" data-tooltip="install ElastAlert" aria-label="下一篇: install ElastAlert">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/03/nginx-lua-traps.html" data-tooltip="Nginx Lua中的小陷阱" aria-label="上一篇: Nginx Lua中的小陷阱">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = '\/\/yull.in\/2019\/06\/config-opendistro-elasticsearch-kibana.html';
+        
+          this.page.identifier = '\/2019\/06\/config-opendistro-elasticsearch-kibana.html'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'yull-in';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="4417624521"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <span class="copyrights">
+    &copy; 2021 Yullin. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/07/install-elastalert.html" data-tooltip="install ElastAlert" aria-label="下一篇: install ElastAlert">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/03/nginx-lua-traps.html" data-tooltip="Nginx Lua中的小陷阱" aria-label="上一篇: Nginx Lua中的小陷阱">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F%2Fyull.in%2F2019%2F06%2Fconfig-opendistro-elasticsearch-kibana.html" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F%2Fyull.in%2F2019%2F06%2Fconfig-opendistro-elasticsearch-kibana.html" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=%2F%2Fyull.in%2F2019%2F06%2Fconfig-opendistro-elasticsearch-kibana.html" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=%2F%2Fyull.in%2F2019%2F06%2Fconfig-opendistro-elasticsearch-kibana.html&amp;pic=&amp;searchPic=false&amp;style=simple" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Yullin</h4>
+    
+      <div id="about-card-bio">Learn To Live</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        DevOps
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('//yull.in/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="//yull.in/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

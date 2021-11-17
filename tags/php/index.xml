@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>php on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/php.html</link>
+    <description>Recent content in php on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>install php5.6 on centos6</title>
+      <link>//yull.in/2019/01/install-php5.6-on-centos6.html</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/01/install-php5.6-on-centos6.html</guid>
+      <description>本次安装系统环境为Centos6 x86_64
+# cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包
+# yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看）</description>
+    </item>
+    
+    <item>
+      <title>install php extension imagick</title>
+      <link>//yull.in/2018/08/install-php-extension-imagick.html</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/install-php-extension-imagick.html</guid>
+      <description>linux下配置imagick的步骤为(以centOS为例):
+1. 安装ImageMagick yum install ImageMagick-devel /usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句 2. 安装php的imagick扩展模块 (http://pecl.php.net/package/imagick) wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz tar -zxvf imagick-3.1.0RC2.tgz /usr/local/php/bin/phpize #在项目目录下运行phpize, phpize为项目生成合乎php使用的configure文件 ./configure --with-php-config=/usr/local/php/bin/php-config --with-imagick=/usr/local/imagemagick	#php-config:获取php配置信息 make make install 4.</description>
+    </item>
+    
+  </channel>
+</rss>

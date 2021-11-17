@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "chrome 73 released 自动画中画 支持硬件媒体按钮",
+  
+  "datePublished": "2019-02-11T00:00:00Z",
+  "dateModified": "2019-02-11T00:00:00Z",
+  "author": {
+    "@type": "Person",
+    "name": "Yullin",
+    
+    "image": "//yull.in/profile.jpg"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "\/\/yull.in\/2019\/02\/chrome-73-released.html" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yullin Blog 运维 生活",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//yull.in/profile.jpg"
+    }
+    
+  },
+  "description": "桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。\n支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。\n{:height=\u0026ldquo;60%\u0026rdquo; width=\u0026ldquo;700px\u0026rdquo;}\n这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=\u0026ldquo;60%\u0026rdquo; width=\u0026ldquo;700px\u0026rdquo;}\n而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yullin">
+<meta name="keywords" content="">
+<meta name="description" content="桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。">
+
+
+<meta property="og:description" content="桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chrome 73 released 自动画中画 支持硬件媒体按钮">
+<meta name="twitter:title" content="chrome 73 released 自动画中画 支持硬件媒体按钮">
+<meta property="og:url" content="//yull.in/2019/02/chrome-73-released.html">
+<meta property="twitter:url" content="//yull.in/2019/02/chrome-73-released.html">
+<meta property="og:site_name" content="Yullin Blog 运维 生活">
+<meta property="og:description" content="桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。">
+<meta name="twitter:description" content="桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-11T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-02-11T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TECH INFO">
+    
+  
+  
+    
+      <meta property="article:tag" content="chrome">
+    
+      <meta property="article:tag" content="浏览器">
+    
+      <meta property="article:tag" content="新版本">
+    
+      <meta property="article:tag" content="beta">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//yull.in/profile.jpg">
+  <meta property="twitter:image" content="//yull.in/profile.jpg">
+
+
+
+
+
+
+    <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
+
+    <link rel="icon" href="//yull.in/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="//yull.in/2019/02/chrome-73-released.html">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="//yull.in/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126720130-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="//yull.in/" aria-label="去首页">Yullin Blog 运维 生活</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="//yull.in/#about" aria-label="打开链接: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="//yull.in/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Yullin</h4>
+        
+          <h5 class="sidebar-profile-bio">Learn To Live</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/categories.html" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/tags.html" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/archives.html" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Yullin" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="8751190709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      chrome 73 released 自动画中画 支持硬件媒体按钮
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-02-11T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-11
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。</p>
+<h3 id="b支持硬件多媒体按钮b"><!-- raw HTML omitted -->支持硬件多媒体按钮<!-- raw HTML omitted --></h3>
+<p>用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/79457c674363241c0ff32eb6617dfdc88c3.jpg" alt="img">{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}</p>
+<p>这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。
+<img src="https://static.cnbetacdn.com/thumb/article/2019/0211/e14d9ddc8a4241b.jpg" alt="多媒体交互"></p>
+<h3 id="b可跟随系统的黑暗主题b"><!-- raw HTML omitted -->可跟随系统的黑暗主题<!-- raw HTML omitted --></h3>
+<p>现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。
+<img src="https://static.cnbetacdn.com/article/2019/02/a0777d699c4afed.gif" alt="跟随系统黑暗主题">{:height=&ldquo;60%&rdquo; width=&ldquo;700px&rdquo;}</p>
+<p>而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。</p>
+<p><img src="https://static.cnbetacdn.com/article/2019/0208/4eb7732c7353de0.jpg" alt="Chrome-shortcuts.jpg"></p>
+<p><img src="https://static.cnbetacdn.com/article/2019/0208/09d5d8c1a82109b.jpg" alt="Chrome-menu-1-663x420.jpg"></p>
+<p>从外观上看，Google Chrome的黑暗外观已经完成，很快就会发布给测试用户。根据Chromium的帖子提交的信息，谷歌也在努力修复图标对黑暗模式的兼容性。</p>
+<p>自动画中画功能</p>
+<p>自动画中画（Automatic Picture-in-Picture）适用于已经安装到系统上的PWA应用程序。Chrome 70版本中引入了在Windows 10平台安装PWA应用的功能，从网页应用的交互体验接近于原生应用，可以将其固定到开始菜单，并且通过Action Center来获得原生通知。不过在此前只有用户手动方式才能将视频切换至画中画模式。
+<img src="https://static.cnbetacdn.com/article/2018/1221/51c2c6cb7e2ff66.png" alt="自动画中画"></p>
+<p>启用自动画中画功能之后，应用中嵌入的视频元素可以自动激活，并且会根据用户焦点自动离开画中画状态。一个案例就是在视频会议应用中，当用户导航切换不同的网页应用或者在浏览器不同标签之后可以自动将视频切换至画中画模式。包括Teams在内的诸多PWA应用程序将会因此获益。</p>
+<p>除了自动画中画功能之外，还可以使用Chrome 73添加使用画中画行为跳过视频中广告的功能。在Chrome 73版本中，PWA应用程序可以在桌面上自动播放带声音的多媒体文件。</p>
+<p>Chrome 73 Beta版本下载：</p>
+<p>Windows x64版本</p>
+<pre tabindex="0"><code>最新版本：73.0.3683.27
+
+文件大小：52.93 MB
+
+SHA1：F7A9CEBB55B53FE6DDCC8581D1E375CE29095D19
+
+SHA256：9F0E229D28ED0F528A1BE15B8F0ECF41C6C92DB247F75A5486C7BFA9F9E31344
+
+http://dl.google.com/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://dl.google.com/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+http://www.google.com/dl/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://www.google.com/dl/release2/chrome/EyS63SxRtQ8_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+</code></pre><p>Windows 版本</p>
+<pre tabindex="0"><code>
+最新版本：73.0.3683.27
+
+文件大小：51.92 MB
+
+SHA1：7987A6618279C64C25576A3A28256DBEFBE1D3F7
+
+SHA256：CF1B334D666A21F75C182E60E51E08799A6DCF8282826064762D826F282709B5
+
+http://dl.google.com/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://dl.google.com/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+http://www.google.com/dl/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+
+https://www.google.com/dl/release2/chrome/AJKpXo5co64_73.0.3683.27/73.0.3683.27_chrome_installer.exe
+</code></pre>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/chrome/">chrome</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/%E6%96%B0%E7%89%88%E6%9C%AC/">新版本</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/beta/">beta</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" data-tooltip="kvm虚拟机系统的高分辨率调整" aria-label="下一篇: kvm虚拟机系统的高分辨率调整">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/01/about-redirect-output.html" data-tooltip="输出重定向到文件的时效性" aria-label="上一篇: 输出重定向到文件的时效性">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2019/02/chrome-73-released.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2019/02/chrome-73-released.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2019/02/chrome-73-released.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2019/02/chrome-73-released.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = '\/\/yull.in\/2019\/02\/chrome-73-released.html';
+        
+          this.page.identifier = '\/2019\/02\/chrome-73-released.html'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'yull-in';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="4417624521"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <span class="copyrights">
+    &copy; 2021 Yullin. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" data-tooltip="kvm虚拟机系统的高分辨率调整" aria-label="下一篇: kvm虚拟机系统的高分辨率调整">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/01/about-redirect-output.html" data-tooltip="输出重定向到文件的时效性" aria-label="上一篇: 输出重定向到文件的时效性">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2019/02/chrome-73-released.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2019/02/chrome-73-released.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2019/02/chrome-73-released.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2019/02/chrome-73-released.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F%2Fyull.in%2F2019%2F02%2Fchrome-73-released.html" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F%2Fyull.in%2F2019%2F02%2Fchrome-73-released.html" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=%2F%2Fyull.in%2F2019%2F02%2Fchrome-73-released.html" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=%2F%2Fyull.in%2F2019%2F02%2Fchrome-73-released.html&amp;pic=&amp;searchPic=false&amp;style=simple" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Yullin</h4>
+    
+      <div id="about-card-bio">Learn To Live</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        DevOps
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('//yull.in/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="//yull.in/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mint on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/mint.html</link>
+    <description>Recent content in mint on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/mint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Mint 19 修改系统菜单字体</title>
+      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
+      <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
+安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
+  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
+下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&amp;gt;首选项-&amp;gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
+  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦</description>
+    </item>
+    
+    <item>
+      <title>kvm虚拟机系统的高分辨率调整</title>
+      <link>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</guid>
+      <description>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
+系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
+经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
+默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
+ &amp;lt;video&amp;gt; &amp;lt;model type=&#39;cirrus&#39; vram=&#39;16384&#39; heads=&#39;1&#39; primary=&#39;yes&#39;/&amp;gt; &amp;lt;address type=&#39;pci&#39; domain=&#39;0x0000&#39; bus=&#39;0x00&#39; slot=&#39;0x02&#39; function=&#39;0x0&#39;/&amp;gt; &amp;lt;/video&amp;gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
+以4K分辨率(3840 x 2160)为例：
+3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.</description>
+    </item>
+    
+  </channel>
+</rss>

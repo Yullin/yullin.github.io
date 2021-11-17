@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chinese on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/chinese.html</link>
+    <description>Recent content in chinese on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 02 Oct 2013 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/chinese/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中文測試</title>
+      <link>//yull.in/blogs/chinese-test.html</link>
+      <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/blogs/chinese-test.html</guid>
+      <description>&lt;p&gt;This is a chinese test post to show you how chinese is displayed.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

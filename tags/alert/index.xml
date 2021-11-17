@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>alert on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/alert.html</link>
+    <description>Recent content in alert on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/alert/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>install ElastAlert</title>
+      <link>//yull.in/2019/07/install-elastalert.html</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/07/install-elastalert.html</guid>
+      <description>准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
+ 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>imagick on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/imagick.html</link>
+    <description>Recent content in imagick on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/imagick/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>install php extension imagick</title>
+      <link>//yull.in/2018/08/install-php-extension-imagick.html</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/install-php-extension-imagick.html</guid>
+      <description>linux下配置imagick的步骤为(以centOS为例):
+1. 安装ImageMagick yum install ImageMagick-devel /usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句 2. 安装php的imagick扩展模块 (http://pecl.php.net/package/imagick) wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz tar -zxvf imagick-3.1.0RC2.tgz /usr/local/php/bin/phpize #在项目目录下运行phpize, phpize为项目生成合乎php使用的configure文件 ./configure --with-php-config=/usr/local/php/bin/php-config --with-imagick=/usr/local/imagemagick	#php-config:获取php配置信息 make make install 4.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "random string in golang",
+  
+  "datePublished": "2021-02-07T17:52:02Z",
+  "dateModified": "2021-02-07T17:52:02Z",
+  "author": {
+    "@type": "Person",
+    "name": "Yullin",
+    
+    "image": "//yull.in/profile.jpg"
+    
+  },
+  "mainEntityOfPage": { 
+    "@type": "WebPage",
+    "@id": "\/\/yull.in\/2021\/02\/random-string-in-golang.html" 
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yullin Blog 运维 生活",
+    
+    "logo": {
+      "@type": "ImageObject",
+      "url": "//yull.in/profile.jpg"
+    }
+    
+  },
+  "description": "在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。\n第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。\nfunc init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(\u0026quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\u0026quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.",
+  "keywords": []
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yullin">
+<meta name="keywords" content="">
+<meta name="description" content="在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.">
+
+
+<meta property="og:description" content="在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="random string in golang">
+<meta name="twitter:title" content="random string in golang">
+<meta property="og:url" content="//yull.in/2021/02/random-string-in-golang.html">
+<meta property="twitter:url" content="//yull.in/2021/02/random-string-in-golang.html">
+<meta property="og:site_name" content="Yullin Blog 运维 生活">
+<meta property="og:description" content="在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.">
+<meta name="twitter:description" content="在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-02-07T17:52:02">
+  
+  
+    <meta property="article:modified_time" content="2021-02-07T17:52:02">
+  
+  
+  
+    
+      <meta property="article:section" content="TECH SKILLS">
+    
+  
+  
+    
+      <meta property="article:tag" content="golang">
+    
+      <meta property="article:tag" content="random string">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//yull.in/profile.jpg">
+  <meta property="twitter:image" content="//yull.in/profile.jpg">
+
+
+
+
+
+
+    <title>random string in golang</title>
+
+    <link rel="icon" href="//yull.in/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="//yull.in/2021/02/random-string-in-golang.html">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="//yull.in/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126720130-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="//yull.in/" aria-label="去首页">Yullin Blog 运维 生活</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="//yull.in/#about" aria-label="打开链接: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="//yull.in/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Yullin</h4>
+        
+          <h5 class="sidebar-profile-bio">Learn To Live</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/categories.html" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/tags.html" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/archives.html" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Yullin" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="8751190709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      random string in golang
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-02-07T17:52:02Z">
+        
+  
+  
+  
+  
+    2021-02-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。</p>
+<h3 id="第一种-通用方案">第一种 通用方案</h3>
+<p>最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。</p>
+<pre tabindex="0"><code>func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
+
+func RandStringRunes(n int) string {
+    b := make([]rune, n)
+    for i := range b {
+        b[i] = letterRuens[rand.Intn(len(letterRunes))]
+    }
+    return string(b)
+}
+</code></pre><h3 id="第二种-字节替换rune">第二种 字节替换rune</h3>
+<p>如果需求是只使用英语字母字符(包括大小写)，那么我们可以使用byte替换rune,因为UTF-8编码中英语字母和byte是一一对应的。</p>
+<pre tabindex="0"><code>const = letterBytes = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+
+func RandStringBytes(n int) string {
+    b := make([]byte, n)
+    for i := rang b {
+        b[i] = letterBytes[rand.Intn(len(letterBytes))]
+    }
+    return string(b)
+}
+</code></pre><h3 id="第三种-使用余数">第三种 使用余数</h3>
+<p>上一步种我们使用<code>rand.Intn</code>来随机选择一个字符，<code>rand.Intn</code>会调用<code>Rand.Intn</code>,而<code>Rand.Intn</code>会调用<code>Rand.Int31n</code>,它会比直接调用<code>rand.Int63</code>慢，后者会产生一个63bit的随机整数。我们可以使用rand.Int63,然后除以<code>len(letterBytes)</code>的余数来选择字符：</p>
+<pre tabindex="0"><code>func RandStringBytesRmndr(n int) string {
+    b := make([]byte, n)
+    for i := rang b {
+        b[i] = letterBytes[rand.Int63() &amp; int64(len(letterBytes))]
+    }
+    return string(b)
+}
+</code></pre><h3 id="使用掩码">使用掩码</h3>
+<p>通过前面的方案，我们可以看到我们并不需要太多的bit来决定字符的平均分布，事实上我们只需要随机整数的后几个bit就可以来选择字母。对于52个英语字母(大小写)， 只需要6个bit就可以实现均匀分布(52=110100b)，所以我们可以使用rand.Int63后6个bit来实现，我们只接受后六位在0..len(letterBytes)-1的随机数，如果不在这个范围，丢弃重选。 通过掩码就可以得到一个整数的后6个bit。</p>
+<pre tabindex="0"><code>const letterBytes = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+const (
+    letterIdxBits = 6                    // 6 bits to represent a letter index
+    letterIdxMask = 1&lt;&lt;letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+)
+func RandStringBytesMask(n int) string {
+    b := make([]byte, n)
+    for i := 0; i &lt; n; {
+        if idx := int(rand.Int63() &amp; letterIdxMask); idx &lt; len(letterBytes) {
+            b[i] = letterBytes[idx]
+            i++
+        }
+    }
+    return string(b)
+}
+</code></pre><h3 id="掩码加强版">掩码加强版</h3>
+<p>上面有个不好的地方，会产生大量的丢弃的case,造成重选和浪费。rand.Int63会产生63bit的随机数，如果我们把它分成6份，那么一次就可以产生10个6bit的随机数。这样就减少了浪费。</p>
+<pre tabindex="0"><code>const letterBytes = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+const (
+    letterIdxBits = 6                    // 6 bits to represent a letter index
+    letterIdxMask = 1&lt;&lt;letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+    letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
+)
+func RandStringBytesMaskImpr(n int) string {
+    b := make([]byte, n)
+    // A rand.Int63() generates 63 random bits, enough for letterIdxMax letters!
+    for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i &gt;= 0; {
+        if remain == 0 {
+            cache, remain = rand.Int63(), letterIdxMax
+        }
+        if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) {
+            b[i] = letterBytes[idx]
+            i--
+        }
+        cache &gt;&gt;= letterIdxBits
+        remain--
+    }
+    return string(b)
+}
+</code></pre><h3 id="source">Source</h3>
+<p>上面的代码的确好，没有太多可以改进的地方，即使可以提升，也得花费很大的复杂度。</p>
+<p>我们可以从另外一个方面进行优化，那就是提高随机数的产生(source)。</p>
+<p>crypto/rand包提供了Read(b []byte)的方法，它可以随机生成我们所需bit的字节，但是因为处于安全方面的设计和检查，它的随机数产生比较慢。</p>
+<p>我们再转回math/rand，rand.Rand使用rand.Source来产生随机bit。rand.Source是一个接口，提供了Int63() int64,正是我们所需要的。</p>
+<p>所以我们可以直接使用rand.Source，而不是全局或者共享的随机源。</p>
+<pre tabindex="0"><code>var src = rand.NewSource(time.Now().UnixNano())
+func RandStringBytesMaskImprSrc(n int) string {
+    b := make([]byte, n)
+    // A src.Int63() generates 63 random bits, enough for letterIdxMax characters!
+    for i, cache, remain := n-1, src.Int63(), letterIdxMax; i &gt;= 0; {
+        if remain == 0 {
+            cache, remain = src.Int63(), letterIdxMax
+        }
+        if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) {
+            b[i] = letterBytes[idx]
+            i--
+        }
+        cache &gt;&gt;= letterIdxBits
+        remain--
+    }
+    return string(b)
+}
+</code></pre><p>全局的(默认的)随机源是线程安全，里面用到了锁，所以没有我们直接rand.Source更好。</p>
+<p>下面的代码是全局的随机源，可以看到Lock/Unlock的使用。</p>
+<pre tabindex="0"><code>func Int63() int64 { return globalRand.Int63() }
+var globalRand = New(&amp;lockedSource{src: NewSource(1).(Source64)})
+type lockedSource struct {
+	lk  sync.Mutex
+	src Source64
+}
+func (r *lockedSource) Int63() (n int64) {
+	r.lk.Lock()
+	n = r.src.Int63()
+	r.lk.Unlock()
+	return
+}
+</code></pre><p>Go1.7中增加了rand.Read()方法和Rand.Read()函数，我们可以尝试使用它得到一组随机bit,用来获取更高的性能。</p>
+<p>一个小问题就是取多少字节的随机数比较好？我们可以说: 和输出字符一样多的。这是一个上限估计，因为字符的索引会少于8bit。
+为了维护字符的均匀分布，我们不得不丢弃一些随机数，这可能会获取更多的随机数，所以只能预估大约需要n * letterIdxBits / 8.0字节的随机byte。</p>
+<p>当然最好的验证方法就是写一个Benchmark,附录是benchmark的代码，以下是测试的结果:</p>
+<pre tabindex="0"><code>BenchmarkRunes                   1000000              1703 ns/op
+BenchmarkBytes                   1000000              1328 ns/op
+BenchmarkBytesRmndr              1000000              1012 ns/op
+BenchmarkBytesMask               1000000              1214 ns/op
+BenchmarkBytesMaskImpr           5000000               395 ns/op
+BenchmarkBytesMaskImprSrc        5000000               303 ns/op
+</code></pre><h3 id="benchmark代码">Benchmark代码</h3>
+<pre tabindex="0"><code>package main
+import (
+	&quot;math/rand&quot;
+	&quot;testing&quot;
+	&quot;time&quot;
+)
+// Implementations
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
+func RandStringRunes(n int) string {
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = letterRunes[rand.Intn(len(letterRunes))]
+	}
+	return string(b)
+}
+const letterBytes = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+const (
+	letterIdxBits = 6                    // 6 bits to represent a letter index
+	letterIdxMask = 1&lt;&lt;letterIdxBits - 1 // All 1-bits, as many as letterIdxBits
+	letterIdxMax  = 63 / letterIdxBits   // # of letter indices fitting in 63 bits
+)
+func RandStringBytes(n int) string {
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = letterBytes[rand.Intn(len(letterBytes))]
+	}
+	return string(b)
+}
+func RandStringBytesRmndr(n int) string {
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = letterBytes[rand.Int63()%int64(len(letterBytes))]
+	}
+	return string(b)
+}
+func RandStringBytesMask(n int) string {
+	b := make([]byte, n)
+	for i := 0; i &lt; n; {
+		if idx := int(rand.Int63() &amp; letterIdxMask); idx &lt; len(letterBytes) {
+			b[i] = letterBytes[idx]
+			i++
+		}
+	}
+	return string(b)
+}
+func RandStringBytesMaskImpr(n int) string {
+	b := make([]byte, n)
+	// A rand.Int63() generates 63 random bits, enough for letterIdxMax letters!
+	for i, cache, remain := n-1, rand.Int63(), letterIdxMax; i &gt;= 0; {
+		if remain == 0 {
+			cache, remain = rand.Int63(), letterIdxMax
+		}
+		if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) {
+			b[i] = letterBytes[idx]
+			i--
+		}
+		cache &gt;&gt;= letterIdxBits
+		remain--
+	}
+	return string(b)
+}
+var src = rand.NewSource(time.Now().UnixNano())
+func RandStringBytesMaskImprSrc(n int) string {
+	b := make([]byte, n)
+	// A src.Int63() generates 63 random bits, enough for letterIdxMax characters!
+	for i, cache, remain := n-1, src.Int63(), letterIdxMax; i &gt;= 0; {
+		if remain == 0 {
+			cache, remain = src.Int63(), letterIdxMax
+		}
+		if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) {
+			b[i] = letterBytes[idx]
+			i--
+		}
+		cache &gt;&gt;= letterIdxBits
+		remain--
+	}
+	return string(b)
+}
+// Benchmark functions
+const n = 16
+func BenchmarkRunes(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringRunes(n)
+	}
+}
+func BenchmarkBytes(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringBytes(n)
+	}
+}
+func BenchmarkBytesRmndr(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringBytesRmndr(n)
+	}
+}
+func BenchmarkBytesMask(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringBytesMask(n)
+	}
+}
+func BenchmarkBytesMaskImpr(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringBytesMaskImpr(n)
+	}
+}
+func BenchmarkBytesMaskImprSrc(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		RandStringBytesMaskImprSrc(n)
+	}
+}
+</code></pre><h3 id="其它提升">其它提升</h3>
+<p>其实如果能替换一个性能更好的随机数生成算法，可能性能会更好，我使用Xorshift算法实现了一个快速的随机数生成器， 和前面的实现做了比较，发觉性能会更好一点。</p>
+<pre tabindex="0"><code>BenchmarkRunes-4                         1000000              1396 ns/op
+BenchmarkBytes-4                         2000000               799 ns/op
+BenchmarkBytesRmndr-4                    3000000               627 ns/op
+BenchmarkBytesMask-4                     2000000               719 ns/op
+BenchmarkBytesMaskImpr-4                10000000               260 ns/op
+BenchmarkBytesMaskImprSrc-4             10000000               227 ns/op
+BenchmarkBytesMaskImprXorshiftSrc-4     10000000               205 ns/op
+</code></pre><p>以上内容均引用自<a href="https://colobu.com/2018/09/02/generate-random-string-in-Go/">鸟窝的博客</a></p>
+<h3 id="最后一种">最后一种</h3>
+<pre tabindex="0"><code>
+import (&quot;math/rand&quot;)
+
+func GetRandomString(n int) string {
+    randBytes := make([]byte, n/2)
+    rand.Read(randBytes)
+    return fmt.Sprintf(&quot;%x&quot;, randBytes)
+}
+</code></pre>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/golang/">golang</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/random-string/">random string</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/07/install-elastalert.html" data-tooltip="install ElastAlert" aria-label="上一篇: install ElastAlert">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2021/02/random-string-in-golang.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = '\/\/yull.in\/2021\/02\/random-string-in-golang.html';
+        
+          this.page.identifier = '\/2021\/02\/random-string-in-golang.html'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'yull-in';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="4417624521"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <span class="copyrights">
+    &copy; 2021 Yullin. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2019/07/install-elastalert.html" data-tooltip="install ElastAlert" aria-label="上一篇: install ElastAlert">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/2021/02/random-string-in-golang.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/2021/02/random-string-in-golang.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F%2Fyull.in%2F2021%2F02%2Frandom-string-in-golang.html" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F%2Fyull.in%2F2021%2F02%2Frandom-string-in-golang.html" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=%2F%2Fyull.in%2F2021%2F02%2Frandom-string-in-golang.html" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=%2F%2Fyull.in%2F2021%2F02%2Frandom-string-in-golang.html&amp;pic=&amp;searchPic=false&amp;style=simple" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Yullin</h4>
+    
+      <div id="about-card-bio">Learn To Live</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        DevOps
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('//yull.in/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="//yull.in/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

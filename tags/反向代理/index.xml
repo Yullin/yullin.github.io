@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>反向代理 on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</link>
+    <description>Recent content in 反向代理 on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx反向代理配置</title>
+      <link>//yull.in/2018/12/nginx-reverse-proxy-pass.html</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/12/nginx-reverse-proxy-pass.html</guid>
+      <description>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
+普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
+location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以
+location / { proxy_pass http://192.168.1.12:8080; } 如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上
+可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息
+location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $params $2; } proxy_pass http://backend$id.</description>
+    </item>
+    
+  </channel>
+</rss>

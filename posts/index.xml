@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Yullin Blog 运维 生活</title>
+    <link>//yull.in/posts.html</link>
+    <description>Recent content in Posts on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Feb 2021 17:52:02 +0000</lastBuildDate><atom:link href="//yull.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>random string in golang</title>
+      <link>//yull.in/2021/02/random-string-in-golang.html</link>
+      <pubDate>Sun, 07 Feb 2021 17:52:02 +0000</pubDate>
+      
+      <guid>//yull.in/2021/02/random-string-in-golang.html</guid>
+      <description>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
+    </item>
+    
+    <item>
+      <title>install ElastAlert</title>
+      <link>//yull.in/2019/07/install-elastalert.html</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/07/install-elastalert.html</guid>
+      <description>准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
+ 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件</description>
+    </item>
+    
+    <item>
+      <title>configure opendistro elasticsearch</title>
+      <link>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</guid>
+      <description>系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &amp;lsquo;UseParNewGC&amp;rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+ 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.</description>
+    </item>
+    
+    <item>
+      <title>Nginx Lua中的小陷阱</title>
+      <link>//yull.in/2019/03/nginx-lua-traps.html</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/03/nginx-lua-traps.html</guid>
+      <description>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
+lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
+ 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 主机名大小字母的问题</title>
+      <link>//yull.in/2019/03/centos-7-hostname-uppercase.html</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/03/centos-7-hostname-uppercase.html</guid>
+      <description>CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：
+# hostnamectl set-hostname TestHostname 但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是testhostname。
+如果我们还是想要驼峰规则的主机名怎么办。
+这样就可以了
+# hostnamectl --static set-hostname TestHostname </description>
+    </item>
+    
+    <item>
+      <title>Linux Mint 19 修改系统菜单字体</title>
+      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
+      <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
+安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
+  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
+下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&amp;gt;首选项-&amp;gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
+  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦</description>
+    </item>
+    
+    <item>
+      <title>kvm虚拟机系统的高分辨率调整</title>
+      <link>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</guid>
+      <description>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
+系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
+经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
+默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
+ &amp;lt;video&amp;gt; &amp;lt;model type=&#39;cirrus&#39; vram=&#39;16384&#39; heads=&#39;1&#39; primary=&#39;yes&#39;/&amp;gt; &amp;lt;address type=&#39;pci&#39; domain=&#39;0x0000&#39; bus=&#39;0x00&#39; slot=&#39;0x02&#39; function=&#39;0x0&#39;/&amp;gt; &amp;lt;/video&amp;gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
+以4K分辨率(3840 x 2160)为例：
+3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.</description>
+    </item>
+    
+    <item>
+      <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
+      <link>//yull.in/2019/02/chrome-73-released.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/chrome-73-released.html</guid>
+      <description>桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。</description>
+    </item>
+    
+    <item>
+      <title>输出重定向到文件的时效性</title>
+      <link>//yull.in/2019/01/about-redirect-output.html</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/01/about-redirect-output.html</guid>
+      <description>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
+经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
+# test.py &amp;gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。
+所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？</description>
+    </item>
+    
+    <item>
+      <title>install php5.6 on centos6</title>
+      <link>//yull.in/2019/01/install-php5.6-on-centos6.html</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/01/install-php5.6-on-centos6.html</guid>
+      <description>本次安装系统环境为Centos6 x86_64
+# cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包
+# yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看）</description>
+    </item>
+    
+    <item>
+      <title>Nginx反向代理配置</title>
+      <link>//yull.in/2018/12/nginx-reverse-proxy-pass.html</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/12/nginx-reverse-proxy-pass.html</guid>
+      <description>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
+普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
+location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以
+location / { proxy_pass http://192.168.1.12:8080; } 如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上
+可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息
+location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $params $2; } proxy_pass http://backend$id.</description>
+    </item>
+    
+    <item>
+      <title>python字典和列表赋值的坑</title>
+      <link>//yull.in/2018/12/python-dict-and-list-copy.html</link>
+      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/12/python-dict-and-list-copy.html</guid>
+      <description>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
+列表的具体测试如下：
+&amp;gt;&amp;gt;&amp;gt; a = [&#39;1&#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&#39;2&#39;)&amp;gt;&amp;gt;&amp;gt; a[&#39;1&#39;, &#39;2&#39;]&amp;gt;&amp;gt;&amp;gt; b[&#39;1&#39;, &#39;2&#39;]可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&amp;gt;&amp;gt;&amp;gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}&amp;gt;&amp;gt;&amp;gt; br = ar&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}&amp;gt;&amp;gt;&amp;gt; ar[&#39;x&#39;] = &#39;3&#39;&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}&amp;gt;&amp;gt;&amp;gt; ar{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}其实还可以有更简单的验证方式，即查看变量的id值：</description>
+    </item>
+    
+    <item>
+      <title>curl usage note</title>
+      <link>//yull.in/2018/11/curl-usage-note.html</link>
+      <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/11/curl-usage-note.html</guid>
+      <description>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&amp;mdash;&amp;gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &amp;ldquo;@curl&amp;rdquo; -o /dev/null -s -d &amp;ldquo;username=aaa&amp;amp;password=bbb&amp;rdquo; https://xxx.</description>
+    </item>
+    
+    <item>
+      <title>configure elasticsearch logstash kibana</title>
+      <link>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</guid>
+      <description>本文主要记录ELK的测试环境的搭建过程
+1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.</description>
+    </item>
+    
+    <item>
+      <title>win10十月更新坑用户</title>
+      <link>//yull.in/2018/10/microsoft-win10-oct-update.html</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/10/microsoft-win10-oct-update.html</guid>
+      <description>昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。
+换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。
+虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。
+reddit的一个讨论主题证实了几个用户遇到了这个问题，虽然目前还不知道这个bug究竟有多广泛。
+但是，随着Windows 10 10月2018 Update的撤下，此问题不再发生，用户将无法再看到通过Windows Update提供的新版本。
+Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一天，微软开始允许用户通过手动检查后通过Windows Update下载。
+然而，到目前为止，新操作系统功能更新带来了众多问题，最糟糕的问题导致在升级期间完全删除用户文件，虽然目前尚不清楚有多少台PC出现此问题，但微软决定完全撤销2018年10月的更新。
+目前还不知道微软什么时候想恢复推出，但随着10月的周二补丁日即将到来，预计下周会有更多这方面的新闻。</description>
+    </item>
+    
+    <item>
+      <title>install and config openresty</title>
+      <link>//yull.in/2018/08/install-and-config-openresty.html</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/install-and-config-openresty.html</guid>
+      <description>安装配置openresty  下载源码  cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz解压后编译安装  yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install</description>
+    </item>
+    
+    <item>
+      <title>configure elasticsearch ingest node</title>
+      <link>//yull.in/2018/08/config-elasticsearch-ingest-node.html</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/config-elasticsearch-ingest-node.html</guid>
+      <description>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
+1.测试可以用如下命令  curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
+ filebeat.test.json的内容如下：
+{&amp;quot;pipeline&amp;quot; : {&amp;quot;description&amp;quot; : &amp;quot;nginx access log&amp;quot;,&amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;quot; %{NUMBER:response_status} (?</description>
+    </item>
+    
+    <item>
+      <title>install php extension imagick</title>
+      <link>//yull.in/2018/08/install-php-extension-imagick.html</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/install-php-extension-imagick.html</guid>
+      <description>linux下配置imagick的步骤为(以centOS为例):
+1. 安装ImageMagick yum install ImageMagick-devel /usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句 2. 安装php的imagick扩展模块 (http://pecl.php.net/package/imagick) wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz tar -zxvf imagick-3.1.0RC2.tgz /usr/local/php/bin/phpize #在项目目录下运行phpize, phpize为项目生成合乎php使用的configure文件 ./configure --with-php-config=/usr/local/php/bin/php-config --with-imagick=/usr/local/imagemagick	#php-config:获取php配置信息 make make install 4.</description>
+    </item>
+    
+  </channel>
+</rss>

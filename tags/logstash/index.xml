@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logstash on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/logstash.html</link>
+    <description>Recent content in logstash on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 26 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/logstash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>configure elasticsearch logstash kibana</title>
+      <link>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</link>
+      <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</guid>
+      <description>本文主要记录ELK的测试环境的搭建过程
+1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.</description>
+    </item>
+    
+    <item>
+      <title>configure elasticsearch ingest node</title>
+      <link>//yull.in/2018/08/config-elasticsearch-ingest-node.html</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2018/08/config-elasticsearch-ingest-node.html</guid>
+      <description>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
+1.测试可以用如下命令  curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
+ filebeat.test.json的内容如下：
+{&amp;quot;pipeline&amp;quot; : {&amp;quot;description&amp;quot; : &amp;quot;nginx access log&amp;quot;,&amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;quot; %{NUMBER:response_status} (?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chrome on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/chrome.html</link>
+    <description>Recent content in chrome on Yullin Blog 运维 生活</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
+      <link>//yull.in/2019/02/chrome-73-released.html</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2019/02/chrome-73-released.html</guid>
+      <description>桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
+支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
+{:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}
+这是一种 Chrome 级别的按键支持，而不是标签级别，这意味着无论 Chrome 浏览器是在操作系统的前台还是最小化在后台，用户对多媒体键的操作都能生效。该多媒体键功能依赖于 Media Session API，开发人员可以使用它来控制浏览器中的媒体播放，还可以自定义多媒体键的交互。 可跟随系统的黑暗主题 现在开始跟随您的系统范围主题设置，这意味着如果您在Windows 10中选择Dark Theme，您的Chrome浏览器也会立即切换到Dark模式。这一变化是谷歌努力与Windows 10更紧密合作的最新举措，包括支持原生Windows 10通知功能，致力于Windows 10 for ARM的原生支持，当然还有为操作系统开发黑暗主题。 {:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}
+而且在随后的更新中又修复了菜单弹出时文本颜色的错误。解决了深色背景上的黑色文本和浅色背景故障上的白色文本。菜单上的文本不再是黑色，您最终可以轻松阅读它们。同样，右键菜单也已更新，并修复了毛刺。另一个在页面中出现白色文本的错误已得到解决。此外，Google还更改了在Omnibox上选择URL时显示的颜色。</description>
+    </item>
+    
+  </channel>
+</rss>
