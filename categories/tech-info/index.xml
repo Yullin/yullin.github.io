@@ -6,7 +6,18 @@
     <description>Recent content in TECH INFO on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-info/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单易用的markdown转html方法</title>
+      <link>//yull.in/2021/11/markdown-to-html-with-markdeep.html</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2021/11/markdown-to-html-with-markdeep.html</guid>
+      <description>发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
+Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot; emacsmode=&amp;quot;-*- markdown -*-&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://casual-effects.com/markdeep/latest/slate.css?&amp;quot;&amp;gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates</description>
+    </item>
+    
     <item>
       <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
       <link>//yull.in/2019/02/chrome-73-released.html</link>

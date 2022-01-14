@@ -272,6 +272,146 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2019/02/linux-mint-font-manager.html" aria-label="打开帖子: Linux Mint 19 修改系统菜单字体">
+      
+          Linux Mint 19 修改系统菜单字体
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-02-25T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-25
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
+安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
+  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
+下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&gt;首选项-&gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
+  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦
+      
+      <p>
+        
+          <a href="//yull.in/2019/02/linux-mint-font-manager.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Linux Mint 19 修改系统菜单字体">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">
+      
+          kvm虚拟机系统的高分辨率调整
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-02-21T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-02-21
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
+系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
+经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
+默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
+ &lt;video&gt; &lt;model type='cirrus' vram='16384' heads='1' primary='yes'/&gt; &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/&gt; &lt;/video&gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
+以4K分辨率(3840 x 2160)为例：
+3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.
+      
+      <p>
+        
+          <a href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" class="postShorten-excerpt_link link" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2019/02/chrome-73-released.html" aria-label="打开帖子: chrome 73 released 自动画中画 支持硬件媒体按钮">
       
           chrome 73 released 自动画中画 支持硬件媒体按钮
@@ -596,147 +736,6 @@ location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $par
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2018/11/curl-usage-note.html" aria-label="打开帖子: curl usage note">
-      
-          curl usage note
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2018-11-02T00:00:00Z">
-        
-  
-  
-  
-  
-    2018-11-02
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
-下面说一下具体的使用方法：
-1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
-time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
-time_connect：TCP连接的时间，三次握手的时间
-time_appconnect：SSL|SSH等上层连接建立的时间
-time_pretransfer：从请求开始到到响应开始传输的时间
-time_redirect：从开始到最后一个请求事务的时间
-time_starttransfer：从请求开始到第一个字节将要传输的时间
-time_total：总时间
-2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.
-      
-      <p>
-        
-          <a href="//yull.in/2018/11/curl-usage-note.html" class="postShorten-excerpt_link link" aria-label="打开帖子: curl usage note">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2018/10/config-elasticsearch-logstash-kibana.html" aria-label="打开帖子: configure elasticsearch logstash kibana">
-      
-          configure elasticsearch logstash kibana
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2018-10-26T00:00:00Z">
-        
-  
-  
-  
-  
-    2018-10-26
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.
-      
-      <p>
-        
-          <a href="//yull.in/2018/10/config-elasticsearch-logstash-kibana.html" class="postShorten-excerpt_link link" aria-label="打开帖子: configure elasticsearch logstash kibana">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -766,7 +765,7 @@ time_total：总时间
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2021 Yullin. All Rights Reserved
+    &copy; 2022 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

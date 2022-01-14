@@ -261,6 +261,75 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2022/01/etcd-user-authentication.html" aria-label="打开帖子: etcd添加用户验证">
+      
+          etcd添加用户验证
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-01-13T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-01-13
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
+添加root用户 etcdctl user add root
+添加root角色 etcdctl role add root
+关联用户与角色 #etcdctl user grant-role username rolename etcdctl user grant-role root root
+如果要取消关联 #etcdctl user revoke-role username rolename etcdctl user revoke-role root root
+      
+      <p>
+        
+          <a href="//yull.in/2022/01/etcd-user-authentication.html" class="postShorten-excerpt_link link" aria-label="打开帖子: etcd添加用户验证">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+            
+              
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2021/02/random-string-in-golang.html" aria-label="打开帖子: random string in golang">
       
           random string in golang
@@ -653,77 +722,6 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
 </article>
 
             
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">
-      
-          kvm虚拟机系统的高分辨率调整
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-02-21T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-21
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
-系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
-经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
-默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
- &lt;video&gt; &lt;model type='cirrus' vram='16384' heads='1' primary='yes'/&gt; &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/&gt; &lt;/video&gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
-以4K分辨率(3840 x 2160)为例：
-3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.
-      
-      <p>
-        
-          <a href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" class="postShorten-excerpt_link link" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
             
   <div class="pagination-bar">
     <ul class="pagination">
@@ -747,7 +745,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
         
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2021 Yullin. All Rights Reserved
+    &copy; 2022 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

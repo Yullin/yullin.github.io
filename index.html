@@ -272,6 +272,142 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2022/01/etcd-user-authentication.html" aria-label="打开帖子: etcd添加用户验证">
+      
+          etcd添加用户验证
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-01-13T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-01-13
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
+添加root用户 etcdctl user add root
+添加root角色 etcdctl role add root
+关联用户与角色 #etcdctl user grant-role username rolename etcdctl user grant-role root root
+如果要取消关联 #etcdctl user revoke-role username rolename etcdctl user revoke-role root root
+      
+      <p>
+        
+          <a href="//yull.in/2022/01/etcd-user-authentication.html" class="postShorten-excerpt_link link" aria-label="打开帖子: etcd添加用户验证">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2021/11/markdown-to-html-with-markdeep.html" aria-label="打开帖子: 简单易用的markdown转html方法">
+      
+          简单易用的markdown转html方法
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-11-27T00:00:00Z">
+        
+  
+  
+  
+  
+    2021-11-27
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
+Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
+&lt;meta charset=&quot;utf-8&quot; emacsmode=&quot;-*- markdown -*-&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://casual-effects.com/markdeep/latest/slate.css?&quot;&gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates
+      
+      <p>
+        
+          <a href="//yull.in/2021/11/markdown-to-html-with-markdeep.html" class="postShorten-excerpt_link link" aria-label="打开帖子: 简单易用的markdown转html方法">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2021/02/random-string-in-golang.html" aria-label="打开帖子: random string in golang">
       
           random string in golang
@@ -595,146 +731,6 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/02/linux-mint-font-manager.html" aria-label="打开帖子: Linux Mint 19 修改系统菜单字体">
-      
-          Linux Mint 19 修改系统菜单字体
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-02-25T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-25
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
-安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
-  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
-下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&gt;首选项-&gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
-  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦
-      
-      <p>
-        
-          <a href="//yull.in/2019/02/linux-mint-font-manager.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Linux Mint 19 修改系统菜单字体">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">
-      
-          kvm虚拟机系统的高分辨率调整
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-02-21T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-02-21
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
-系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
-经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
-默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
- &lt;video&gt; &lt;model type='cirrus' vram='16384' heads='1' primary='yes'/&gt; &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/&gt; &lt;/video&gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
-以4K分辨率(3840 x 2160)为例：
-3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.
-      
-      <p>
-        
-          <a href="//yull.in/2019/02/kvm-virtual-monitor-resolution.html" class="postShorten-excerpt_link link" aria-label="打开帖子: kvm虚拟机系统的高分辨率调整">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -757,7 +753,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2021 Yullin. All Rights Reserved
+    &copy; 2022 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

@@ -6,7 +6,31 @@
     <description>Recent content in Posts on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Feb 2021 17:52:02 +0000</lastBuildDate><atom:link href="//yull.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>etcd添加用户验证</title>
+      <link>//yull.in/2022/01/etcd-user-authentication.html</link>
+      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2022/01/etcd-user-authentication.html</guid>
+      <description>etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
+添加root用户 etcdctl user add root
+添加root角色 etcdctl role add root
+关联用户与角色 #etcdctl user grant-role username rolename etcdctl user grant-role root root
+如果要取消关联 #etcdctl user revoke-role username rolename etcdctl user revoke-role root root</description>
+    </item>
+    
+    <item>
+      <title>简单易用的markdown转html方法</title>
+      <link>//yull.in/2021/11/markdown-to-html-with-markdeep.html</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2021/11/markdown-to-html-with-markdeep.html</guid>
+      <description>发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
+Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot; emacsmode=&amp;quot;-*- markdown -*-&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://casual-effects.com/markdeep/latest/slate.css?&amp;quot;&amp;gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates</description>
+    </item>
+    
     <item>
       <title>random string in golang</title>
       <link>//yull.in/2021/02/random-string-in-golang.html</link>
