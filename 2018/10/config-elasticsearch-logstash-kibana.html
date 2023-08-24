@@ -32,7 +32,7 @@
     }
     
   },
-  "description": "本文主要记录ELK的测试环境的搭建过程\n1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.",
+  "description": "本文主要记录ELK的测试环境的搭建过程\n1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。\n首先是准备环境，安装JAVA运行环境JDK。\nyum install java-1.8.0-openjdk-devel 2.",
   "keywords": []
 }
 
@@ -40,15 +40,19 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.">
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.">
 
 
 <meta property="og:description" content="本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.">
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="configure elasticsearch logstash kibana">
 <meta name="twitter:title" content="configure elasticsearch logstash kibana">
@@ -56,9 +60,13 @@
 <meta property="twitter:url" content="//yull.in/2018/10/config-elasticsearch-logstash-kibana.html">
 <meta property="og:site_name" content="Yullin Blog 运维 生活">
 <meta property="og:description" content="本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.">
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.">
 <meta name="twitter:description" content="本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.">
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -372,7 +380,7 @@ path.logs: /data/es_logs #设置日志文件目录
 </code></pre><p>修改完成后，启动elasticsearch</p>
 <pre tabindex="0"><code>/usr/local/elasticsearch/bin/elasticsearch  
 </code></pre><p>启动直接就报错了，报错信息如下：</p>
-<pre tabindex="0"><code>Exception in thread &quot;main&quot; java.nio.file.AccessDeniedException: /usr/local/elasticsearch/config/jvm.options
+<pre tabindex="0"><code>Exception in thread &#34;main&#34; java.nio.file.AccessDeniedException: /usr/local/elasticsearch/config/jvm.options
         at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)
         at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
         at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
@@ -409,18 +417,18 @@ sudo ln -s logstash-6.3.2 logstash
 </code></pre><p>在<code>/esr/local/logstash/config</code>目录下面新建log.conf配置文件，并添加以下修改内容：</p>
 <pre tabindex="0"><code>input {
   stdin {
-    type =&gt; &quot;syslog&quot;
+    type =&gt; &#34;syslog&#34;
   }
   #file {
-  #  type =&gt; &quot;hadoop-yarnlog&quot;
-  #  path =&gt; &quot;/usr/local/hadoop/logs/yarn-hadoop-resourcemanager-m000.log&quot;
+  #  type =&gt; &#34;hadoop-yarnlog&#34;
+  #  path =&gt; &#34;/usr/local/hadoop/logs/yarn-hadoop-resourcemanager-m000.log&#34;
   #}
 }
 
 output {
   elasticsearch {
-    hosts =&gt; &quot;10.2.0.12:9200&quot;
-    index =&gt; &quot;logstash-%{type}-%{+YYYY.MM.dd}&quot;
+    hosts =&gt; &#34;10.2.0.12:9200&#34;
+    index =&gt; &#34;logstash-%{type}-%{+YYYY.MM.dd}&#34;
     template_overwrite =&gt; true
   }
 }
@@ -438,8 +446,8 @@ cd /usr/local/
 sudo ln -s kibana-6.3.2-linux-x86_64 kibana
 </code></pre><p>修改配置文件<code>/usr/local/kibana/config/kibana.yml</code>中的以下参数：</p>
 <pre tabindex="0"><code>server.port: 5601                           #kibana的监听端口
-server.host: &quot;10.2.0.10&quot;                    #kibana的绑定IP
-elasticsearch.url: &quot;http://10.2.0.12:9200&quot;  #kibana的后端数据查询链接
+server.host: &#34;10.2.0.10&#34;                    #kibana的绑定IP
+elasticsearch.url: &#34;http://10.2.0.12:9200&#34;  #kibana的后端数据查询链接
 </code></pre><p>修改完成后启动kibana到后台</p>
 <pre tabindex="0"><code>sudo /usr/local/kibana/bin/kibana &gt; /dev/null 2&gt;&amp;1 &amp;
 </code></pre>
@@ -577,7 +585,7 @@ elasticsearch.url: &quot;http://10.2.0.12:9200&quot;  #kibana的后端数据查�
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

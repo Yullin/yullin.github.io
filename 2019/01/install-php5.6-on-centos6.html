@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="本次安装系统环境为Centos6 x86_64
@@ -359,7 +359,6 @@ if (!doNotTrack) {
 --enable-zip \
 --with-bz2 \
 --with-readline \
-
 </code></pre><p>编译时报错：</p>
 <pre tabindex="0"><code>configure: error: Please reinstall the iconv library.
 </code></pre><p>安装iconv lib</p>
@@ -375,10 +374,10 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>configure: error: off_t undefined; check your library configuration
 </code></pre><p>到这里，我的内心OS “WTF”<br>
 找GOOGLE老师咨询了一下，原来是要这样处理一下：</p>
-<pre tabindex="0"><code># echo '/usr/local/lib64
+<pre tabindex="0"><code># echo &#39;/usr/local/lib64
 /usr/local/lib
 /usr/lib
-/usr/lib64'&gt;&gt;/etc/ld.so.conf 
+/usr/lib64&#39;&gt;&gt;/etc/ld.so.conf 
 # ldconfig -v
 </code></pre><p>据说这样处理之后，即便不改之前的opcache设置也正常，不过我没试，你有空倒是可以<code>--enable-opcache</code>再测试一次。<br>
 修改之后是这样的：</p>
@@ -522,7 +521,7 @@ include ld.so.conf.d/*.conf
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

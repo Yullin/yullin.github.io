@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
@@ -336,7 +336,7 @@ if (!doNotTrack) {
 <p><code>#etcdctl user revoke-role username rolename</code>
 <code>etcdctl user revoke-role root root</code></p>
 <h4 id="为想要访问的资源授权">为想要访问的资源授权</h4>
-<p><code>etcdctl role grant-permission root --prefix=true readwr ite /keypath/</code></p>
+<p><code>etcdctl role grant-permission root --prefix=true readwrite /keypath/</code></p>
 <h4 id="最后让策略生效">最后让策略生效</h4>
 <p><code>etcdctl auth enable</code></p>
 <h4 id="关闭密码校验">关闭密码校验</h4>
@@ -370,7 +370,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" data-tooltip="Google BBRv3效果显著，将合并到Linux内核" aria-label="下一篇: Google BBRv3效果显著，将合并到Linux内核">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -470,7 +470,7 @@ if (!doNotTrack) {
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
@@ -495,7 +495,7 @@ if (!doNotTrack) {
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" data-tooltip="Google BBRv3效果显著，将合并到Linux内核" aria-label="下一篇: Google BBRv3效果显著，将合并到Linux内核">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>

@@ -28,7 +28,7 @@
       <guid>//yull.in/2021/02/random-string-in-golang.html</guid>
       <description>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
 第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
-func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
     </item>
     
     <item>
@@ -38,8 +38,9 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;q
       
       <guid>//yull.in/2019/07/install-elastalert.html</guid>
       <description>准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件</description>
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.</description>
     </item>
     
     <item>
@@ -51,7 +52,7 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;q
       <description>系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &amp;lsquo;UseParNewGC&amp;rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.</description>
     </item>
@@ -64,8 +65,8 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.</descripti
       <guid>//yull.in/2019/03/nginx-lua-traps.html</guid>
       <description>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：</description>
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..p..&amp;#39;]+&amp;#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：</description>
     </item>
     
     <item>
@@ -89,9 +90,9 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
       <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
       <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
 安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
-  菜单 系统管理 软件源   然后直接选择自己最合适的就可以了。
+菜单 系统管理 软件源 然后直接选择自己最合适的就可以了。
 下面主要说一下，修改字体的坑，普通修改字体，也就是在系统菜单里面，找到对应设置字体的地方就可以了：菜单-&amp;gt;首选项-&amp;gt;字体，但这样你修改之后会发现，只有窗口字体生效，而系统菜单，登录界面的字体仍然没变，这就需要用到font-manager这个工具了，首先还是需要安装这个工具：
-  直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体   这就可以啦</description>
+直接使用Mint自带的软件管理器安装就可以了。 安装完成后，打开这个工具。 禁用所有以 AR PL 开头的字体 这就可以啦</description>
     </item>
     
     <item>
@@ -104,7 +105,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
 系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
 经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
 默认情况下，显存设置为16MB，所以分辨率最高只能到1024X768，具体代码如下：
- &amp;lt;video&amp;gt; &amp;lt;model type=&#39;cirrus&#39; vram=&#39;16384&#39; heads=&#39;1&#39; primary=&#39;yes&#39;/&amp;gt; &amp;lt;address type=&#39;pci&#39; domain=&#39;0x0000&#39; bus=&#39;0x00&#39; slot=&#39;0x02&#39; function=&#39;0x0&#39;/&amp;gt; &amp;lt;/video&amp;gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
+&amp;lt;video&amp;gt; &amp;lt;model type=&amp;#39;cirrus&amp;#39; vram=&amp;#39;16384&amp;#39; heads=&amp;#39;1&amp;#39; primary=&amp;#39;yes&amp;#39;/&amp;gt; &amp;lt;address type=&amp;#39;pci&amp;#39; domain=&amp;#39;0x0000&amp;#39; bus=&amp;#39;0x00&amp;#39; slot=&amp;#39;0x02&amp;#39; function=&amp;#39;0x0&amp;#39;/&amp;gt; &amp;lt;/video&amp;gt; 我们需要将vram调整得大一些，但是具体应该调整为多少呢？
 以4K分辨率(3840 x 2160)为例：
 3840 x 2160 = 8294400 # 总共像素点 8294400 x 32 = 265420800 # 每个像素点占 4 个字节 265420800/8 = 33177600 # 转为 Byte 单位 33177600 /（1024 * 1024）= 31.</description>
     </item>
@@ -154,8 +155,8 @@ location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $par
       <guid>//yull.in/2018/12/python-dict-and-list-copy.html</guid>
       <description>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
 列表的具体测试如下：
-&amp;gt;&amp;gt;&amp;gt; a = [&#39;1&#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&#39;2&#39;)&amp;gt;&amp;gt;&amp;gt; a[&#39;1&#39;, &#39;2&#39;]&amp;gt;&amp;gt;&amp;gt; b[&#39;1&#39;, &#39;2&#39;]可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
-&amp;gt;&amp;gt;&amp;gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}&amp;gt;&amp;gt;&amp;gt; br = ar&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}&amp;gt;&amp;gt;&amp;gt; ar[&#39;x&#39;] = &#39;3&#39;&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}&amp;gt;&amp;gt;&amp;gt; ar{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}其实还可以有更简单的验证方式，即查看变量的id值：</description>
+&amp;gt;&amp;gt;&amp;gt; a = [&amp;#39;1&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&amp;#39;2&amp;#39;)&amp;gt;&amp;gt;&amp;gt; a[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;] 可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&amp;gt;&amp;gt;&amp;gt; ar = {&amp;#39;x&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;y&amp;#39;:&amp;#39;2&amp;#39;}&amp;gt;&amp;gt;&amp;gt; br = ar&amp;gt;&amp;gt;&amp;gt; br{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;1&amp;#39;}&amp;gt;&amp;gt;&amp;gt; ar[&amp;#39;x&amp;#39;] = &amp;#39;3&amp;#39;&amp;gt;&amp;gt;&amp;gt; br{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;}&amp;gt;&amp;gt;&amp;gt; ar{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;} 其实还可以有更简单的验证方式，即查看变量的id值：</description>
     </item>
     
     <item>
@@ -184,7 +185,9 @@ time_total：总时间
       
       <guid>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</guid>
       <description>本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.</description>
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.</description>
     </item>
     
     <item>
@@ -193,7 +196,7 @@ time_total：总时间
       <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>//yull.in/2018/08/install-and-config-openresty.html</guid>
-      <description>安装配置openresty  下载源码  cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz解压后编译安装  yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install</description>
+      <description>安装配置openresty 下载源码 cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install </description>
     </item>
     
     <item>
@@ -203,9 +206,9 @@ time_total：总时间
       
       <guid>//yull.in/2018/08/config-elasticsearch-ingest-node.html</guid>
       <description>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&amp;quot;pipeline&amp;quot; : {&amp;quot;description&amp;quot; : &amp;quot;nginx access log&amp;quot;,&amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;quot; %{NUMBER:response_status} (?</description>
+1.测试可以用如下命令 curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&amp;#34;pipeline&amp;#34; : {&amp;#34;description&amp;#34; : &amp;#34;nginx access log&amp;#34;,&amp;#34;processors&amp;#34;: [{&amp;#34;grok&amp;#34;: {&amp;#34;field&amp;#34;: &amp;#34;message&amp;#34;,&amp;#34;patterns&amp;#34;: [&amp;#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;#34; %{NUMBER:response_status} (?</description>
     </item>
     
     <item>

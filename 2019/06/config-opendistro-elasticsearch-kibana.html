@@ -32,7 +32,7 @@
     }
     
   },
-  "description": "系统环境：Centos 7\n安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)\ncd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option \u0026lsquo;UseParNewGC\u0026rsquo;参考链接https://github.com/elastic/logstash/issues/9345\n 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。\n下面开始安装：\nyum install opendistroforelasticsearch systemctl start elasticsearch.",
+  "description": "系统环境：Centos 7\n安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)\ncd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option \u0026lsquo;UseParNewGC\u0026rsquo;参考链接https://github.com/elastic/logstash/issues/9345\n如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。\n下面开始安装：\nyum install opendistroforelasticsearch systemctl start elasticsearch.",
   "keywords": []
 }
 
@@ -40,13 +40,13 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.">
 
@@ -54,7 +54,7 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.">
 <meta property="og:description" content="系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.">
 <meta property="og:type" content="article">
@@ -66,13 +66,13 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.">
 <meta property="og:description" content="系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.">
 <meta name="twitter:description" content="系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.">
 <meta property="og:locale" content="zh-cn">
@@ -367,7 +367,7 @@ systemctl start kibana.service
 </code></pre><p>由于默认的kibana配置是监听的localhost，所以需要修改一下配置，修改server.host为0.0.0.0或者你想监听的IP地址</p>
 <p>由于opendistro实际也是基于searchguard做的集成，所以KIBANA的前端同样需要一个代理服务器来传递账号信息，nginx的代理配置如下：</p>
 <pre tabindex="0"><code>location / {
-    auth_basic &quot;web log elk sandbox2&quot;;
+    auth_basic &#34;web log elk sandbox2&#34;;
     auth_basic_user_file auth_passwd/kibana_auth; 
     proxy_set_header X-PROXY-USER $remote_user;
     proxy_pass http://10.2.xx.xx:5601/;             #这里的地址应为KIBANA的IP地址    
@@ -523,7 +523,7 @@ ln -s /usr/java/jdk1.8.0_181-amd64/lib/tools.jar /usr/share/elasticsearch/lib/
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

@@ -6,7 +6,17 @@
     <description>Recent content in TECH INFO on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-info/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google BBRv3效果显著，将合并到Linux内核</title>
+      <link>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</guid>
+      <description>Google BBRv3效果显著，将合并到Linux内核 Google的开源BBR TCP拥塞控制算法在Google内部被广泛使用，其v3版本已经在公司内部取得了成功，并且他们正在努力将BBRv3引入主线Linux内核。
+Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已被证明优于简单的基于丢包的拥塞控制，使得Google内外的网络能够以更高的吞吐量和更低的延迟更高效地运行。 Google工程师在7月底的IETF 117活动中在旧金山做了演讲。BBRv3集成了各种修复和算法更新。Google发现BBRv3的数据包重传率减少了12%，延迟略有改善。BBRv3将以双重GPL和BSD许可证公开发布。Google工程师计划在8月份提议将BBRv3主线化到Linux内核TCP/网络代码中。计划是从版本1升级到版本3的BBR模块。 请查看Google幻灯片以获取有关BBRv3的更多详细信息。在BBRv3代码上游到主线内核之前，您可以通过此Google GitHub存储库找到BBRv3代码。</description>
+    </item>
+    
     <item>
       <title>简单易用的markdown转html方法</title>
       <link>//yull.in/2021/11/markdown-to-html-with-markdeep.html</link>
@@ -15,7 +25,7 @@
       <guid>//yull.in/2021/11/markdown-to-html-with-markdeep.html</guid>
       <description>发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
 Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
-&amp;lt;meta charset=&amp;quot;utf-8&amp;quot; emacsmode=&amp;quot;-*- markdown -*-&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://casual-effects.com/markdeep/latest/slate.css?&amp;quot;&amp;gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates</description>
+&amp;lt;meta charset=&amp;#34;utf-8&amp;#34; emacsmode=&amp;#34;-*- markdown -*-&amp;#34;&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://casual-effects.com/markdeep/latest/slate.css?&amp;#34;&amp;gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates</description>
     </item>
     
     <item>

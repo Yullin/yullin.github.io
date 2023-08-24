@@ -32,7 +32,7 @@
     }
     
   },
-  "description": "在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦\nlua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的\n 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁\nstring.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', function(w) table.insert(rt, w) end ) return rt end  使用示例：",
+  "description": "在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦\nlua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的\n另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁\nstring.split = function(s, p) local rt= {} string.gsub(s, \u0026#39;[^\u0026#39;..p..\u0026#39;]+\u0026#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：",
   "keywords": []
 }
 
@@ -40,19 +40,19 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：">
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：">
 
 
 <meta property="og:description" content="在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：">
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx Lua中的小陷阱">
 <meta name="twitter:title" content="Nginx Lua中的小陷阱">
@@ -61,12 +61,12 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
 <meta property="og:site_name" content="Yullin Blog 运维 生活">
 <meta property="og:description" content="在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：">
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：">
 <meta name="twitter:description" content="在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：">
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]&#43;&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -330,15 +330,15 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>string.split = function(s, p)
 
     local rt= {}
-    string.gsub(s, '[^'..p..']+', function(w) table.insert(rt, w) end )
+    string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end )
     return rt
 
 end
 </code></pre><hr>
 <p><strong>使用示例：</strong></p>
-<pre tabindex="0"><code>local str = 'abc,123,hello,ok'
+<pre tabindex="0"><code>local str = &#39;abc,123,hello,ok&#39;
 
-local list = string.split(str, ',')
+local list = string.split(str, &#39;,&#39;)
 
 for _, s in ipairs(list） do
 
@@ -355,9 +355,9 @@ hello
 ok
 </code></pre><hr>
 <p><strong>另外一个示例：</strong></p>
-<pre tabindex="0"><code>local str = 'abc \n123 \t hello ok'
+<pre tabindex="0"><code>local str = &#39;abc \n123 \t hello ok&#39;
 
-local list = string.split(str, '%s')
+local list = string.split(str, &#39;%s&#39;)
 
 for _, s in ipairs(list） do
 
@@ -504,7 +504,7 @@ ok
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

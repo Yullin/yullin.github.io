@@ -32,7 +32,7 @@
     }
     
   },
-  "description": "准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。\n 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以\n# yum install gcc 下面就是安装kibana的插件",
+  "description": "准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。\n对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以\n# yum install gcc 下面就是安装kibana的插件\n# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.",
   "keywords": []
 }
 
@@ -40,17 +40,19 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件">
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.">
 
 
 <meta property="og:description" content="准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件">
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="install ElastAlert">
 <meta name="twitter:title" content="install ElastAlert">
@@ -58,11 +60,13 @@
 <meta property="twitter:url" content="//yull.in/2019/07/install-elastalert.html">
 <meta property="og:site_name" content="Yullin Blog 运维 生活">
 <meta property="og:description" content="准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件">
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.">
 <meta name="twitter:description" content="准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件">
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -471,7 +475,7 @@ if (!doNotTrack) {
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

@@ -32,7 +32,7 @@
     }
     
   },
-  "description": "在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。\n1.测试可以用如下命令  curl -v -H \u0026lsquo;Content-Type: application/json\u0026rsquo; -X POST \u0026lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate\u0026rsquo; -d@filebeat.test.json\n filebeat.test.json的内容如下：\n{\r\u0026quot;pipeline\u0026quot; : {\r\u0026quot;description\u0026quot; : \u0026quot;nginx access log\u0026quot;,\r\u0026quot;processors\u0026quot;: [\r{\r\u0026quot;grok\u0026quot;: {\r\u0026quot;field\u0026quot;: \u0026quot;message\u0026quot;,\r\u0026quot;patterns\u0026quot;: [\u0026quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \\\u0026quot;%{WORD:request_method} %\r{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\\\u0026quot; %{NUMBER:response_status} (?",
+  "description": "在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。\n1.测试可以用如下命令 curl -v -H \u0026lsquo;Content-Type: application/json\u0026rsquo; -X POST \u0026lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate\u0026rsquo; -d@filebeat.test.json\nfilebeat.test.json的内容如下：\n{\r\u0026#34;pipeline\u0026#34; : {\r\u0026#34;description\u0026#34; : \u0026#34;nginx access log\u0026#34;,\r\u0026#34;processors\u0026#34;: [\r{\r\u0026#34;grok\u0026#34;: {\r\u0026#34;field\u0026#34;: \u0026#34;message\u0026#34;,\r\u0026#34;patterns\u0026#34;: [\u0026#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \\\u0026#34;%{WORD:request_method} %\r{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\\\u0026#34; %{NUMBER:response_status} (?",
   "keywords": []
 }
 
@@ -40,19 +40,19 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?">
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?">
 
 
 <meta property="og:description" content="在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?">
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="configure elasticsearch ingest node">
 <meta name="twitter:title" content="configure elasticsearch ingest node">
@@ -60,13 +60,13 @@
 <meta property="twitter:url" content="//yull.in/2018/08/config-elasticsearch-ingest-node.html">
 <meta property="og:site_name" content="Yullin Blog 运维 生活">
 <meta property="og:description" content="在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?">
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?">
 <meta name="twitter:description" content="在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?">
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -333,24 +333,24 @@ if (!doNotTrack) {
 </blockquote>
 <p>filebeat.test.json的内容如下：</p>
 <pre tabindex="0"><code>{
-  &quot;pipeline&quot; : {
-    &quot;description&quot; : &quot;nginx access log&quot;,
-    &quot;processors&quot;: [
+  &#34;pipeline&#34; : {
+    &#34;description&#34; : &#34;nginx access log&#34;,
+    &#34;processors&#34;: [
       {
-        &quot;grok&quot;: {
-          &quot;field&quot;: &quot;message&quot;,
-          &quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %
-{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?:%{NUMBER:bytes}|-) (?:%{NUMBER:error_code}|-) \&quot;(?:%{WORD:error_msg}|-)\&quot; %{QS:referrer} %{QS:agent} \&quot;%{DATA:x_forwarded_for}\&quot; \&quot;%{DATA:x_is_ip}\&quot; %{HOSTN
-AME:server_host} %{URIHOST:upstream_addr} %{BASE10NUM:upstream_response_time} %{NUMBER:upstream_status} \&quot;(?:%{IP:x_is_client_ip}|-)\&quot;&quot;],
-          &quot;ignore_missing&quot;: true
+        &#34;grok&#34;: {
+          &#34;field&#34;: &#34;message&#34;,
+          &#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %
+{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?:%{NUMBER:bytes}|-) (?:%{NUMBER:error_code}|-) \&#34;(?:%{WORD:error_msg}|-)\&#34; %{QS:referrer} %{QS:agent} \&#34;%{DATA:x_forwarded_for}\&#34; \&#34;%{DATA:x_is_ip}\&#34; %{HOSTN
+AME:server_host} %{URIHOST:upstream_addr} %{BASE10NUM:upstream_response_time} %{NUMBER:upstream_status} \&#34;(?:%{IP:x_is_client_ip}|-)\&#34;&#34;],
+          &#34;ignore_missing&#34;: true
         }
       }
     ]
   },
-  &quot;docs&quot; : [
-    { &quot;_source&quot;: {
-        &quot;message&quot;: &quot;101.95.128.162 2018-08-09T19:26:41+08:00 1533814001.040 0.061 407 27500839 1 /wp-includes/js/jquery/jquery.js \&quot;GET /wp-includes/js/jquery/jquery.js?ver=1.12.4 HTTP/1.1\&quot; 200 97184 - \&quot;-\&quot; \&quot;http://blog.zdao.com/\
-&quot; \&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36\&quot; \&quot;-\&quot; \&quot;-\&quot; blog.zdao.com 106.75.223.130:80 0.061 200 \&quot;101.95.128.162\&quot;&quot; 
+  &#34;docs&#34; : [
+    { &#34;_source&#34;: {
+        &#34;message&#34;: &#34;101.95.128.162 2018-08-09T19:26:41+08:00 1533814001.040 0.061 407 27500839 1 /wp-includes/js/jquery/jquery.js \&#34;GET /wp-includes/js/jquery/jquery.js?ver=1.12.4 HTTP/1.1\&#34; 200 97184 - \&#34;-\&#34; \&#34;http://blog.zdao.com/\
+&#34; \&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36\&#34; \&#34;-\&#34; \&#34;-\&#34; blog.zdao.com 106.75.223.130:80 0.061 200 \&#34;101.95.128.162\&#34;&#34; 
       }
     }
   ]
@@ -362,7 +362,7 @@ AME:server_host} %{URIHOST:upstream_addr} %{BASE10NUM:upstream_response_time} %{
   paths:
     - /data/front/webcc_online/*/*/*/10.2.0.247/5032/*.log
   fields:
-    type: &quot;access-log&quot;
+    type: &#34;access-log&#34;
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
@@ -371,22 +371,22 @@ filebeat.config.modules:
 setup.template.settings:
   index.number_of_shards: 3
 
-setup.template.name: &quot;ignore-this&quot;
-setup.template.pattern: &quot;ignore-this&quot;
+setup.template.name: &#34;ignore-this&#34;
+setup.template.pattern: &#34;ignore-this&#34;
 
 setup.kibana:
-  host: &quot;localhost:5601&quot;
+  host: &#34;localhost:5601&#34;
   
 output.elasticsearch:
-  hosts: [&quot;10.2.4.34:9200&quot;]
+  hosts: [&#34;10.2.4.34:9200&#34;]
   indices:
-    - index: &quot;filebeat-nginx-access-%{+yyy.MM.dd}&quot;
+    - index: &#34;filebeat-nginx-access-%{+yyy.MM.dd}&#34;
       when.equals:
-        fields.type: &quot;access-log&quot;
+        fields.type: &#34;access-log&#34;
   pipelines:
-    - pipeline: &quot;pipeline-nginx-access&quot;
+    - pipeline: &#34;pipeline-nginx-access&#34;
       when.equals:
-        fields.type: &quot;access-log&quot;
+        fields.type: &#34;access-log&#34;
 </code></pre>
               
 
@@ -522,7 +522,7 @@ output.elasticsearch:
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

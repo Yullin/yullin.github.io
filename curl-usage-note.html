@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"\/\/yull.in\/",
+  "author": {
+    "@type": "Person",
+    "name": "Yullin",
+    
+    "image": "//yull.in/profile.jpg"
+    
+  },
+  "name":"Yullin Blog 运维 生活",
+  "description":"CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。\n下面说一下具体的使用方法：\n1.建立一个命令格式文件 \\n time_namelookup: %{time_namelookup}\\n time_connect: %{time_connect}\\n time_appconnect: %{time_appconnect}\\n time_pretransfer: %{time_pretransfer}\\n time_redirect: %{time_redirect}\\n time_starttransfer: %{time_starttransfer}\\n ----------\\n time_total: %{time_total}\\n \\n 说明：\ntime_namelookup：DNS解析域名时间，把域名\u0026mdash;\u0026gt;ip的时间\ntime_connect：TCP连接的时间，三次握手的时间\ntime_appconnect：SSL|SSH等上层连接建立的时间\ntime_pretransfer：从请求开始到到响应开始传输的时间\ntime_redirect：从开始到最后一个请求事务的时间\ntime_starttransfer：从请求开始到第一个字节将要传输的时间\ntime_total：总时间\n2.命令使用方法 curl -w \u0026ldquo;@curl\u0026rdquo; -o \/dev\/null -s -d \u0026ldquo;username=aaa\u0026amp;password=bbb\u0026rdquo; https:\/\/xxx.",
+  "url":"\/\/yull.in\/curl-usage-note.html",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Yullin">
+<meta name="keywords" content="">
+<meta name="description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.">
+
+
+<meta property="og:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="curl usage note">
+<meta name="twitter:title" content="curl usage note">
+<meta property="og:url" content="//yull.in/curl-usage-note.html">
+<meta property="twitter:url" content="//yull.in/curl-usage-note.html">
+<meta property="og:site_name" content="Yullin Blog 运维 生活">
+<meta property="og:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.">
+<meta name="twitter:description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
+下面说一下具体的使用方法：
+1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间
+time_connect：TCP连接的时间，三次握手的时间
+time_appconnect：SSL|SSH等上层连接建立的时间
+time_pretransfer：从请求开始到到响应开始传输的时间
+time_redirect：从开始到最后一个请求事务的时间
+time_starttransfer：从请求开始到第一个字节将要传输的时间
+time_total：总时间
+2.命令使用方法 curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; https://xxx.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2018-11-02T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-11-02T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="TECH SKILLS">
+    
+  
+  
+    
+      <meta property="article:tag" content="curl">
+    
+      <meta property="article:tag" content="usage">
+    
+      <meta property="article:tag" content="get">
+    
+      <meta property="article:tag" content="post">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="//yull.in/profile.jpg">
+  <meta property="twitter:image" content="//yull.in/profile.jpg">
+
+
+
+
+
+
+    <title>curl usage note</title>
+
+    <link rel="icon" href="//yull.in/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="//yull.in/curl-usage-note.html">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="//yull.in/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-126720130-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="//yull.in/" aria-label="去首页">Yullin Blog 运维 生活</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="//yull.in/#about" aria-label="打开链接: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="//yull.in/#about" aria-label="阅读有关作者的更多信息">
+          <img class="sidebar-profile-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Yullin</h4>
+        
+          <h5 class="sidebar-profile-bio">Learn To Live</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/categories.html" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/tags.html" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/archives.html" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Yullin" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="//yull.in/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="8751190709"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      curl usage note
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-11-02T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-11-02
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。<br>
+下面说一下具体的使用方法：</p>
+<h3 id="1建立一个命令格式文件">1.建立一个命令格式文件</h3>
+<pre tabindex="0"><code>\n 
+            time_namelookup:  %{time_namelookup}\n
+               time_connect:  %{time_connect}\n
+            time_appconnect:  %{time_appconnect}\n
+           time_pretransfer:  %{time_pretransfer}\n
+              time_redirect:  %{time_redirect}\n
+         time_starttransfer:  %{time_starttransfer}\n
+                            ----------\n
+                 time_total:  %{time_total}\n
+\n
+</code></pre><p>说明：<br>
+time_namelookup：DNS解析域名时间，把域名&mdash;&gt;ip的时间<br>
+time_connect：TCP连接的时间，三次握手的时间<br>
+time_appconnect：SSL|SSH等上层连接建立的时间<br>
+time_pretransfer：从请求开始到到响应开始传输的时间<br>
+time_redirect：从开始到最后一个请求事务的时间<br>
+time_starttransfer：从请求开始到第一个字节将要传输的时间<br>
+time_total：总时间</p>
+<h3 id="2命令使用方法">2.命令使用方法</h3>
+<p>curl -w &ldquo;@curl&rdquo; -o /dev/null -s -d &ldquo;username=aaa&amp;password=bbb&rdquo; <a href="https://xxx.xxx.com/webapp/xxx/login">https://xxx.xxx.com/webapp/xxx/login</a></p>
+<p>-w：从文件中读取信息打印格式</p>
+<p>-o：输出的全部信息</p>
+<p>-s：不打印进度条</p>
+<p>-d：参数</p>
+<h3 id="3简单的方式">3.简单的方式</h3>
+<p>curl -o /dev/null -s -w &lsquo;%{time_connect}:%{time_starttransfer}:%{time_total}\n&rsquo; &lsquo;<a href="http://www.baidu.com">http://www.baidu.com</a>&rsquo;</p>
+<p>忽略ssl认证  并输出结果</p>
+<p>curl -k -XPOST -w &lsquo;\n%{time_connect}:%{time_starttransfer}:%{time_total}\n&rsquo; <a href="https://www.baidu.com">www.baidu.com</a></p>
+<h3 id="4当content-typeapplicationjsonrequestbodyid-93-status-2">4.当Content-Type:application/json，requestBody:{id: 93, status: 2}</h3>
+<p>curl -w &ldquo;@curl&rdquo; -H &ldquo;Content-Type:application/json&rdquo; -X PUT &ndash;data &lsquo;{id: 93, status: 2}&rsquo; http:/xxxxxxxxxxx/changeStatus</p>
+<hr>
+<p>curl 命令提供了 -w 参数，这个参数在 manpage 是这样解释的：</p>
+<pre tabindex="0"><code>-w, --write-out &lt;format&gt;
+              Make curl display information on stdout after a completed transfer. The format is a string that may contain plain text mixed with any number of variables. The  format
+              can  be  specified  as  a literal &#34;string&#34;, or you can have curl read the format from a file with &#34;@filename&#34; and to tell curl to read the format from stdin you write
+              &#34;@-&#34;.
+
+              The variables present in the output format will be substituted by the value or text that curl thinks fit, as described below. All variables are specified  as  %{vari‐
+              able_name} and to output a normal % you just write them as %%. You can output a newline by using \n, a carriage return with \r and a tab space with \t.
+</code></pre><p>它能够按照指定的格式打印某些信息，里面可以使用某些特定的变量，而且支持 \n 、 \t 和 \r 转义字符。提供的变量很多，比如 status_code 、 local_port 、 size_download 等等，这篇文章我们只关注和请求时间有关的变量（以 time_ 开头的变量）。</p>
+<p>先往文本文件 curl-format.txt 写入下面的内容：</p>
+<pre tabindex="0"><code>➜  ~ cat curl-format.txt
+    time_namelookup:  %{time_namelookup}\n
+       time_connect:  %{time_connect}\n
+    time_appconnect:  %{time_appconnect}\n
+      time_redirect:  %{time_redirect}\n
+   time_pretransfer:  %{time_pretransfer}\n
+ time_starttransfer:  %{time_starttransfer}\n
+                    ----------\n
+         time_total:  %{time_total}\n
+</code></pre><p>那么这些变量都是什么意思呢？我解释一下：</p>
+<p>time_namelookup ：DNS 域名解析的时候，就是把 <a href="https://zhihu.com">https://zhihu.com</a> 转换成 ip 地址的过程
+time_connect ：TCP 连接建立的时间，就是三次握手的时间
+time_appconnect ：SSL/SSH 等上层协议建立连接的时间，比如 connect/handshake 的时间
+time_redirect ：从开始到最后一个请求事务的时间
+time_pretransfer ：从请求开始到响应开始传输的时间
+time_starttransfer ：从请求开始到第一个字节将要传输的时间
+time_total ：这次请求花费的全部时间
+我们先看看一个简单的请求，没有重定向，也没有 SSL 协议的时间：</p>
+<pre tabindex="0"><code>➜  ~ curl -w &#34;@curl-format.txt&#34; -o /dev/null -s -L &#34;http://cizixs.com&#34;
+    time_namelookup:  0.012
+       time_connect:  0.227
+    time_appconnect:  0.000
+      time_redirect:  0.000
+   time_pretransfer:  0.227
+ time_starttransfer:  0.443
+                    ----------
+         time_total:  0.867
+</code></pre><p>可以看到这次请求各个步骤的时间都打印出来了，每个数字的单位都是秒（seconds），这样可以分析哪一步比较耗时，方便定位问题。这个命令各个参数的意义：</p>
+<p>-w ：从文件中读取要打印信息的格式
+-o /dev/null ：把响应的内容丢弃，因为我们这里并不关心它，只关心请求的耗时情况
+-s ：不要打印进度条
+从这个输出，我们可以算出各个步骤的时间：</p>
+<p>DNS 查询：12ms
+TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
+服务器处理时间：starttransfter(443) - pretransfer(227) = 216ms
+内容传输时间：total(867) - starttransfer(443) = 424ms
+来个比较复杂的，访问某度首页，带有中间有重定向和 SSL 协议：</p>
+<pre tabindex="0"><code>➜  ~ curl -w &#34;@curl-format.txt&#34; -o /dev/null -s -L &#34;https://baidu.com&#34;
+    time_namelookup:  0.012
+       time_connect:  0.018
+    time_appconnect:  0.328
+      time_redirect:  0.356
+   time_pretransfer:  0.018
+ time_starttransfer:  0.027
+                    ----------
+         time_total:  0.384
+</code></pre><p>可以看到 time_appconnect 和 time_redirect 都不是 0 了，其中 SSL 协议处理时间为 328-18=310ms 。而且 pretransfer 和 starttransfer 的时间都缩短了，这是重定向之后请求的时间。</p>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/curl/">curl</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/usage/">usage</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/get/">get</a>
+
+  <a class="tag tag--primary tag--small" href="//yull.in/tags/post/">post</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/python-dict-and-list-copy.html" data-tooltip="python字典和列表赋值的坑" aria-label="下一篇: python字典和列表赋值的坑">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/config-elasticsearch-logstash-kibana.html" data-tooltip="configure elasticsearch logstash kibana" aria-label="上一篇: configure elasticsearch logstash kibana">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/curl-usage-note.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/curl-usage-note.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/curl-usage-note.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/curl-usage-note.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = '\/\/yull.in\/curl-usage-note.html';
+        
+          this.page.identifier = '\/curl-usage-note.html'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'yull-in';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 Yullin. All Rights Reserved
+  </span>
+</footer>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
+     crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7268840106840339"
+     data-ad-slot="4417624521"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/python-dict-and-list-copy.html" data-tooltip="python字典和列表赋值的坑" aria-label="下一篇: python字典和列表赋值的坑">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="//yull.in/config-elasticsearch-logstash-kibana.html" data-tooltip="configure elasticsearch logstash kibana" aria-label="上一篇: configure elasticsearch logstash kibana">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="分享这个帖子">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=//yull.in/curl-usage-note.html" title="分享到 Facebook" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=//yull.in/curl-usage-note.html" title="分享到 Twitter" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=//yull.in/curl-usage-note.html" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=//yull.in/curl-usage-note.html&amp;pic=&amp;searchPic=false&amp;style=simple" title="分享到 Weibo" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="发表评论">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="回到顶部">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F%2Fyull.in%2Fcurl-usage-note.html" aria-label="分享到 Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F%2Fyull.in%2Fcurl-usage-note.html" aria-label="分享到 Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=%2F%2Fyull.in%2Fcurl-usage-note.html" aria-label="分享到 Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://service.weibo.com/share/share.php?appkey=&amp;title=&amp;url=%2F%2Fyull.in%2Fcurl-usage-note.html&amp;pic=&amp;searchPic=false&amp;style=simple" aria-label="分享到 Weibo">
+          <i class="fab fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//yull.in/profile.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Yullin</h4>
+    
+      <div id="about-card-bio">Learn To Live</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        DevOps
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('//yull.in/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="//yull.in/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

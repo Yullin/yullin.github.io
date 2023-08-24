@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
@@ -296,8 +296,8 @@ if (!doNotTrack) {
       
         今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
 列表的具体测试如下：
-&gt;&gt;&gt; a = ['1']&gt;&gt;&gt; b = a&gt;&gt;&gt; a.append('2')&gt;&gt;&gt; a['1', '2']&gt;&gt;&gt; b['1', '2']可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
-&gt;&gt;&gt; ar = {'x':'1','y':'2'}&gt;&gt;&gt; br = ar&gt;&gt;&gt; br{'y': '2', 'x': '1'}&gt;&gt;&gt; ar['x'] = '3'&gt;&gt;&gt; br{'y': '2', 'x': '3'}&gt;&gt;&gt; ar{'y': '2', 'x': '3'}其实还可以有更简单的验证方式，即查看变量的id值：
+&gt;&gt;&gt; a = [&#39;1&#39;]&gt;&gt;&gt; b = a&gt;&gt;&gt; a.append(&#39;2&#39;)&gt;&gt;&gt; a[&#39;1&#39;, &#39;2&#39;]&gt;&gt;&gt; b[&#39;1&#39;, &#39;2&#39;] 可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}&gt;&gt;&gt; br = ar&gt;&gt;&gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;&gt;&gt;&gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}&gt;&gt;&gt; ar{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;} 其实还可以有更简单的验证方式，即查看变量的id值：
       
       <p>
         
@@ -317,7 +317,7 @@ if (!doNotTrack) {
         
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

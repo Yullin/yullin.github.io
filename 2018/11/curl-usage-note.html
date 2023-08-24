@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
@@ -382,15 +382,15 @@ time_total：总时间</p>
 <h3 id="3简单的方式">3.简单的方式</h3>
 <p>curl -o /dev/null -s -w &lsquo;%{time_connect}:%{time_starttransfer}:%{time_total}\n&rsquo; &lsquo;<a href="http://www.baidu.com">http://www.baidu.com</a>&rsquo;</p>
 <p>忽略ssl认证  并输出结果</p>
-<p>curl -k -XPOST -w &lsquo;\n%{time_connect}:%{time_starttransfer}:%{time_total}\n&rsquo; <a href="http://www.baidu.com">www.baidu.com</a></p>
+<p>curl -k -XPOST -w &lsquo;\n%{time_connect}:%{time_starttransfer}:%{time_total}\n&rsquo; <a href="https://www.baidu.com">www.baidu.com</a></p>
 <h3 id="4当content-typeapplicationjsonrequestbodyid-93-status-2">4.当Content-Type:application/json，requestBody:{id: 93, status: 2}</h3>
 <p>curl -w &ldquo;@curl&rdquo; -H &ldquo;Content-Type:application/json&rdquo; -X PUT &ndash;data &lsquo;{id: 93, status: 2}&rsquo; http:/xxxxxxxxxxx/changeStatus</p>
 <hr>
 <p>curl 命令提供了 -w 参数，这个参数在 manpage 是这样解释的：</p>
 <pre tabindex="0"><code>-w, --write-out &lt;format&gt;
               Make curl display information on stdout after a completed transfer. The format is a string that may contain plain text mixed with any number of variables. The  format
-              can  be  specified  as  a literal &quot;string&quot;, or you can have curl read the format from a file with &quot;@filename&quot; and to tell curl to read the format from stdin you write
-              &quot;@-&quot;.
+              can  be  specified  as  a literal &#34;string&#34;, or you can have curl read the format from a file with &#34;@filename&#34; and to tell curl to read the format from stdin you write
+              &#34;@-&#34;.
 
               The variables present in the output format will be substituted by the value or text that curl thinks fit, as described below. All variables are specified  as  %{vari‐
               able_name} and to output a normal % you just write them as %%. You can output a newline by using \n, a carriage return with \r and a tab space with \t.
@@ -414,7 +414,7 @@ time_pretransfer ：从请求开始到响应开始传输的时间
 time_starttransfer ：从请求开始到第一个字节将要传输的时间
 time_total ：这次请求花费的全部时间
 我们先看看一个简单的请求，没有重定向，也没有 SSL 协议的时间：</p>
-<pre tabindex="0"><code>➜  ~ curl -w &quot;@curl-format.txt&quot; -o /dev/null -s -L &quot;http://cizixs.com&quot;
+<pre tabindex="0"><code>➜  ~ curl -w &#34;@curl-format.txt&#34; -o /dev/null -s -L &#34;http://cizixs.com&#34;
     time_namelookup:  0.012
        time_connect:  0.227
     time_appconnect:  0.000
@@ -433,7 +433,7 @@ TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
 服务器处理时间：starttransfter(443) - pretransfer(227) = 216ms
 内容传输时间：total(867) - starttransfer(443) = 424ms
 来个比较复杂的，访问某度首页，带有中间有重定向和 SSL 协议：</p>
-<pre tabindex="0"><code>➜  ~ curl -w &quot;@curl-format.txt&quot; -o /dev/null -s -L &quot;https://baidu.com&quot;
+<pre tabindex="0"><code>➜  ~ curl -w &#34;@curl-format.txt&#34; -o /dev/null -s -L &#34;https://baidu.com&#34;
     time_namelookup:  0.012
        time_connect:  0.018
     time_appconnect:  0.328
@@ -576,7 +576,7 @@ TCP 连接时间：pretransfter(227) - namelookup(12) = 215ms
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

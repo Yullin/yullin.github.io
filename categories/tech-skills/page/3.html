@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
@@ -294,7 +294,7 @@ if (!doNotTrack) {
     </div>
     <div class="postShorten-excerpt">
       
-        安装配置openresty  下载源码  cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz解压后编译安装  yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install
+        安装配置openresty 下载源码 cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install 
       
       <p>
         
@@ -360,9 +360,9 @@ if (!doNotTrack) {
     <div class="postShorten-excerpt">
       
         在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?
       
       <p>
         
@@ -465,7 +465,7 @@ if (!doNotTrack) {
         
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

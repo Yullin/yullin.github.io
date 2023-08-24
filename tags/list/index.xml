@@ -15,8 +15,8 @@
       <guid>//yull.in/2018/12/python-dict-and-list-copy.html</guid>
       <description>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
 列表的具体测试如下：
-&amp;gt;&amp;gt;&amp;gt; a = [&#39;1&#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&#39;2&#39;)&amp;gt;&amp;gt;&amp;gt; a[&#39;1&#39;, &#39;2&#39;]&amp;gt;&amp;gt;&amp;gt; b[&#39;1&#39;, &#39;2&#39;]可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
-&amp;gt;&amp;gt;&amp;gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}&amp;gt;&amp;gt;&amp;gt; br = ar&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}&amp;gt;&amp;gt;&amp;gt; ar[&#39;x&#39;] = &#39;3&#39;&amp;gt;&amp;gt;&amp;gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}&amp;gt;&amp;gt;&amp;gt; ar{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}其实还可以有更简单的验证方式，即查看变量的id值：</description>
+&amp;gt;&amp;gt;&amp;gt; a = [&amp;#39;1&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&amp;#39;2&amp;#39;)&amp;gt;&amp;gt;&amp;gt; a[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;] 可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&amp;gt;&amp;gt;&amp;gt; ar = {&amp;#39;x&amp;#39;:&amp;#39;1&amp;#39;,&amp;#39;y&amp;#39;:&amp;#39;2&amp;#39;}&amp;gt;&amp;gt;&amp;gt; br = ar&amp;gt;&amp;gt;&amp;gt; br{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;1&amp;#39;}&amp;gt;&amp;gt;&amp;gt; ar[&amp;#39;x&amp;#39;] = &amp;#39;3&amp;#39;&amp;gt;&amp;gt;&amp;gt; br{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;}&amp;gt;&amp;gt;&amp;gt; ar{&amp;#39;y&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;x&amp;#39;: &amp;#39;3&amp;#39;} 其实还可以有更简单的验证方式，即查看变量的id值：</description>
     </item>
     
   </channel>

@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
@@ -272,6 +272,72 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" aria-label="打开帖子: Google BBRv3效果显著，将合并到Linux内核">
+      
+          Google BBRv3效果显著，将合并到Linux内核
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-08-07T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-08-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Google BBRv3效果显著，将合并到Linux内核 Google的开源BBR TCP拥塞控制算法在Google内部被广泛使用，其v3版本已经在公司内部取得了成功，并且他们正在努力将BBRv3引入主线Linux内核。
+Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已被证明优于简单的基于丢包的拥塞控制，使得Google内外的网络能够以更高的吞吐量和更低的延迟更高效地运行。 Google工程师在7月底的IETF 117活动中在旧金山做了演讲。BBRv3集成了各种修复和算法更新。Google发现BBRv3的数据包重传率减少了12%，延迟略有改善。BBRv3将以双重GPL和BSD许可证公开发布。Google工程师计划在8月份提议将BBRv3主线化到Linux内核TCP/网络代码中。计划是从版本1升级到版本3的BBR模块。 请查看Google幻灯片以获取有关BBRv3的更多详细信息。在BBRv3代码上游到主线内核之前，您可以通过此Google GitHub存储库找到BBRv3代码。
+      
+      <p>
+        
+          <a href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Google BBRv3效果显著，将合并到Linux内核">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2022/01/etcd-user-authentication.html" aria-label="打开帖子: etcd添加用户验证">
       
           etcd添加用户验证
@@ -376,7 +442,7 @@ if (!doNotTrack) {
       
         发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
 Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
-&lt;meta charset=&quot;utf-8&quot; emacsmode=&quot;-*- markdown -*-&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://casual-effects.com/markdeep/latest/slate.css?&quot;&gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates
+&lt;meta charset=&#34;utf-8&#34; emacsmode=&#34;-*- markdown -*-&#34;&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;https://casual-effects.com/markdeep/latest/slate.css?&#34;&gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates
       
       <p>
         
@@ -443,7 +509,7 @@ Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只�
       
         在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
 第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
-func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.
       
       <p>
         
@@ -509,8 +575,9 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;
     <div class="postShorten-excerpt">
       
         准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
- 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert  安装  进入ElastAlert目录，执行  # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
 # yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.
       
       <p>
         
@@ -578,7 +645,7 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&quot;
         系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.
       
@@ -647,81 +714,12 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.
       
         在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', function(w) table.insert(rt, w) end ) return rt end  使用示例：
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：
       
       <p>
         
           <a href="//yull.in/2019/03/nginx-lua-traps.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx Lua中的小陷阱">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/03/centos-7-hostname-uppercase.html" aria-label="打开帖子: CentOS 7 主机名大小字母的问题">
-      
-          CentOS 7 主机名大小字母的问题
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-03-06T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-03-06
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：
-# hostnamectl set-hostname TestHostname 但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是testhostname。
-如果我们还是想要驼峰规则的主机名怎么办。
-这样就可以了
-# hostnamectl --static set-hostname TestHostname 
-      
-      <p>
-        
-          <a href="//yull.in/2019/03/centos-7-hostname-uppercase.html" class="postShorten-excerpt_link link" aria-label="打开帖子: CentOS 7 主机名大小字母的问题">阅读全文</a>
         
         
       </p>
@@ -753,7 +751,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

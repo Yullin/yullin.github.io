@@ -15,7 +15,7 @@
       <guid>//yull.in/2021/02/random-string-in-golang.html</guid>
       <description>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
 第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
-func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;quot;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
     </item>
     
   </channel>

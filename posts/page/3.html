@@ -10,7 +10,7 @@
   "headline": "Posts",
   
   "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "2022-01-13T00:00:00Z",
+  "dateModified": "2022-08-07T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Yullin",
@@ -40,7 +40,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
@@ -274,6 +274,74 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2018/12/python-dict-and-list-copy.html" aria-label="打开帖子: python字典和列表赋值的坑">
+      
+          python字典和列表赋值的坑
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2018-12-18T00:00:00Z">
+        
+  
+  
+  
+  
+    2018-12-18
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
+列表的具体测试如下：
+&gt;&gt;&gt; a = [&#39;1&#39;]&gt;&gt;&gt; b = a&gt;&gt;&gt; a.append(&#39;2&#39;)&gt;&gt;&gt; a[&#39;1&#39;, &#39;2&#39;]&gt;&gt;&gt; b[&#39;1&#39;, &#39;2&#39;] 可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
+&gt;&gt;&gt; ar = {&#39;x&#39;:&#39;1&#39;,&#39;y&#39;:&#39;2&#39;}&gt;&gt;&gt; br = ar&gt;&gt;&gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;1&#39;}&gt;&gt;&gt; ar[&#39;x&#39;] = &#39;3&#39;&gt;&gt;&gt; br{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;}&gt;&gt;&gt; ar{&#39;y&#39;: &#39;2&#39;, &#39;x&#39;: &#39;3&#39;} 其实还可以有更简单的验证方式，即查看变量的id值：
+      
+      <p>
+        
+          <a href="//yull.in/2018/12/python-dict-and-list-copy.html" class="postShorten-excerpt_link link" aria-label="打开帖子: python字典和列表赋值的坑">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2018/11/curl-usage-note.html" aria-label="打开帖子: curl usage note">
       
           curl usage note
@@ -383,7 +451,9 @@ time_total：总时间
     <div class="postShorten-excerpt">
       
         本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.
       
       <p>
         
@@ -520,7 +590,7 @@ Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一�
     </div>
     <div class="postShorten-excerpt">
       
-        安装配置openresty  下载源码  cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz解压后编译安装  yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install
+        安装配置openresty 下载源码 cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install 
       
       <p>
         
@@ -586,9 +656,9 @@ Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一�
     <div class="postShorten-excerpt">
       
         在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&quot;pipeline&quot; : {&quot;description&quot; : &quot;nginx access log&quot;,&quot;processors&quot;: [{&quot;grok&quot;: {&quot;field&quot;: &quot;message&quot;,&quot;patterns&quot;: [&quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&quot; %{NUMBER:response_status} (?
+1.测试可以用如下命令 curl -v -H &lsquo;Content-Type: application/json&rsquo; -X POST &lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&#34;pipeline&#34; : {&#34;description&#34; : &#34;nginx access log&#34;,&#34;processors&#34;: [{&#34;grok&#34;: {&#34;field&#34;: &#34;message&#34;,&#34;patterns&#34;: [&#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&#34; %{NUMBER:response_status} (?
       
       <p>
         
@@ -690,7 +760,7 @@ Windows 10 10月2018更新，也称为版本1809，于10月2日宣布，同一�
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

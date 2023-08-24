@@ -15,8 +15,8 @@
       <guid>//yull.in/2019/03/nginx-lua-traps.html</guid>
       <description>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end  使用示例：</description>
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..p..&amp;#39;]+&amp;#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：</description>
     </item>
     
   </channel>

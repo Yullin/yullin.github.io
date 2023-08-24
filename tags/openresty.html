@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.89.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Yullin">
 <meta name="keywords" content="">
 <meta name="description" content="记录工作，记录学习，记录生活，Yullin, Devops, K8S, Kubernets">
@@ -296,8 +296,8 @@ if (!doNotTrack) {
       
         在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
- 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
-string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', function(w) table.insert(rt, w) end ) return rt end  使用示例：
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：
       
       <p>
         
@@ -362,7 +362,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
     </div>
     <div class="postShorten-excerpt">
       
-        安装配置openresty  下载源码  cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz解压后编译安装  yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install
+        安装配置openresty 下载源码 cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install 
       
       <p>
         
@@ -382,7 +382,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, '[^'..p..']+', functio
         
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 Yullin. All Rights Reserved
+    &copy; 2023 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

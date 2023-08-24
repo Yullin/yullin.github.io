@@ -16,7 +16,7 @@
       <description>系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &amp;lsquo;UseParNewGC&amp;rsquo;参考链接https://github.com/elastic/logstash/issues/9345
- 如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch  ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
 下面开始安装：
 yum install opendistroforelasticsearch systemctl start elasticsearch.</description>
     </item>
@@ -28,7 +28,9 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.</descripti
       
       <guid>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</guid>
       <description>本文主要记录ELK的测试环境的搭建过程
-1.环境以及架构    Jumper 系统版本 IP地址 主机名 角色     d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana   d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash   d1000 CENTOS 7 10.</description>
+1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
+首先是准备环境，安装JAVA运行环境JDK。
+yum install java-1.8.0-openjdk-devel 2.</description>
     </item>
     
     <item>
@@ -38,9 +40,9 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.</descripti
       
       <guid>//yull.in/2018/08/config-elasticsearch-ingest-node.html</guid>
       <description>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
-1.测试可以用如下命令  curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
- filebeat.test.json的内容如下：
-{&amp;quot;pipeline&amp;quot; : {&amp;quot;description&amp;quot; : &amp;quot;nginx access log&amp;quot;,&amp;quot;processors&amp;quot;: [{&amp;quot;grok&amp;quot;: {&amp;quot;field&amp;quot;: &amp;quot;message&amp;quot;,&amp;quot;patterns&amp;quot;: [&amp;quot;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;quot;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;quot; %{NUMBER:response_status} (?</description>
+1.测试可以用如下命令 curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
+filebeat.test.json的内容如下：
+{&amp;#34;pipeline&amp;#34; : {&amp;#34;description&amp;#34; : &amp;#34;nginx access log&amp;#34;,&amp;#34;processors&amp;#34;: [{&amp;#34;grok&amp;#34;: {&amp;#34;field&amp;#34;: &amp;#34;message&amp;#34;,&amp;#34;patterns&amp;#34;: [&amp;#34;%{IP:client_ip} %{TIMESTAMP_ISO8601:iso_time} %{BASE10NUM:timestamp} %{BASE10NUM:request_time} %{BASE10NUM:request_length} %{INT:connection_id} %{INT:connection_requests} %{PATH:uri} \&amp;#34;%{WORD:request_method} %{NOTSPACE:request} HTTP/%{NUMBER:httpversion}\&amp;#34; %{NUMBER:response_status} (?</description>
     </item>
     
   </channel>
