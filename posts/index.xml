@@ -18,6 +18,17 @@ Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已�
     </item>
     
     <item>
+      <title>Linux终端复制粘贴出现”0~“和”1~“的解决方案</title>
+      <link>//yull.in/2022/06/linux-terminal-fix-0-1.html</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2022/06/linux-terminal-fix-0-1.html</guid>
+      <description>Linux终端复制粘贴出现”0~“和”1~“的解决方案 复制文字后在Linux终端粘贴后出现多余的&amp;quot;0~&amp;ldquo;和&amp;rdquo;~1&amp;quot;时，可使用下面的方法解决
+直接输入执行
+printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
+    </item>
+    
+    <item>
       <title>etcd添加用户验证</title>
       <link>//yull.in/2022/01/etcd-user-authentication.html</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>

@@ -274,6 +274,74 @@ if (!doNotTrack) {
     <div class="postShorten-header">
       <h1 class="postShorten-title">
       
+        <a class="link-unstyled" href="//yull.in/2019/03/nginx-lua-traps.html" aria-label="打开帖子: Nginx Lua中的小陷阱">
+      
+          Nginx Lua中的小陷阱
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-03-11T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-03-11
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
+lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
+另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
+string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;]+&#39;, function(w) table.insert(rt, w) end ) return rt end 使用示例：
+      
+      <p>
+        
+          <a href="//yull.in/2019/03/nginx-lua-traps.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx Lua中的小陷阱">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
         <a class="link-unstyled" href="//yull.in/2019/03/centos-7-hostname-uppercase.html" aria-label="打开帖子: CentOS 7 主机名大小字母的问题">
       
           CentOS 7 主机名大小字母的问题
@@ -669,76 +737,6 @@ if (!doNotTrack) {
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2018/12/nginx-reverse-proxy-pass.html" aria-label="打开帖子: Nginx反向代理配置">
-      
-          Nginx反向代理配置
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2018-12-19T00:00:00Z">
-        
-  
-  
-  
-  
-    2018-12-19
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
-普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
-location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以
-location / { proxy_pass http://192.168.1.12:8080; } 如果要配置一个相对复杂的反向代理,比如，将url中以/test/开头的请求转发到后台对应的某台server上
-可以在Nginx里设置一个变量，来临时保存/test/后面的路径信息
-location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $params $2; } proxy_pass http://backend$id.
-      
-      <p>
-        
-          <a href="//yull.in/2018/12/nginx-reverse-proxy-pass.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx反向代理配置">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -760,7 +758,7 @@ location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $par
           </li>
         
       
-      <li class="pagination-number">第 2 页 共 3 页</li>
+      <li class="pagination-number">第 2 页 共 4 页</li>
     </ul>
   </div>
 
