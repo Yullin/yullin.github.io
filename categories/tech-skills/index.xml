@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-skills/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>etcd添加用户验证</title>
-      <link>//yull.in/2022/01/etcd-user-authentication.html</link>
+      <link>//yull.in/etcd-user-authentication.html</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2022/01/etcd-user-authentication.html</guid>
+      <guid>//yull.in/etcd-user-authentication.html</guid>
       <description>etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
 添加root用户 etcdctl user add root
 添加root角色 etcdctl role add root
@@ -22,10 +22,10 @@
     
     <item>
       <title>random string in golang</title>
-      <link>//yull.in/2021/02/random-string-in-golang.html</link>
+      <link>//yull.in/random-string-in-golang.html</link>
       <pubDate>Sun, 07 Feb 2021 17:52:02 +0000</pubDate>
       
-      <guid>//yull.in/2021/02/random-string-in-golang.html</guid>
+      <guid>//yull.in/random-string-in-golang.html</guid>
       <description>在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
 第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
 func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;#34;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.</description>
@@ -33,10 +33,10 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;#
     
     <item>
       <title>install ElastAlert</title>
-      <link>//yull.in/2019/07/install-elastalert.html</link>
+      <link>//yull.in/install-elastalert.html</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/07/install-elastalert.html</guid>
+      <guid>//yull.in/install-elastalert.html</guid>
       <description>准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
 对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
 # yum install gcc 下面就是安装kibana的插件
@@ -45,10 +45,10 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&amp;#
     
     <item>
       <title>configure opendistro elasticsearch</title>
-      <link>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</link>
+      <link>//yull.in/config-opendistro-elasticsearch-kibana.html</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</guid>
+      <guid>//yull.in/config-opendistro-elasticsearch-kibana.html</guid>
       <description>系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &amp;lsquo;UseParNewGC&amp;rsquo;参考链接https://github.com/elastic/logstash/issues/9345
@@ -59,10 +59,10 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.</descripti
     
     <item>
       <title>Nginx Lua中的小陷阱</title>
-      <link>//yull.in/2019/03/nginx-lua-traps.html</link>
+      <link>//yull.in/nginx-lua-traps.html</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/03/nginx-lua-traps.html</guid>
+      <guid>//yull.in/nginx-lua-traps.html</guid>
       <description>在日常的lua脚本调试中，我们通常会用ngx.say或者ngx.print来打印信息，但是要注意了，当你在ngx.redirect前面使用这两个方法时，就会报错哦
 lua entry thread aborted: runtime error: attempt to call ngx.redirect after sending out the headers 但是用ngx.log方法一般是没有问题的
 另外这里再记录一下，lua中的split实现方法，下面这个方法够简洁
@@ -71,10 +71,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>CentOS 7 主机名大小字母的问题</title>
-      <link>//yull.in/2019/03/centos-7-hostname-uppercase.html</link>
+      <link>//yull.in/centos-7-hostname-uppercase.html</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/03/centos-7-hostname-uppercase.html</guid>
+      <guid>//yull.in/centos-7-hostname-uppercase.html</guid>
       <description>CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：
 # hostnamectl set-hostname TestHostname 但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是testhostname。
 如果我们还是想要驼峰规则的主机名怎么办。
@@ -84,10 +84,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>Linux Mint 19 修改系统菜单字体</title>
-      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
+      <link>//yull.in/linux-mint-font-manager.html</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
+      <guid>//yull.in/linux-mint-font-manager.html</guid>
       <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
 安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
 菜单 系统管理 软件源 然后直接选择自己最合适的就可以了。
@@ -97,10 +97,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>kvm虚拟机系统的高分辨率调整</title>
-      <link>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</link>
+      <link>//yull.in/kvm-virtual-monitor-resolution.html</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</guid>
+      <guid>//yull.in/kvm-virtual-monitor-resolution.html</guid>
       <description>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
 系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
 经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
@@ -112,10 +112,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>输出重定向到文件的时效性</title>
-      <link>//yull.in/2019/01/about-redirect-output.html</link>
+      <link>//yull.in/about-redirect-output.html</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/01/about-redirect-output.html</guid>
+      <guid>//yull.in/about-redirect-output.html</guid>
       <description>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
 经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
 # test.py &amp;gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。
@@ -124,10 +124,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>install php5.6 on centos6</title>
-      <link>//yull.in/2019/01/install-php5.6-on-centos6.html</link>
+      <link>//yull.in/install-php5.6-on-centos6.html</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/01/install-php5.6-on-centos6.html</guid>
+      <guid>//yull.in/install-php5.6-on-centos6.html</guid>
       <description>本次安装系统环境为Centos6 x86_64
 # cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包
 # yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看）</description>
@@ -135,10 +135,10 @@ string.split = function(s, p) local rt= {} string.gsub(s, &amp;#39;[^&amp;#39;..
     
     <item>
       <title>Nginx反向代理配置</title>
-      <link>//yull.in/2018/12/nginx-reverse-proxy-pass.html</link>
+      <link>//yull.in/nginx-reverse-proxy-pass.html</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/12/nginx-reverse-proxy-pass.html</guid>
+      <guid>//yull.in/nginx-reverse-proxy-pass.html</guid>
       <description>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
 普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
 location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以
@@ -149,10 +149,10 @@ location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $par
     
     <item>
       <title>python字典和列表赋值的坑</title>
-      <link>//yull.in/2018/12/python-dict-and-list-copy.html</link>
+      <link>//yull.in/python-dict-and-list-copy.html</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/12/python-dict-and-list-copy.html</guid>
+      <guid>//yull.in/python-dict-and-list-copy.html</guid>
       <description>今天在实际脚本中遇到了一个python的变量赋值的坑，将字典从一个变量a赋值给另外一个变量b之后，修改了原始变量a的值，本意是保持b变量为原始值不动，结果修改a之后发现b的值也随着改变了，经过一番查询以及自己的测试之后，确认原来python中的list和dict数据类型采用的是浅拷贝。
 列表的具体测试如下：
 &amp;gt;&amp;gt;&amp;gt; a = [&amp;#39;1&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b = a&amp;gt;&amp;gt;&amp;gt; a.append(&amp;#39;2&amp;#39;)&amp;gt;&amp;gt;&amp;gt; a[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;]&amp;gt;&amp;gt;&amp;gt; b[&amp;#39;1&amp;#39;, &amp;#39;2&amp;#39;] 可以看到当改变a的值时，b的值也跟着一起改变了。 再看字典的例子：
@@ -161,10 +161,10 @@ location ^~ /test/ { if ($request_uri ~ /test/(\d+)/(.+)) { set $id $1; set $par
     
     <item>
       <title>curl usage note</title>
-      <link>//yull.in/2018/11/curl-usage-note.html</link>
+      <link>//yull.in/curl-usage-note.html</link>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/11/curl-usage-note.html</guid>
+      <guid>//yull.in/curl-usage-note.html</guid>
       <description>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
 下面说一下具体的使用方法：
 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：
@@ -180,10 +180,10 @@ time_total：总时间
     
     <item>
       <title>configure elasticsearch logstash kibana</title>
-      <link>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</link>
+      <link>//yull.in/config-elasticsearch-logstash-kibana.html</link>
       <pubDate>Fri, 26 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</guid>
+      <guid>//yull.in/config-elasticsearch-logstash-kibana.html</guid>
       <description>本文主要记录ELK的测试环境的搭建过程
 1.环境以及架构 Jumper 系统版本 IP地址 主机名 角色 d1000 CENTOS 7 10.2.0.10 centosELK10 Kibana d1000 CENTOS 7 10.2.0.11 centosELK11 Logstash d1000 CENTOS 7 10.2.0.12 centosELK12 ElasticSearch 本次的所有环境均是基于CENTOS7系统进行搭建。
 首先是准备环境，安装JAVA运行环境JDK。
@@ -192,19 +192,19 @@ yum install java-1.8.0-openjdk-devel 2.</description>
     
     <item>
       <title>install and config openresty</title>
-      <link>//yull.in/2018/08/install-and-config-openresty.html</link>
+      <link>//yull.in/install-and-config-openresty.html</link>
       <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/08/install-and-config-openresty.html</guid>
+      <guid>//yull.in/install-and-config-openresty.html</guid>
       <description>安装配置openresty 下载源码 cd /usr/local/srcwget https://openresty.org/download/openresty-1.13.6.2.tar.gz 解压后编译安装 yum install pcre-devel openssl-devel gcc curl #需要事先准备好需要的依赖包tar xzf openresty-1.13.6.2.tar.gzcd openresty-1.13.6.2./configure --prefix=/usr/local/openresty --with-luajit --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-debuggmake -j2 ##由于是双核CPU，所以编译时添加-j2的参数gmake install </description>
     </item>
     
     <item>
       <title>configure elasticsearch ingest node</title>
-      <link>//yull.in/2018/08/config-elasticsearch-ingest-node.html</link>
+      <link>//yull.in/config-elasticsearch-ingest-node.html</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/08/config-elasticsearch-ingest-node.html</guid>
+      <guid>//yull.in/config-elasticsearch-ingest-node.html</guid>
       <description>在elastic 5.*版本开始支持ingest node功能，他可以在一定程度上替代Logstash的处理功能，只要是熟悉了其支持的格式之后，配置还是比较简单的。
 1.测试可以用如下命令 curl -v -H &amp;lsquo;Content-Type: application/json&amp;rsquo; -X POST &amp;lsquo;http://10.2.4.34:9200/_ingest/pipeline/_simulate&amp;rsquo; -d@filebeat.test.json
 filebeat.test.json的内容如下：
@@ -213,10 +213,10 @@ filebeat.test.json的内容如下：
     
     <item>
       <title>install php extension imagick</title>
-      <link>//yull.in/2018/08/install-php-extension-imagick.html</link>
+      <link>//yull.in/install-php-extension-imagick.html</link>
       <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/08/install-php-extension-imagick.html</guid>
+      <guid>//yull.in/install-php-extension-imagick.html</guid>
       <description>linux下配置imagick的步骤为(以centOS为例):
 1. 安装ImageMagick yum install ImageMagick-devel /usr/local/imagemagick/bin/convert -sample 25%x25% a.jpg b.jpg #测试语句 2. 安装php的imagick扩展模块 (http://pecl.php.net/package/imagick) wget http://pecl.php.net/get/imagick-3.1.0RC2.tgz tar -zxvf imagick-3.1.0RC2.tgz /usr/local/php/bin/phpize #在项目目录下运行phpize, phpize为项目生成合乎php使用的configure文件 ./configure --with-php-config=/usr/local/php/bin/php-config --with-imagick=/usr/local/imagemagick	#php-config:获取php配置信息 make make install 4.</description>
     </item>

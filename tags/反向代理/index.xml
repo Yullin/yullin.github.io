@@ -6,13 +6,25 @@
     <description>Recent content in 反向代理 on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx开源DNS自动刷新功能</title>
+      <link>//yull.in/nginx-support-dns-auto-refresh.html</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/nginx-support-dns-auto-refresh.html</guid>
+      <description>Nginx开源DNS自动刷新功能 使用Nginx做为代理的各位可能都知道，以前你的上游配置如果是一个域名的话，那一定会有踩坑的时候，那就是这个域名所指向的DNS是不会动态更新的，你Nginx启动的时候域名指向的哪些IP，那就一直会用这些IP，不会再去更新，即便你的DNS在后来做过变更，Nginx也是不会更新的。只有你在重新加载Nginx配置的时候才会更新。
+虽然后来也出现了Lua插件可以实现这个功能，但是如果你之前是用的原生Nginx的话，那你还需要去配置Lua环境，甚至重新编译Nginx以配合Lua的生态。这无疑会增加你的维护成本。如果你使用的是Openresty这种已经集成了Lua环境的版本，但这个组件也还是需要你去安装以及做一些Lua的配置的，也还是会有一定的成本，毕竟不是原生支持的。
+现在好了，Nginx官方将这个以前得付费才能使用的功能开放给开源版本了。下面是官方ChangeLog：
+Changes with nginx 1.27.3 26 Nov 2024 *) Feature: the &amp;#34;server&amp;#34; directive in the &amp;#34;upstream&amp;#34; block supports the &amp;#34;resolve&amp;#34; parameter. *) Feature: the &amp;#34;resolver&amp;#34; and &amp;#34;resolver_timeout&amp;#34; directives in the &amp;#34;upstream&amp;#34; block.</description>
+    </item>
+    
     <item>
       <title>Nginx反向代理配置</title>
-      <link>//yull.in/2018/12/nginx-reverse-proxy-pass.html</link>
+      <link>//yull.in/nginx-reverse-proxy-pass.html</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2018/12/nginx-reverse-proxy-pass.html</guid>
+      <guid>//yull.in/nginx-reverse-proxy-pass.html</guid>
       <description>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
 普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
 location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以

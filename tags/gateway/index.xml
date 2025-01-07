@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TECH SKILL on Yullin Blog 运维 生活</title>
-    <link>//yull.in/categories/tech-skill.html</link>
-    <description>Recent content in TECH SKILL on Yullin Blog 运维 生活</description>
+    <title>Gateway on Yullin Blog 运维 生活</title>
+    <link>//yull.in/tags/gateway.html</link>
+    <description>Recent content in Gateway on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-skill/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/gateway/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx开源DNS自动刷新功能</title>
       <link>//yull.in/nginx-support-dns-auto-refresh.html</link>
@@ -17,17 +17,6 @@
 虽然后来也出现了Lua插件可以实现这个功能，但是如果你之前是用的原生Nginx的话，那你还需要去配置Lua环境，甚至重新编译Nginx以配合Lua的生态。这无疑会增加你的维护成本。如果你使用的是Openresty这种已经集成了Lua环境的版本，但这个组件也还是需要你去安装以及做一些Lua的配置的，也还是会有一定的成本，毕竟不是原生支持的。
 现在好了，Nginx官方将这个以前得付费才能使用的功能开放给开源版本了。下面是官方ChangeLog：
 Changes with nginx 1.27.3 26 Nov 2024 *) Feature: the &amp;#34;server&amp;#34; directive in the &amp;#34;upstream&amp;#34; block supports the &amp;#34;resolve&amp;#34; parameter. *) Feature: the &amp;#34;resolver&amp;#34; and &amp;#34;resolver_timeout&amp;#34; directives in the &amp;#34;upstream&amp;#34; block.</description>
-    </item>
-    
-    <item>
-      <title>Linux终端复制粘贴出现”0~“和”1~“的解决方案</title>
-      <link>//yull.in/linux-terminal-fix-0-1.html</link>
-      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/linux-terminal-fix-0-1.html</guid>
-      <description>Linux终端复制粘贴出现”0~“和”1~“的解决方案 复制文字后在Linux终端粘贴后出现多余的&amp;quot;0~&amp;ldquo;和&amp;rdquo;~1&amp;quot;时，可使用下面的方法解决
-直接输入执行
-printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
     </item>
     
   </channel>

@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 25 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Mint 19 修改系统菜单字体</title>
-      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
+      <link>//yull.in/linux-mint-font-manager.html</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
+      <guid>//yull.in/linux-mint-font-manager.html</guid>
       <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
 安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
 菜单 系统管理 软件源 然后直接选择自己最合适的就可以了。

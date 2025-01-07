@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TECH SKILL</title>
+      <link>//yull.in/categories/tech-skill.html</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/categories/tech-skill.html</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>TECH INFO</title>
       <link>//yull.in/categories/tech-info.html</link>
@@ -17,56 +26,11 @@
     </item>
     
     <item>
-      <title>TECH SKILL</title>
-      <link>//yull.in/categories/tech-skill.html</link>
-      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/tech-skill.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TECH SKILLS</title>
       <link>//yull.in/categories/tech-skills.html</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>//yull.in/categories/tech-skills.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>releases</title>
-      <link>//yull.in/categories/releases.html</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/releases.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tranquilpeak</title>
-      <link>//yull.in/categories/tranquilpeak.html</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/tranquilpeak.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>showcase</title>
-      <link>//yull.in/categories/showcase.html</link>
-      <pubDate>Sun, 14 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/showcase.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>features</title>
-      <link>//yull.in/categories/features.html</link>
-      <pubDate>Thu, 28 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/features.html</guid>
       <description></description>
     </item>
     

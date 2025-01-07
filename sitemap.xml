@@ -2,37 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//yull.in/tags/bbr.html</loc>
-    <lastmod>2022-08-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//yull.in/categories.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/gateway.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/nginx.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/nginx-support-dns-auto-refresh.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/categories/tech-skill.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</loc>
+    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/bbr.html</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/google.html</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</loc>
+    <loc>//yull.in/google-bbrv3-upstream-to-linux-kernel.html</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/linux.html</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/posts.html</loc>
-    <lastmod>2022-08-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags.html</loc>
-    <lastmod>2022-08-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//yull.in/categories/tech-info.html</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/</loc>
-    <lastmod>2022-08-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/2022/06/linux-terminal-fix-0-1.html</loc>
-    <lastmod>2022-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/tech-skill.html</loc>
+    <loc>//yull.in/linux-terminal-fix-0-1.html</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/terminal.html</loc>
@@ -44,7 +53,7 @@
     <loc>//yull.in/tags/etcd.html</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2022/01/etcd-user-authentication.html</loc>
+    <loc>//yull.in/etcd-user-authentication.html</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/categories/tech-skills.html</loc>
@@ -59,7 +68,7 @@
     <loc>//yull.in/tags/markdown.html</loc>
     <lastmod>2021-11-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2021/11/markdown-to-html-with-markdeep.html</loc>
+    <loc>//yull.in/markdown-to-html-with-markdeep.html</loc>
     <lastmod>2021-11-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/golang.html</loc>
@@ -68,7 +77,7 @@
     <loc>//yull.in/tags/random-string.html</loc>
     <lastmod>2021-02-07T17:52:02+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2021/02/random-string-in-golang.html</loc>
+    <loc>//yull.in/random-string-in-golang.html</loc>
     <lastmod>2021-02-07T17:52:02+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/alert.html</loc>
@@ -80,10 +89,10 @@
     <loc>//yull.in/tags/elk.html</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/07/install-elastalert.html</loc>
+    <loc>//yull.in/install-elastalert.html</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</loc>
+    <loc>//yull.in/config-opendistro-elasticsearch-kibana.html</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/elasticsearch.html</loc>
@@ -98,16 +107,13 @@
     <loc>//yull.in/tags/lua.html</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/tags/nginx.html</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/2019/03/nginx-lua-traps.html</loc>
+    <loc>//yull.in/nginx-lua-traps.html</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/openresty.html</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/03/centos-7-hostname-uppercase.html</loc>
+    <loc>//yull.in/centos-7-hostname-uppercase.html</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/centos7.html</loc>
@@ -119,7 +125,7 @@
     <loc>//yull.in/tags/%E4%B8%BB%E6%9C%BA%E5%90%8D.html</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/02/linux-mint-font-manager.html</loc>
+    <loc>//yull.in/linux-mint-font-manager.html</loc>
     <lastmod>2019-02-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/mint.html</loc>
@@ -134,7 +140,7 @@
     <loc>//yull.in/tags/kvm.html</loc>
     <lastmod>2019-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</loc>
+    <loc>//yull.in/kvm-virtual-monitor-resolution.html</loc>
     <lastmod>2019-02-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/%E5%88%86%E8%BE%A8%E7%8E%87.html</loc>
@@ -146,7 +152,7 @@
     <loc>//yull.in/tags/chrome.html</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/02/chrome-73-released.html</loc>
+    <loc>//yull.in/chrome-73-released.html</loc>
     <lastmod>2019-02-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/%E6%B5%8F%E8%A7%88%E5%99%A8.html</loc>
@@ -161,13 +167,13 @@
     <loc>//yull.in/tags/shell.html</loc>
     <lastmod>2019-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/01/about-redirect-output.html</loc>
+    <loc>//yull.in/about-redirect-output.html</loc>
     <lastmod>2019-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/centos6.html</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2019/01/install-php5.6-on-centos6.html</loc>
+    <loc>//yull.in/install-php5.6-on-centos6.html</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/php.html</loc>
@@ -176,16 +182,13 @@
     <loc>//yull.in/tags/php-extension.html</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/12/nginx-reverse-proxy-pass.html</loc>
+    <loc>//yull.in/nginx-reverse-proxy-pass.html</loc>
     <lastmod>2018-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/proxy.html</loc>
     <lastmod>2018-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/reverse.html</loc>
-    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</loc>
     <lastmod>2018-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/dict.html</loc>
@@ -197,13 +200,13 @@
     <loc>//yull.in/tags/python.html</loc>
     <lastmod>2018-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/12/python-dict-and-list-copy.html</loc>
+    <loc>//yull.in/python-dict-and-list-copy.html</loc>
     <lastmod>2018-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/curl.html</loc>
     <lastmod>2018-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/11/curl-usage-note.html</loc>
+    <loc>//yull.in/curl-usage-note.html</loc>
     <lastmod>2018-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/get.html</loc>
@@ -215,7 +218,7 @@
     <loc>//yull.in/tags/usage.html</loc>
     <lastmod>2018-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/10/config-elasticsearch-logstash-kibana.html</loc>
+    <loc>//yull.in/config-elasticsearch-logstash-kibana.html</loc>
     <lastmod>2018-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/ingest-node.html</loc>
@@ -233,137 +236,20 @@
     <loc>//yull.in/tags/win10.html</loc>
     <lastmod>2018-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/10/microsoft-win10-oct-update.html</loc>
+    <loc>//yull.in/microsoft-win10-oct-update.html</loc>
     <lastmod>2018-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/08/install-and-config-openresty.html</loc>
+    <loc>//yull.in/install-and-config-openresty.html</loc>
     <lastmod>2018-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/08/config-elasticsearch-ingest-node.html</loc>
+    <loc>//yull.in/config-elasticsearch-ingest-node.html</loc>
     <lastmod>2018-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/imagick.html</loc>
     <lastmod>2018-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/2018/08/install-php-extension-imagick.html</loc>
+    <loc>//yull.in/install-php-extension-imagick.html</loc>
     <lastmod>2018-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/disqus.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/google-analytics.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/gravatar.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/hexo-theme.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/releases.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/responsive.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/tranquilpeak.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/welcome-to-the-new-tranquilpeak.html</loc>
-    <lastmod>2015-06-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/showcase.html</loc>
-    <lastmod>2015-06-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/who-is-using-tranquilpeak-hugo-theme.html</loc>
-    <lastmod>2015-06-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/elements-showcase.html</loc>
-    <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/features.html</loc>
-    <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/html-elements.html</loc>
-    <lastmod>2015-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/cover-image.html</loc>
-    <lastmod>2015-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/cover-image-showcase.html</loc>
-    <lastmod>2015-05-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/github-theme.html</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/highlight-code.html</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/highlighted-code-showcase.html</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/test.html</loc>
-    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/tag-plugins.html</loc>
-    <lastmod>2014-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/tags-plugins-showcase.html</loc>
-    <lastmod>2014-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/hidden-social-section-showcase.html</loc>
-    <lastmod>2014-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/social.html</loc>
-    <lastmod>2014-08-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/hidden-tag-section-showcase.html</loc>
-    <lastmod>2014-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/tags.html</loc>
-    <lastmod>2014-08-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/hidden-pagination-showcase.html</loc>
-    <lastmod>2014-08-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/pagination.html</loc>
-    <lastmod>2014-08-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/dailymotion.html</loc>
-    <lastmod>2014-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/video-integrations-showcase.html</loc>
-    <lastmod>2014-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/videos-integration.html</loc>
-    <lastmod>2014-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/vimeo.html</loc>
-    <lastmod>2014-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/youtube.html</loc>
-    <lastmod>2014-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/chinese.html</loc>
-    <lastmod>2013-10-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/chinese-test.html</loc>
-    <lastmod>2013-10-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/image-gallery.html</loc>
-    <lastmod>2013-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/image-gallery-showcase.html</loc>
-    <lastmod>2013-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags/japanese.html</loc>
-    <lastmod>2013-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/blogs/japanese-test.html</loc>
-    <lastmod>2013-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/archives.html</loc>
   </url>
