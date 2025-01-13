@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 11 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
-      <link>//yull.in/chrome-73-released.html</link>
+      <link>//yull.in/2019/02/chrome-73-released.html</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/chrome-73-released.html</guid>
+      <guid>//yull.in/2019/02/chrome-73-released.html</guid>
       <description>桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
 支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
 {:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}

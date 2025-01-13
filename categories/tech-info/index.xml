@@ -9,20 +9,20 @@
     <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/tech-info/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google BBRv3效果显著，将合并到Linux内核</title>
-      <link>//yull.in/google-bbrv3-upstream-to-linux-kernel.html</link>
+      <link>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</link>
       <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/google-bbrv3-upstream-to-linux-kernel.html</guid>
+      <guid>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</guid>
       <description>Google BBRv3效果显著，将合并到Linux内核 Google的开源BBR TCP拥塞控制算法在Google内部被广泛使用，其v3版本已经在公司内部取得了成功，并且他们正在努力将BBRv3引入主线Linux内核。
 Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已被证明优于简单的基于丢包的拥塞控制，使得Google内外的网络能够以更高的吞吐量和更低的延迟更高效地运行。 Google工程师在7月底的IETF 117活动中在旧金山做了演讲。BBRv3集成了各种修复和算法更新。Google发现BBRv3的数据包重传率减少了12%，延迟略有改善。BBRv3将以双重GPL和BSD许可证公开发布。Google工程师计划在8月份提议将BBRv3主线化到Linux内核TCP/网络代码中。计划是从版本1升级到版本3的BBR模块。 请查看Google幻灯片以获取有关BBRv3的更多详细信息。在BBRv3代码上游到主线内核之前，您可以通过此Google GitHub存储库找到BBRv3代码。</description>
     </item>
     
     <item>
       <title>简单易用的markdown转html方法</title>
-      <link>//yull.in/markdown-to-html-with-markdeep.html</link>
+      <link>//yull.in/2021/11/markdown-to-html-with-markdeep.html</link>
       <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/markdown-to-html-with-markdeep.html</guid>
+      <guid>//yull.in/2021/11/markdown-to-html-with-markdeep.html</guid>
       <description>发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
 Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
 &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; emacsmode=&amp;#34;-*- markdown -*-&amp;#34;&amp;gt;&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;https://casual-effects.com/markdeep/latest/slate.css?&amp;#34;&amp;gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates</description>
@@ -30,10 +30,10 @@ Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只�
     
     <item>
       <title>chrome 73 released 自动画中画 支持硬件媒体按钮</title>
-      <link>//yull.in/chrome-73-released.html</link>
+      <link>//yull.in/2019/02/chrome-73-released.html</link>
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/chrome-73-released.html</guid>
+      <guid>//yull.in/2019/02/chrome-73-released.html</guid>
       <description>桌面端Chrome浏览器在即将到来的版本更迭中有望获得一系列新的功能，我们从各种Commits、媒体发掘的实验性功能以及Canary通道都能一瞥这些新功能，包括可跟随系统的原生黑暗主题，高性能的“Never-Slow Mode”和标签预览等等。今天Chrome 73刚刚升级至Beta通道，预计在未来几周内会发布稳定版。Chrome 73中最值得注意的新功能包括支持硬件多媒体按钮，对PWA应用的自动画中画功能，以及画中画功能中跳过广告等等。
 支持硬件多媒体按钮 用户将能够通过键盘上的多媒体键控制 Chrome 中播放的音视频内容，指令包括跳过播放列表、播放、暂停、前一曲目、下一曲目、前后向滚动等。
 {:height=&amp;ldquo;60%&amp;rdquo; width=&amp;ldquo;700px&amp;rdquo;}
@@ -43,10 +43,10 @@ Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只�
     
     <item>
       <title>win10十月更新坑用户</title>
-      <link>//yull.in/microsoft-win10-oct-update.html</link>
+      <link>//yull.in/2018/10/microsoft-win10-oct-update.html</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/microsoft-win10-oct-update.html</guid>
+      <guid>//yull.in/2018/10/microsoft-win10-oct-update.html</guid>
       <description>昨日微软撤回了Windows 10的2018年十月更新，让这次发布已经接近成为了一个笑话，不过更大的笑话还在后面：又有用户报告了十月更新当中的重大问题：本次操作系统版本更新曾被多次提供给相同的PC，尽管其中一些实际安装成功，微软还是非常客气地无事献殷勤：让他们再安装一遍。
 换句话说，一些用户被提示安装2018年10月更新，即使在同一天早些时候，他们做了同样的事情。
 虽然这是一个非常尴尬的错误，但万幸的是，第二次安装2018年10月更新，系统重启和所有内容，都没有更改受影响系统上的文件。

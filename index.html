@@ -254,7 +254,496 @@ if (!doNotTrack) {
         <section class="postShorten-group main-content-wrap">
           
           
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2024/12/nginx-support-dns-auto-refresh.html" aria-label="打开帖子: Nginx开源DNS自动刷新功能">
+      
+          Nginx开源DNS自动刷新功能
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2024-12-12T00:00:00Z">
+        
+  
+  
+  
+  
+    2024-12-12
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skill">TECH SKILL</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Nginx开源DNS自动刷新功能 使用Nginx做为代理的各位可能都知道，以前你的上游配置如果是一个域名的话，那一定会有踩坑的时候，那就是这个域名所指向的DNS是不会动态更新的，你Nginx启动的时候域名指向的哪些IP，那就一直会用这些IP，不会再去更新，即便你的DNS在后来做过变更，Nginx也是不会更新的。只有你在重新加载Nginx配置的时候才会更新。
+虽然后来也出现了Lua插件可以实现这个功能，但是如果你之前是用的原生Nginx的话，那你还需要去配置Lua环境，甚至重新编译Nginx以配合Lua的生态。这无疑会增加你的维护成本。如果你使用的是Openresty这种已经集成了Lua环境的版本，但这个组件也还是需要你去安装以及做一些Lua的配置的，也还是会有一定的成本，毕竟不是原生支持的。
+现在好了，Nginx官方将这个以前得付费才能使用的功能开放给开源版本了。下面是官方ChangeLog：
+Changes with nginx 1.27.3 26 Nov 2024 *) Feature: the &#34;server&#34; directive in the &#34;upstream&#34; block supports the &#34;resolve&#34; parameter. *) Feature: the &#34;resolver&#34; and &#34;resolver_timeout&#34; directives in the &#34;upstream&#34; block.
+      
+      <p>
+        
+          <a href="//yull.in/2024/12/nginx-support-dns-auto-refresh.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx开源DNS自动刷新功能">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" aria-label="打开帖子: Google BBRv3效果显著，将合并到Linux内核">
+      
+          Google BBRv3效果显著，将合并到Linux内核
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-08-07T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-08-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Google BBRv3效果显著，将合并到Linux内核 Google的开源BBR TCP拥塞控制算法在Google内部被广泛使用，其v3版本已经在公司内部取得了成功，并且他们正在努力将BBRv3引入主线Linux内核。
+Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已被证明优于简单的基于丢包的拥塞控制，使得Google内外的网络能够以更高的吞吐量和更低的延迟更高效地运行。 Google工程师在7月底的IETF 117活动中在旧金山做了演讲。BBRv3集成了各种修复和算法更新。Google发现BBRv3的数据包重传率减少了12%，延迟略有改善。BBRv3将以双重GPL和BSD许可证公开发布。Google工程师计划在8月份提议将BBRv3主线化到Linux内核TCP/网络代码中。计划是从版本1升级到版本3的BBR模块。 请查看Google幻灯片以获取有关BBRv3的更多详细信息。在BBRv3代码上游到主线内核之前，您可以通过此Google GitHub存储库找到BBRv3代码。
+      
+      <p>
+        
+          <a href="//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Google BBRv3效果显著，将合并到Linux内核">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2022/06/linux-terminal-fix-0-1.html" aria-label="打开帖子: Linux终端复制粘贴出现”0~“和”1~“的解决方案">
+      
+          Linux终端复制粘贴出现”0~“和”1~“的解决方案
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-06-01T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-06-01
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skill">TECH SKILL</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Linux终端复制粘贴出现”0~“和”1~“的解决方案 复制文字后在Linux终端粘贴后出现多余的&quot;0~&ldquo;和&rdquo;~1&quot;时，可使用下面的方法解决
+直接输入执行
+printf &#34;\e[?2004l&#34; 即可解决问题
+      
+      <p>
+        
+          <a href="//yull.in/2022/06/linux-terminal-fix-0-1.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Linux终端复制粘贴出现”0~“和”1~“的解决方案">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2022/01/etcd-user-authentication.html" aria-label="打开帖子: etcd添加用户验证">
+      
+          etcd添加用户验证
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-01-13T00:00:00Z">
+        
+  
+  
+  
+  
+    2022-01-13
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
+添加root用户 etcdctl user add root
+添加root角色 etcdctl role add root
+关联用户与角色 #etcdctl user grant-role username rolename etcdctl user grant-role root root
+如果要取消关联 #etcdctl user revoke-role username rolename etcdctl user revoke-role root root
+      
+      <p>
+        
+          <a href="//yull.in/2022/01/etcd-user-authentication.html" class="postShorten-excerpt_link link" aria-label="打开帖子: etcd添加用户验证">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2021/11/markdown-to-html-with-markdeep.html" aria-label="打开帖子: 简单易用的markdown转html方法">
+      
+          简单易用的markdown转html方法
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-11-27T00:00:00Z">
+        
+  
+  
+  
+  
+    2021-11-27
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-info">TECH INFO</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        发现一个非常好的工具，可以很方便的把markdown文本转换为html，可以说是最简单的方案了。名字就叫：
+Markdeep 项目地址：http://casual-effects.com/markdeep/ 使用方法： 只需要在markdown文本的头部添加上如下代码，并把文件名由原来的x.md修改为x.md.html即可：
+&lt;meta charset=&#34;utf-8&#34; emacsmode=&#34;-*- markdown -*-&#34;&gt;&lt;link rel=&#34;stylesheet&#34; href=&#34;https://casual-effects.com/markdeep/latest/slate.css?&#34;&gt; slate.css是其中的一种主题，它还支持多种风格主题，可以到官网查看 http://casual-effects.com/markdeep/#templates
+      
+      <p>
+        
+          <a href="//yull.in/2021/11/markdown-to-html-with-markdeep.html" class="postShorten-excerpt_link link" aria-label="打开帖子: 简单易用的markdown转html方法">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2021/02/random-string-in-golang.html" aria-label="打开帖子: random string in golang">
+      
+          random string in golang
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2021-02-07T17:52:02Z">
+        
+  
+  
+  
+  
+    2021-02-07
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        在学习golang的过程中，有注意到对于随机字符串的生成方式有很多种，下面就网上的罗列一下，最后一种是我最喜欢的方式，够优雅。
+第一种 通用方案 最普通方案就是随机产生每个字符，所以整体字符串也是随机的。这样的好处是可以控制要使用的字符。
+func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&#34;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;) func RandStringRunes(n int) string { b := make([]rune, n) for i := range b { b[i] = letterRuens[rand.
+      
+      <p>
+        
+          <a href="//yull.in/2021/02/random-string-in-golang.html" class="postShorten-excerpt_link link" aria-label="打开帖子: random string in golang">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/07/install-elastalert.html" aria-label="打开帖子: install ElastAlert">
+      
+          install ElastAlert
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-07-10T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-07-10
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.
+      
+      <p>
+        
+          <a href="//yull.in/2019/07/install-elastalert.html" class="postShorten-excerpt_link link" aria-label="打开帖子: install ElastAlert">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
+          
+          
+  <div class="pagination-bar">
+    <ul class="pagination">
+      
+        
+        
+          <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="//yull.in/page/2.html" aria-label="下一页">
+              <span>下一页</span>
+              <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+          </li>
+        
+      
+      <li class="pagination-number">第 1 页 共 4 页</li>
+    </ul>
+  </div>
+
 
         </section>
         <footer id="footer" class="main-content-wrap">

@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 02 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/curl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>curl usage note</title>
-      <link>//yull.in/curl-usage-note.html</link>
+      <link>//yull.in/2018/11/curl-usage-note.html</link>
       <pubDate>Fri, 02 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/curl-usage-note.html</guid>
+      <guid>//yull.in/2018/11/curl-usage-note.html</guid>
       <description>CURL可以详细打印出请求过程每一步所消耗的时间，对于我们日常的排查故障非常有用。
 下面说一下具体的使用方法：
 1.建立一个命令格式文件 \n time_namelookup: %{time_namelookup}\n time_connect: %{time_connect}\n time_appconnect: %{time_appconnect}\n time_pretransfer: %{time_pretransfer}\n time_redirect: %{time_redirect}\n time_starttransfer: %{time_starttransfer}\n ----------\n time_total: %{time_total}\n \n 说明：

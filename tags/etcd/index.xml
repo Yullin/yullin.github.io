@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 13 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/etcd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>etcd添加用户验证</title>
-      <link>//yull.in/etcd-user-authentication.html</link>
+      <link>//yull.in/2022/01/etcd-user-authentication.html</link>
       <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/etcd-user-authentication.html</guid>
+      <guid>//yull.in/2022/01/etcd-user-authentication.html</guid>
       <description>etcd集群在默认情况下是没有安全验证的，如果存储了机密信息的话，则需要为其添加账号密码验证。这里记录一下具体的添加过程。
 添加root用户 etcdctl user add root
 添加root角色 etcdctl role add root

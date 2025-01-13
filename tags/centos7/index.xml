@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 06 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/centos7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CentOS 7 主机名大小字母的问题</title>
-      <link>//yull.in/centos-7-hostname-uppercase.html</link>
+      <link>//yull.in/2019/03/centos-7-hostname-uppercase.html</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/centos-7-hostname-uppercase.html</guid>
+      <guid>//yull.in/2019/03/centos-7-hostname-uppercase.html</guid>
       <description>CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：
 # hostnamectl set-hostname TestHostname 但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是testhostname。
 如果我们还是想要驼峰规则的主机名怎么办。

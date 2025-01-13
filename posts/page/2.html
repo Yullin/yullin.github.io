@@ -10,7 +10,7 @@
   "headline": "Posts",
   
   "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "2022-08-07T00:00:00Z",
+  "dateModified": "2024-12-12T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Yullin",
@@ -255,6 +255,76 @@ if (!doNotTrack) {
         <section class="postShorten-group main-content-wrap">
           
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" aria-label="打开帖子: configure opendistro elasticsearch">
+      
+          configure opendistro elasticsearch
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-06-10T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-06-10
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        系统环境：Centos 7
+安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
+cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
+如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
+下面开始安装：
+yum install opendistroforelasticsearch systemctl start elasticsearch.
+      
+      <p>
+        
+          <a href="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" class="postShorten-excerpt_link link" aria-label="打开帖子: configure opendistro elasticsearch">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -670,73 +740,6 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/01/install-php5.6-on-centos6.html" aria-label="打开帖子: install php5.6 on centos6">
-      
-          install php5.6 on centos6
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-01-09T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-01-09
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        本次安装系统环境为Centos6 x86_64
-# cd /usr/local/src # wget http://cn2.php.net/distributions/php-5.6.39.tar.gz # tar xzf php-5.6.39.tar.xz 安装依赖包
-# yum install gcc gcc-c++ bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel sqlite-devel 开始编译安装（这里先别急着去执行，先往文章后面看看）
-      
-      <p>
-        
-          <a href="//yull.in/2019/01/install-php5.6-on-centos6.html" class="postShorten-excerpt_link link" aria-label="打开帖子: install php5.6 on centos6">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -766,7 +769,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 Yullin. All Rights Reserved
+    &copy; 2025 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

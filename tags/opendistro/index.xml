@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 10 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/opendistro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>configure opendistro elasticsearch</title>
-      <link>//yull.in/config-opendistro-elasticsearch-kibana.html</link>
+      <link>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/config-opendistro-elasticsearch-kibana.html</guid>
+      <guid>//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html</guid>
       <description>系统环境：Centos 7
 安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
 cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &amp;lsquo;UseParNewGC&amp;rsquo;参考链接https://github.com/elastic/logstash/issues/9345

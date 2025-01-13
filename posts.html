@@ -10,7 +10,7 @@
   "headline": "Posts",
   
   "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "2022-08-07T00:00:00Z",
+  "dateModified": "2024-12-12T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Yullin",
@@ -255,6 +255,74 @@ if (!doNotTrack) {
         <section class="postShorten-group main-content-wrap">
           
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2024/12/nginx-support-dns-auto-refresh.html" aria-label="打开帖子: Nginx开源DNS自动刷新功能">
+      
+          Nginx开源DNS自动刷新功能
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2024-12-12T00:00:00Z">
+        
+  
+  
+  
+  
+    2024-12-12
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skill">TECH SKILL</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        Nginx开源DNS自动刷新功能 使用Nginx做为代理的各位可能都知道，以前你的上游配置如果是一个域名的话，那一定会有踩坑的时候，那就是这个域名所指向的DNS是不会动态更新的，你Nginx启动的时候域名指向的哪些IP，那就一直会用这些IP，不会再去更新，即便你的DNS在后来做过变更，Nginx也是不会更新的。只有你在重新加载Nginx配置的时候才会更新。
+虽然后来也出现了Lua插件可以实现这个功能，但是如果你之前是用的原生Nginx的话，那你还需要去配置Lua环境，甚至重新编译Nginx以配合Lua的生态。这无疑会增加你的维护成本。如果你使用的是Openresty这种已经集成了Lua环境的版本，但这个组件也还是需要你去安装以及做一些Lua的配置的，也还是会有一定的成本，毕竟不是原生支持的。
+现在好了，Nginx官方将这个以前得付费才能使用的功能开放给开源版本了。下面是官方ChangeLog：
+Changes with nginx 1.27.3 26 Nov 2024 *) Feature: the &#34;server&#34; directive in the &#34;upstream&#34; block supports the &#34;resolve&#34; parameter. *) Feature: the &#34;resolver&#34; and &#34;resolver_timeout&#34; directives in the &#34;upstream&#34; block.
+      
+      <p>
+        
+          <a href="//yull.in/2024/12/nginx-support-dns-auto-refresh.html" class="postShorten-excerpt_link link" aria-label="打开帖子: Nginx开源DNS自动刷新功能">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -660,76 +728,6 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&#34;a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" aria-label="打开帖子: configure opendistro elasticsearch">
-      
-          configure opendistro elasticsearch
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-06-10T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-06-10
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        系统环境：Centos 7
-安装ELASTICSEARCH 按照官方文档（https://opendistro.github.io/for-elasticsearch-docs/）的说明，首先需要安装JDK(使用官方源地址)
-cd /etc/yum.repos.d/ curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o opendistroforelasticsearch-artifacts.repo yum install java-11-openjdk-devel #如果需要在本机上安装logstash，则建议安装yum install java-1.8.0-openjdk-devel 因为新版的logstash-6.3.2不支持最新版的jdk-10.0.2，需要降为上一个稳定版jdk-8u181。否则会报错Unrecognized VM option &lsquo;UseParNewGC&rsquo;参考链接https://github.com/elastic/logstash/issues/9345
-如果安装java-1.8.0-openjdk-devel，则需要在安装之后做如下操作，否则后面会起不来elasticsearch ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/ 我们目前的方案是logstash在另外一台机器上，所以可以不考虑JDK的问题。
-下面开始安装：
-yum install opendistroforelasticsearch systemctl start elasticsearch.
-      
-      <p>
-        
-          <a href="//yull.in/2019/06/config-opendistro-elasticsearch-kibana.html" class="postShorten-excerpt_link link" aria-label="打开帖子: configure opendistro elasticsearch">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -752,7 +750,7 @@ yum install opendistroforelasticsearch systemctl start elasticsearch.
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2023 Yullin. All Rights Reserved
+    &copy; 2025 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

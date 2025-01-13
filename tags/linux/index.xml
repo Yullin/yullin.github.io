@@ -9,20 +9,20 @@
     <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google BBRv3效果显著，将合并到Linux内核</title>
-      <link>//yull.in/google-bbrv3-upstream-to-linux-kernel.html</link>
+      <link>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</link>
       <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/google-bbrv3-upstream-to-linux-kernel.html</guid>
+      <guid>//yull.in/2022/08/google-bbrv3-upstream-to-linux-kernel.html</guid>
       <description>Google BBRv3效果显著，将合并到Linux内核 Google的开源BBR TCP拥塞控制算法在Google内部被广泛使用，其v3版本已经在公司内部取得了成功，并且他们正在努力将BBRv3引入主线Linux内核。
 Google的BBR（Bottleneck Bandwidth and Round-trip propagation time）算法已被证明优于简单的基于丢包的拥塞控制，使得Google内外的网络能够以更高的吞吐量和更低的延迟更高效地运行。 Google工程师在7月底的IETF 117活动中在旧金山做了演讲。BBRv3集成了各种修复和算法更新。Google发现BBRv3的数据包重传率减少了12%，延迟略有改善。BBRv3将以双重GPL和BSD许可证公开发布。Google工程师计划在8月份提议将BBRv3主线化到Linux内核TCP/网络代码中。计划是从版本1升级到版本3的BBR模块。 请查看Google幻灯片以获取有关BBRv3的更多详细信息。在BBRv3代码上游到主线内核之前，您可以通过此Google GitHub存储库找到BBRv3代码。</description>
     </item>
     
     <item>
       <title>Linux终端复制粘贴出现”0~“和”1~“的解决方案</title>
-      <link>//yull.in/linux-terminal-fix-0-1.html</link>
+      <link>//yull.in/2022/06/linux-terminal-fix-0-1.html</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/linux-terminal-fix-0-1.html</guid>
+      <guid>//yull.in/2022/06/linux-terminal-fix-0-1.html</guid>
       <description>Linux终端复制粘贴出现”0~“和”1~“的解决方案 复制文字后在Linux终端粘贴后出现多余的&amp;quot;0~&amp;ldquo;和&amp;rdquo;~1&amp;quot;时，可使用下面的方法解决
 直接输入执行
 printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
@@ -30,10 +30,10 @@ printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
     
     <item>
       <title>CentOS 7 主机名大小字母的问题</title>
-      <link>//yull.in/centos-7-hostname-uppercase.html</link>
+      <link>//yull.in/2019/03/centos-7-hostname-uppercase.html</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/centos-7-hostname-uppercase.html</guid>
+      <guid>//yull.in/2019/03/centos-7-hostname-uppercase.html</guid>
       <description>CentOS 7 以后命名主机名，需要用到hostnamectl命令，具体用法如下：
 # hostnamectl set-hostname TestHostname 但这个命令会将所有字母转换成小写字母，也就是最后的主机名实际是testhostname。
 如果我们还是想要驼峰规则的主机名怎么办。
@@ -43,10 +43,10 @@ printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
     
     <item>
       <title>Linux Mint 19 修改系统菜单字体</title>
-      <link>//yull.in/linux-mint-font-manager.html</link>
+      <link>//yull.in/2019/02/linux-mint-font-manager.html</link>
       <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/linux-mint-font-manager.html</guid>
+      <guid>//yull.in/2019/02/linux-mint-font-manager.html</guid>
       <description>在装好LinuxMint 19系统之后，对其做一番美化，让自己身心愉悦，那是必须的。所以我比较习惯与使用这个主题Adapta-Nokto，然后字体再修改为文泉驿等宽字体，这是初步的美化，不过即便只做了这两步，使用体验就已经得到大幅的提升。
 安装主题其实很简单，只是安装好之后，如果不修改软件源的话，那么你下载任何东西都会很慢的，修改软件源当然可以在命令行下到/etc/apt/目录下进行修改，但更简单的是直接点几下就可以了，操作步骤如下：
 菜单 系统管理 软件源 然后直接选择自己最合适的就可以了。
@@ -56,10 +56,10 @@ printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
     
     <item>
       <title>kvm虚拟机系统的高分辨率调整</title>
-      <link>//yull.in/kvm-virtual-monitor-resolution.html</link>
+      <link>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/kvm-virtual-monitor-resolution.html</guid>
+      <guid>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</guid>
       <description>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
 系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
 经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。
@@ -71,10 +71,10 @@ printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
     
     <item>
       <title>输出重定向到文件的时效性</title>
-      <link>//yull.in/about-redirect-output.html</link>
+      <link>//yull.in/2019/01/about-redirect-output.html</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/about-redirect-output.html</guid>
+      <guid>//yull.in/2019/01/about-redirect-output.html</guid>
       <description>在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
 经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
 # test.py &amp;gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。

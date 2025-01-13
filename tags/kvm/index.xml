@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>kvm虚拟机系统的高分辨率调整</title>
-      <link>//yull.in/kvm-virtual-monitor-resolution.html</link>
+      <link>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/kvm-virtual-monitor-resolution.html</guid>
+      <guid>//yull.in/2019/02/kvm-virtual-monitor-resolution.html</guid>
       <description>最近在服务器中用KVM虚拟机折腾Linux Mint, 因为对KVM并不是很熟悉，所以折腾了挺久。这里记录一下，遇到的其中一个问题。
 系统的安装其实挺简单，但是在安装好之后发现虚拟机的最大分辨率也只有1024X768，无法再调整到更高。
 经过一番查询之后，才知道分辨率与创建虚拟机时所设置的显存有关。

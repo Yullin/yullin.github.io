@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx反向代理配置</title>
-      <link>//yull.in/nginx-reverse-proxy-pass.html</link>
+      <link>//yull.in/2018/12/nginx-reverse-proxy-pass.html</link>
       <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/nginx-reverse-proxy-pass.html</guid>
+      <guid>//yull.in/2018/12/nginx-reverse-proxy-pass.html</guid>
       <description>这里主要记录Nginx服务器的反向代理proxy_pass配置方法中容易踩坑的地方,就是经常被提到的url的/问题的相关说明,需要的朋友可以参考下
 普通反向代理 Nginx的普通的反向代理配置还是比较简单的，如：
 location ~ /* { proxy_pass http://192.168.1.12:8080; } 或者可以

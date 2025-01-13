@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux终端复制粘贴出现”0~“和”1~“的解决方案</title>
-      <link>//yull.in/linux-terminal-fix-0-1.html</link>
+      <link>//yull.in/2022/06/linux-terminal-fix-0-1.html</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>//yull.in/linux-terminal-fix-0-1.html</guid>
+      <guid>//yull.in/2022/06/linux-terminal-fix-0-1.html</guid>
       <description>Linux终端复制粘贴出现”0~“和”1~“的解决方案 复制文字后在Linux终端粘贴后出现多余的&amp;quot;0~&amp;ldquo;和&amp;rdquo;~1&amp;quot;时，可使用下面的方法解决
 直接输入执行
 printf &amp;#34;\e[?2004l&amp;#34; 即可解决问题</description>
