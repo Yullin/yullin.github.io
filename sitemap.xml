@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//yull.in/categories.html</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/go.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/2026/06/vault-plugin-secrets-volcengine.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/posts.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/secrets-management.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/categories/tech-skills.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/vault.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/tags/volcengine.html</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//yull.in/</loc>
+    <lastmod>2026-06-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/gateway.html</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
@@ -14,16 +41,7 @@
     <loc>//yull.in/2024/12/nginx-support-dns-auto-refresh.html</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//yull.in/posts.html</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/tags.html</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//yull.in/categories/tech-skill.html</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</loc>
@@ -57,9 +75,6 @@
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/2022/01/etcd-user-authentication.html</loc>
-    <lastmod>2022-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//yull.in/categories/tech-skills.html</loc>
     <lastmod>2022-01-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//yull.in/tags/html.html</loc>

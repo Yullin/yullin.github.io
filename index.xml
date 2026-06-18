@@ -6,7 +6,20 @@
     <description>Recent content on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HashiCorp Vault火山引擎Secrets插件</title>
+      <link>//yull.in/2026/06/vault-plugin-secrets-volcengine.html</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/2026/06/vault-plugin-secrets-volcengine.html</guid>
+      <description>背景 在企业实践中，HashiCorp Vault 作为密钥管理的事实标准，官方及社区已经提供了 AWS、AliCloud、TencentCloud 等主流云厂商的 Secrets Engine 插件。然而，当我试图为火山引擎（Volcengine）寻找类似方案时，发现市面上并没有现成的插件可用。
+既然没有轮子，而且现在有AI了，那咱就自己Vibe一个。
+插件能做什么 这个插件（vault-plugin-secrets-volcengine）为 Vault 提供了火山引擎的动态凭证管理能力，支持两种模式：
+STS 临时凭证 — 通过 AssumeRole 签发短期临时 AK/SK + SecurityToken，适合短生命周期的作业场景，凭证到期自动失效，无需主动回收。
+IAM 动态用户 — 按需创建 IAM 子用户并挂载策略，生成长期 AK/SK。Vault 负责完整的生命周期管理：创建、续期、到期自动回收（删除 AccessKey → 解绑策略 → 删除用户）。</description>
+    </item>
+    
     <item>
       <title>Nginx开源DNS自动刷新功能</title>
       <link>//yull.in/2024/12/nginx-support-dns-auto-refresh.html</link>

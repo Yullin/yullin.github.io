@@ -10,7 +10,7 @@
   "headline": "Posts",
   
   "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "2024-12-12T00:00:00Z",
+  "dateModified": "2026-06-18T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Yullin",
@@ -255,6 +255,75 @@ if (!doNotTrack) {
         <section class="postShorten-group main-content-wrap">
           
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2026/06/vault-plugin-secrets-volcengine.html" aria-label="打开帖子: HashiCorp Vault火山引擎Secrets插件">
+      
+          HashiCorp Vault火山引擎Secrets插件
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2026-06-18T00:00:00Z">
+        
+  
+  
+  
+  
+    2026-06-18
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        背景 在企业实践中，HashiCorp Vault 作为密钥管理的事实标准，官方及社区已经提供了 AWS、AliCloud、TencentCloud 等主流云厂商的 Secrets Engine 插件。然而，当我试图为火山引擎（Volcengine）寻找类似方案时，发现市面上并没有现成的插件可用。
+既然没有轮子，而且现在有AI了，那咱就自己Vibe一个。
+插件能做什么 这个插件（vault-plugin-secrets-volcengine）为 Vault 提供了火山引擎的动态凭证管理能力，支持两种模式：
+STS 临时凭证 — 通过 AssumeRole 签发短期临时 AK/SK + SecurityToken，适合短生命周期的作业场景，凭证到期自动失效，无需主动回收。
+IAM 动态用户 — 按需创建 IAM 子用户并挂载策略，生成长期 AK/SK。Vault 负责完整的生命周期管理：创建、续期、到期自动回收（删除 AccessKey → 解绑策略 → 删除用户）。
+      
+      <p>
+        
+          <a href="//yull.in/2026/06/vault-plugin-secrets-volcengine.html" class="postShorten-excerpt_link link" aria-label="打开帖子: HashiCorp Vault火山引擎Secrets插件">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -660,74 +729,6 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&#34;a
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/07/install-elastalert.html" aria-label="打开帖子: install ElastAlert">
-      
-          install ElastAlert
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-07-10T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-07-10
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
-对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
-# yum install gcc 下面就是安装kibana的插件
-# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.
-      
-      <p>
-        
-          <a href="//yull.in/2019/07/install-elastalert.html" class="postShorten-excerpt_link link" aria-label="打开帖子: install ElastAlert">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -750,7 +751,7 @@ func init() { rand.Seed(time.Now().UnixNano()) } var letterRunes = []rune(&#34;a
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2025 Yullin. All Rights Reserved
+    &copy; 2026 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"

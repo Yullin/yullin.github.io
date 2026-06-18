@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Yullin Blog 运维 生活</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="//yull.in/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TECH SKILLS</title>
+      <link>//yull.in/categories/tech-skills.html</link>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>//yull.in/categories/tech-skills.html</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>TECH SKILL</title>
       <link>//yull.in/categories/tech-skill.html</link>
@@ -22,15 +31,6 @@
       <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>//yull.in/categories/tech-info.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TECH SKILLS</title>
-      <link>//yull.in/categories/tech-skills.html</link>
-      <pubDate>Thu, 13 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//yull.in/categories/tech-skills.html</guid>
       <description></description>
     </item>
     

@@ -10,7 +10,7 @@
   "headline": "Posts",
   
   "datePublished": "0001-01-01T00:00:00Z",
-  "dateModified": "2024-12-12T00:00:00Z",
+  "dateModified": "2026-06-18T00:00:00Z",
   "author": {
     "@type": "Person",
     "name": "Yullin",
@@ -255,6 +255,74 @@ if (!doNotTrack) {
         <section class="postShorten-group main-content-wrap">
           
           
+          
+            
+  
+    
+      
+        
+      
+    
+  
+
+
+  
+
+<article class="postShorten postShorten--thumbnailimg-bottom">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title">
+      
+        <a class="link-unstyled" href="//yull.in/2019/07/install-elastalert.html" aria-label="打开帖子: install ElastAlert">
+      
+          install ElastAlert
+        </a>
+      </h1>
+      
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-07-10T00:00:00Z">
+        
+  
+  
+  
+  
+    2019-07-10
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
+    
+  
+
+  </div>
+
+    </div>
+    <div class="postShorten-excerpt">
+      
+        准备工作 对于ElastAlert的介绍我就不说了，网上一搜一大堆的。这里直接进入正题。
+对应你的kibana版本去下载elastalert-kibana-plugin，到这里去下 https://github.com/bitsensor/elastalert-kibana-plugin/releases 下载ElastAlert程序本身，到这里去下 https://github.com/Yelp/elastalert 安装 进入ElastAlert目录，执行 # yum install python-setuptools # git clone https://github.com/Yelp/elastalert.git # cd elastalert # python setup.py install 中间或许会提示报错，缺一些包，库什么的，根据报错装上对应的就行了。比如我就提示了缺gcc，所以
+# yum install gcc 下面就是安装kibana的插件
+# /usr/share/kibana/bin/kibana-plugin install file:///path/to/elastalert-kibana-plugin-1.
+      
+      <p>
+        
+          <a href="//yull.in/2019/07/install-elastalert.html" class="postShorten-excerpt_link link" aria-label="打开帖子: install ElastAlert">阅读全文</a>
+        
+        
+      </p>
+    </div>
+  </div>
+  
+</article>
+
           
             
   
@@ -672,74 +740,6 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
 </article>
 
           
-            
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="//yull.in/2019/01/about-redirect-output.html" aria-label="打开帖子: 输出重定向到文件的时效性">
-      
-          输出重定向到文件的时效性
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2019-01-14T00:00:00Z">
-        
-  
-  
-  
-  
-    2019-01-14
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="//yull.in/categories/tech-skills">TECH SKILLS</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        在做一个监控脚本时，需要将结果输出到一个文件，然后另外一个脚本来读取该文件的内容作为结果进行判断。
-经过测试发现，shell中的命令行重定向功能有个特点，即在命令一开始执行时，就已开始创建了对应的文件，下面举个例子来进行说明：
-# test.py &gt; /tmp/test.log 这条命令中，假如该命令执行总共需要30秒，而在该命令一开始执行时，/tmp/test.log就已创建，而不是等到命令执行完成再创建。而这时如果有执行频率较高，在30秒内去检查/tmp/test.log文件内的内容的话，有可能是检查不到正确的内容的。
-所以我们在使用重定向功能时需要注意到这点，创建文件的时间是否就是你所设想的时间呢？
-      
-      <p>
-        
-          <a href="//yull.in/2019/01/about-redirect-output.html" class="postShorten-excerpt_link link" aria-label="打开帖子: 输出重定向到文件的时效性">阅读全文</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
           
   <div class="pagination-bar">
     <ul class="pagination">
@@ -769,7 +769,7 @@ string.split = function(s, p) local rt= {} string.gsub(s, &#39;[^&#39;..p..&#39;
         </section>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2025 Yullin. All Rights Reserved
+    &copy; 2026 Yullin. All Rights Reserved
   </span>
 </footer>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7268840106840339"
