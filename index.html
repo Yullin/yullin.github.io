@@ -306,7 +306,7 @@ if (!doNotTrack) {
     <div class="postShorten-excerpt">
       
         背景 在企业实践中，HashiCorp Vault 作为密钥管理的事实标准，官方及社区已经提供了 AWS、AliCloud、TencentCloud 等主流云厂商的 Secrets Engine 插件。然而，当我试图为火山引擎（Volcengine）寻找类似方案时，发现市面上并没有现成的插件可用。
-既然没有轮子，而且现在有AI了，那咱就自己Vibe一个。
+既然没有轮子，那现在咱们在AI的加持下，可以非常方便的造出一个轮子来了。
 插件能做什么 这个插件（vault-plugin-secrets-volcengine）为 Vault 提供了火山引擎的动态凭证管理能力，支持两种模式：
 STS 临时凭证 — 通过 AssumeRole 签发短期临时 AK/SK + SecurityToken，适合短生命周期的作业场景，凭证到期自动失效，无需主动回收。
 IAM 动态用户 — 按需创建 IAM 子用户并挂载策略，生成长期 AK/SK。Vault 负责完整的生命周期管理：创建、续期、到期自动回收（删除 AccessKey → 解绑策略 → 删除用户）。
